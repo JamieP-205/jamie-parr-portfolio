@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jamie-parr-portfolio.netlify.app/sitemap.xml

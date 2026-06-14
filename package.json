@@ -1,0 +1,14 @@
+{
+  "name": "jamie-parr-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Accessible static portfolio and project case studies for Jamie Parr",
+  "scripts": {
+    "check:js": "node --check script.js",
+    "check:site": "node tools/check-site.js",
+    "test": "npm run check:js && npm run check:site"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
