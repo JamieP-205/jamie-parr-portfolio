@@ -933,3 +933,110 @@ html[data-motion="reduced"] .reveal {
     padding: 0.45rem 0.55rem;
   }
 }
+/* Portfolio project refinements */
+.project-card-technical {
+  grid-column: 1 / -1;
+}
+
+.project-card-technical {
+  grid-template-columns: minmax(280px, .9fr) minmax(0, 1.1fr);
+  grid-template-rows: auto;
+}
+
+.project-card-panel {
+  min-height: 100%;
+  padding: clamp(1.2rem, 3vw, 1.8rem);
+  background:
+    linear-gradient(135deg, #07111f 0%, #10243a 58%, #0f766e 140%);
+  color: #e2e8f0;
+  border-bottom: 0;
+  display: grid;
+  align-items: end;
+}
+
+.panel-inner {
+  display: grid;
+  gap: 1rem;
+}
+
+.panel-label {
+  margin: 0;
+  color: #99f6e4;
+  font-size: .78rem;
+  font-weight: 850;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.panel-title {
+  color: #ffffff;
+  font-size: clamp(2.1rem, 6vw, 4.1rem);
+  line-height: .95;
+  letter-spacing: -.06em;
+  font-weight: 900;
+}
+
+.architecture-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+}
+
+.architecture-list span {
+  color: #dbeafe;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .15);
+  border-radius: 999px;
+  padding: .44rem .62rem;
+  font-size: .86rem;
+  font-weight: 750;
+}
+
+.technical-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .8rem;
+  margin: 1.4rem 0 1.6rem;
+}
+
+.technical-panel div {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  padding: 1rem;
+}
+
+.technical-panel span {
+  display: block;
+  color: var(--quiet);
+  font-size: .78rem;
+  font-weight: 850;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: .35rem;
+}
+
+.technical-panel strong {
+  display: block;
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.project-card-technical .button-ghost {
+  border-color: var(--border);
+}
+
+@media (max-width: 880px) {
+  .project-card-technical {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card-panel {
+    min-height: 320px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .technical-panel {
+    grid-template-columns: 1fr;
+  }
+}

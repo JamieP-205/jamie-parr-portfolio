@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jamie Parr | Computing Technologies Student & Practical Web Projects | Belfast</title>
-  <meta name="description" content="Jamie Parr is a Computing Technologies student at Ulster University in Belfast with practical work experience and live web projects including Local Web Fix and Coast Internet Radio.">
+  <meta name="description" content="Jamie Parr is a Computing Technologies student at Ulster University in Belfast with practical work experience and live web projects including Talk With Jamie, Local Web Fix and Coast Internet Radio.">
   <meta name="author" content="Jamie Parr">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://jamie-parr-portfolio.netlify.app/">
   <meta property="og:title" content="Jamie Parr | Computing Technologies Student">
-  <meta property="og:description" content="Belfast-based Computing Technologies student with real work experience and live web projects including Local Web Fix and Coast Internet Radio.">
+  <meta property="og:description" content="Belfast-based Computing Technologies student with real work experience and live projects including Talk With Jamie, Local Web Fix and Coast Internet Radio.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jamie-parr-portfolio.netlify.app/">
   <meta property="og:image" content="https://jamie-parr-portfolio.netlify.app/assets/og-card.svg">
@@ -56,8 +56,8 @@
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <p class="eyebrow">Belfast, Northern Ireland</p>
-          <h1>Computing Technologies student with real work experience and live web projects.</h1>
-          <p class="hero-text">I study at Ulster University in Belfast and build small practical websites alongside work and study. I am currently looking for full-time summer work in Belfast, with flexibility to continue part-time from September. I am applying for entry-level IT support, helpdesk, admin, data entry, warehouse admin, stockroom, retail replenishment and other practical support roles.</p>
+          <h1>Computing Technologies student building practical web and app projects.</h1>
+          <p class="hero-text">I study at Ulster University in Belfast and build practical projects alongside work and study: static websites, service sites, and a privacy-conscious chat app with accounts, serverless functions and persistent conversations. I am currently looking for full-time summer work in Belfast, with flexibility to continue part-time from September.</p>
           <div class="hero-actions" aria-label="Primary actions">
             <a class="button button-primary" href="#projects">View my projects</a>
             <a class="button button-secondary" href="assets/jamie_parr_public_cv.pdf" download>Download CV</a>
@@ -82,7 +82,7 @@
             <dl class="quick-facts">
               <div>
                 <dt>Main projects</dt>
-                <dd>Local Web Fix and Coast Internet Radio</dd>
+                <dd>Talk With Jamie, Local Web Fix and Coast Internet Radio</dd>
               </div>
               <div>
                 <dt>Experience</dt>
@@ -132,6 +132,8 @@
               <li>Troubleshooting</li>
               <li>Responsive design</li>
               <li>Accessibility awareness</li>
+              <li>Netlify Functions</li>
+              <li>GitHub Actions</li>
             </ul>
           </article>
 
@@ -160,6 +162,8 @@
               <li>Clear communication</li>
               <li>Contact forms</li>
               <li>Plain-English copy</li>
+              <li>Privacy-aware design</li>
+              <li>Project documentation</li>
             </ul>
           </article>
         </div>
@@ -170,11 +174,50 @@
       <div class="container">
         <div class="section-heading narrow reveal">
           <p class="eyebrow">Projects</p>
-          <h2>Live projects that show practical web work.</h2>
-          <p>These are public projects I can talk through honestly: one small service site I built myself, and one live radio website redevelopment for real listeners.</p>
+          <h2>Projects with real users, constraints and working deployments.</h2>
+          <p>These projects show different sides of my work: a serverless chat app with accounts and privacy boundaries, a small service website, and a live radio website for real listeners.</p>
         </div>
 
         <div class="project-card-grid">
+          <article class="project-card project-card-technical project-card-feature reveal">
+            <figure class="project-card-media project-card-panel" aria-label="Talk With Jamie project architecture summary">
+              <div class="panel-inner">
+                <p class="panel-label">Featured technical project</p>
+                <div class="panel-title">Talk With Jamie</div>
+                <div class="architecture-list" aria-label="Technical features">
+                  <span>Signed sessions</span>
+                  <span>Guest and account chats</span>
+                  <span>Netlify Functions API</span>
+                  <span>Persistent conversations</span>
+                  <span>Private admin tools</span>
+                  <span>Context retrieval</span>
+                  <span>Rate limiting</span>
+                  <span>Automated tests</span>
+                </div>
+              </div>
+            </figure>
+            <div class="project-card-body">
+              <p class="eyebrow">Most technical project</p>
+              <h3>Talk With Jamie</h3>
+              <p>A privacy-conscious personal chat app built on Netlify. It supports guest sessions, registered accounts, persistent conversations, admin tools, rate limiting and private context retrieval.</p>
+              <p>The strongest part is the separation between public-safe context and private administration features. Raw source material stays out of GitHub and the deployed site, while the app uses serverless functions, signed cookies, Netlify Blobs and automated tests to keep the project controlled.</p>
+              <ul class="tag-list" aria-label="Talk With Jamie project skills">
+                <li>Netlify Functions</li>
+                <li>Authentication</li>
+                <li>Netlify Blobs</li>
+                <li>Context retrieval</li>
+                <li>Privacy boundaries</li>
+                <li>Automated tests</li>
+                <li>JavaScript</li>
+                <li>API routes</li>
+              </ul>
+              <div class="project-card-actions">
+                <a class="button button-primary" href="https://talkwithjamie.netlify.app" target="_blank" rel="noopener noreferrer">View live project</a>
+                <a class="button button-secondary" href="talk-with-jamie-case-study.html">Read case study</a>
+                <a class="button button-ghost" href="https://github.com/JamieP-205/talk-with-jamie" target="_blank" rel="noopener noreferrer">GitHub repo</a>
+              </div>
+            </div>
+          </article>
           <article class="project-card project-card-feature reveal">
             <figure class="project-card-media">
               <img src="assets/local-web-fix-home.jpg" alt="Screenshot of the Local Web Fix homepage showing the free check offer and simple mobile layout.">

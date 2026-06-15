@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en-GB" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Talk With Jamie Case Study | Jamie Parr Portfolio</title>
+  <meta name="description" content="Case study for Talk With Jamie, a privacy-conscious personal chat app built with Netlify Functions, authentication, persistent conversations, private context retrieval and automated tests.">
+  <meta name="author" content="Jamie Parr">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://jamie-parr-portfolio.netlify.app/talk-with-jamie-case-study.html">
+  <meta property="og:title" content="Talk With Jamie Case Study | Jamie Parr">
+  <meta property="og:description" content="A technical case study covering authentication, serverless functions, private context retrieval, persistence, testing and privacy boundaries.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://jamie-parr-portfolio.netlify.app/talk-with-jamie-case-study.html">
+  <meta property="og:image" content="https://jamie-parr-portfolio.netlify.app/assets/og-card.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Jamie Parr homepage">
+        <span class="brand-mark" aria-hidden="true">JP</span>
+        <span class="brand-text">Jamie Parr</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Toggle navigation</span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <a href="index.html#about">About</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#contact">Contact</a>
+        <div class="nav-controls" aria-label="Display options">
+          <button class="utility-button" type="button" data-theme-toggle aria-pressed="false">Dark</button>
+          <button class="utility-button" type="button" data-text-toggle aria-pressed="false">Larger text</button>
+          <button class="utility-button" type="button" data-motion-toggle aria-pressed="false">Less motion</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero case-hero section-pad">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Project case study</p>
+          <h1>Talk With Jamie: a privacy-conscious personal chat app.</h1>
+          <p class="hero-text">This is my most technical project so far. It combines a static frontend, Netlify Functions, account sessions, guest chats, persistent conversations, admin tools, private context retrieval and automated tests.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://talkwithjamie.netlify.app" target="_blank" rel="noopener noreferrer">View live project</a>
+            <a class="button button-secondary" href="https://github.com/JamieP-205/talk-with-jamie" target="_blank" rel="noopener noreferrer">View GitHub repo</a>
+            <a class="button button-ghost" href="index.html#projects">Back to projects</a>
+          </div>
+        </div>
+
+        <aside class="case-summary reveal" aria-label="Project summary">
+          <h2>Project summary</h2>
+          <dl>
+            <div>
+              <dt>Type</dt>
+              <dd>Personal chat app and technical experiment</dd>
+            </div>
+            <div>
+              <dt>Stack</dt>
+              <dd>HTML, CSS, JavaScript, Netlify Functions, Netlify Blobs</dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd>Authentication, persistence, privacy boundaries and testing</dd>
+            </div>
+            <div>
+              <dt>Status</dt>
+              <dd>Experimental, active development</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-pad">
+      <div class="container case-grid">
+        <aside class="case-summary reveal" aria-label="Case study navigation">
+          <h2>What it shows</h2>
+          <dl>
+            <div>
+              <dt>Backend thinking</dt>
+              <dd>Serverless API routes and storage</dd>
+            </div>
+            <div>
+              <dt>Security thinking</dt>
+              <dd>Signed cookies, hashing and rate limits</dd>
+            </div>
+            <div>
+              <dt>Privacy thinking</dt>
+              <dd>Public and private context separation</dd>
+            </div>
+            <div>
+              <dt>Testing</dt>
+              <dd>Syntax, site, unit and integration checks</dd>
+            </div>
+          </dl>
+        </aside>
+
+        <article class="case-content reveal">
+          <h2>Overview</h2>
+          <p>Talk With Jamie started as a personal chat interface, but the interesting part became the system around it. I wanted to explore how a small web app could support guest users, registered users, persistent conversations and admin tools while still being clear about what the app is and how data is handled.</p>
+
+          <h2>What I built</h2>
+          <ul class="checked-list">
+            <li>Guest and registered chat sessions.</li>
+            <li>Signed HttpOnly session cookies and password hashing.</li>
+            <li>Persistent users, conversations, contacts and rate limits using Netlify Blobs.</li>
+            <li>A Netlify Functions backend with route handling, input cleaning and provider logic.</li>
+            <li>Private admin tools for conversation review, blocking, deletion and drafting.</li>
+            <li>A v2 deployment path with private context retrieval and public-safe context separation.</li>
+            <li>Automated checks covering syntax, site structure, authentication helpers, context boundaries and deployment safeguards.</li>
+          </ul>
+
+          <h2>Architecture</h2>
+          <p>The project uses a static frontend with JavaScript handling the chat interface and account flow. Requests go through Netlify Functions, which act as the backend API. Storage is handled through Netlify Blobs, allowing the project to persist conversations and user records without running a traditional server.</p>
+
+          <div class="technical-panel">
+            <div>
+              <span>Frontend</span>
+              <strong>Static HTML, CSS and JavaScript</strong>
+            </div>
+            <div>
+              <span>API</span>
+              <strong>Netlify Functions routes</strong>
+            </div>
+            <div>
+              <span>Storage</span>
+              <strong>Netlify Blobs</strong>
+            </div>
+            <div>
+              <span>Testing</span>
+              <strong>Node syntax, site, unit and integration tests</strong>
+            </div>
+          </div>
+
+          <h2>Privacy and safety decisions</h2>
+          <p>The project is clearly labelled as a chat experiment, and it warns users not to submit sensitive information. Raw personal exports and private source files are not committed or deployed. The v2 version uses a compact, redacted context pack rather than exposing original source material.</p>
+          <p>The important design choice is separation: public users only receive public-safe context, while deeper private context is limited to admin or trusted workflows. That made the project more complicated, but it also made it more realistic and safer.</p>
+
+          <h2>Testing and deployment</h2>
+          <p>The root app and v2 app both have automated checks. These cover JavaScript syntax, site structure, authentication helpers, signed sessions, username validation, message cleaning, context validation, retrieval boundaries and production migration safeguards.</p>
+
+          <h2>What I learned</h2>
+          <p>This project helped me understand the difference between making a page that works and designing an actual application with users, sessions, storage, privacy boundaries and deployment risk. It also gave me practice explaining technical decisions clearly, which is useful for support, admin and junior developer roles.</p>
+
+          <div class="inline-actions">
+            <a class="button button-primary" href="https://talkwithjamie.netlify.app" target="_blank" rel="noopener noreferrer">Open live project</a>
+            <a class="button button-secondary" href="https://github.com/JamieP-205/talk-with-jamie" target="_blank" rel="noopener noreferrer">Open GitHub repo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span data-year></span> Jamie Parr. Built as a small static portfolio.</p>
+      <a href="#main">Back to top</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

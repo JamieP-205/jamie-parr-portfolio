@@ -4,43 +4,44 @@
 
 ## Live site
 
-The production portfolio is hosted on Netlify and can be viewed at [jamie parr portfolio.netlify.app](https://jamie-parr-portfolio.netlify.app/).
+The production portfolio is hosted on Netlify and can be viewed at [jamie parr portfolio.netlify.app](https://jamie-parr-portfolio.netlify.app/).
 
 ## Status
 
-**Live, actively maintained** – I add new case studies and refine the site as I progress through my Computing Technologies degree.
+**Live, actively maintained**  -  I add new case studies and refine the site as I progress through my Computing Technologies degree.
 
 ## Summary
 
-I built this portfolio to present my studies, work experience, qualifications and live web projects in one accessible site. The codebase is intentionally framework free so that I can directly control accessibility, performance and progressive enhancement. Visitors can find clear evidence of real work and study, read project case studies that explain my decisions and access CV and certificate documents. Screenshots of the site are available on the live site or in the assets folder of this repository.
+I built this portfolio to present my studies, work experience, qualifications and live web and app projects in one accessible site. The codebase is intentionally framework free so that I can directly control accessibility, performance and progressive enhancement. Visitors can find clear evidence of real work and study, read project case studies that explain my decisions and access CV and certificate documents. Screenshots of the site are available on the live site or in the assets folder of this repository.
 
 ## What I built
 
 - A responsive homepage covering my skills, education, employment and availability
-- Detailed case studies for **Local Web Fix** and **Coast Internet Radio** explaining scope, decisions and outcomes
+- Detailed case studies for **Talk With Jamie**, **Local Web Fix** and **Coast Internet Radio** explaining scope, decisions and outcomes
+- A featured Talk With Jamie case study covering authentication, serverless functions, storage, privacy boundaries and testing
 - Reusable display preferences (dark/light mode, larger text and reduced motion) stored in localStorage
 - A mobile navigation menu with keyboard support
 - Social sharing metadata, a web manifest, sitemap, robots file and custom 404 page
-- Automated checks for JavaScript syntax, required files, metadata, JSON and exact case local links
+- Automated checks for JavaScript syntax, required files, metadata, JSON and exact case local links
 
 ## Key files
 
-- `index.html` – main portfolio content
-- `style.css` – layout, responsive design and themes
-- `script.js` – navigation and display preferences
-- `tools/check-site.js` – automated site validation
+- `index.html`  -  main portfolio content
+- `style.css`  -  layout, responsive design and themes
+- `script.js`  -  navigation and display preferences
+- `tools/check-site.js`  -  automated site validation
 
 ## Technical approach
 
-The site uses semantic HTML, modern CSS and vanilla JavaScript. I deliberately avoided frameworks because this is a content focused project; a small static codebase gives me direct control over accessibility, performance and progressive enhancement. The site is deployed to Netlify from this repository with GitHub Actions verifying syntax and site structure on every push.
+The site uses semantic HTML, modern CSS and vanilla JavaScript. I deliberately avoided frameworks because this is a content focused project; a small static codebase gives me direct control over accessibility, performance and progressive enhancement. The site is deployed to Netlify from this repository with GitHub Actions verifying syntax and site structure on every push.
 
 ## Project structure
 
-- `assets/` – CV, certificates and social preview images
-- `index.html` – homepage and project overview
-- `case-studies/` – individual project case study pages
-- `style.css` and `script.js` – presentation and interaction logic
-- `tools/` – validation scripts used in CI and locally
+- `assets/`  -  CV, certificates and social preview images
+- `index.html`  -  homepage and project overview
+- `case-studies/`  -  individual project case study pages
+- `style.css` and `script.js`  -  presentation and interaction logic
+- `tools/`  -  validation scripts used in CI and locally
 
 ## Local development
 
