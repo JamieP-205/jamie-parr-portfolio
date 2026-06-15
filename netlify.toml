@@ -1,3 +1,7 @@
+[build]
+  command = "npm test"
+  publish = "."
+
 [[headers]]
   for = "/*"
   [headers.values]
