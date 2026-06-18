@@ -51,7 +51,7 @@ npm test
 npx serve .
 ```
 
-There is no build step. `npm test` checks JavaScript syntax and validates the site’s files and links before deployment.
+There is no build step. `npm test` checks JavaScript syntax and validates the site's files and links before deployment.
 
 ## Privacy & security notes
 
