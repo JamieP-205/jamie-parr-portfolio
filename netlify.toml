@@ -22,8 +22,19 @@
     Cache-Control = "public, max-age=0, must-revalidate"
 
 [[redirects]]
+  from = "/case-study.html"
+  to = "/coast-internet-radio-case-study.html"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/case-study"
-  to = "/case-study.html"
+  to = "/coast-internet-radio-case-study.html"
+  status = 301
+
+[[redirects]]
+  from = "/coast-internet-radio-case-study"
+  to = "/coast-internet-radio-case-study.html"
   status = 200
 
 [[redirects]]
