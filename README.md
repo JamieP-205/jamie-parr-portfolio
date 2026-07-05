@@ -4,7 +4,7 @@
 
 ## Live site
 
-The production portfolio is hosted on Netlify and can be viewed at [jamie parr portfolio.netlify.app](https://jamie-parr-portfolio.netlify.app/).
+The production portfolio is hosted on Netlify and can be viewed at [jamie-parr-portfolio.netlify.app](https://jamie-parr-portfolio.netlify.app/).
 
 ## Status
 
@@ -27,7 +27,7 @@ I built this portfolio to present my studies, work experience, qualifications an
 ## Key files
 
 - `index.html`  -  main portfolio content
-- `style.css`  -  layout, responsive design and themes
+- `styles.css`  -  layout, responsive design and themes
 - `script.js`  -  navigation and display preferences
 - `tools/check-site.js`  -  automated site validation
 
@@ -39,8 +39,8 @@ The site uses semantic HTML, modern CSS and vanilla JavaScript. I deliberately a
 
 - `assets/`  -  CV, certificates and social preview images
 - `index.html`  -  homepage and project overview
-- `case-studies/`  -  individual project case study pages
-- `style.css` and `script.js`  -  presentation and interaction logic
+- `*-case-study.html`  -  individual project case study pages
+- `styles.css` and `script.js`  -  presentation and interaction logic
 - `tools/`  -  validation scripts used in CI and locally
 
 ## Local development
