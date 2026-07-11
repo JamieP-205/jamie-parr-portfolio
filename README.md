@@ -20,6 +20,8 @@ I built this portfolio to present my studies, work experience, qualifications an
 - Detailed case studies for **Talk With Jamie**, **Local Web Fix** and **Coast Internet Radio** explaining scope, decisions and outcomes
 - A featured Talk With Jamie case study covering authentication, serverless functions, storage, privacy boundaries and testing
 - Reusable display preferences (dark/light mode, larger text and reduced motion) stored in localStorage
+- A keyboard quick-navigation palette (press / or Ctrl+K) built with a plain accessible listbox
+- A live panel in the hero showing the real Coast Internet Radio listener feed and my latest GitHub push
 - A mobile navigation menu with keyboard support
 - Social sharing metadata, a web manifest, sitemap, robots file and custom 404 page
 - Automated checks for JavaScript syntax, required files, metadata, JSON and exact case local links
