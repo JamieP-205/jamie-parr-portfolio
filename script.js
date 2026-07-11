@@ -179,7 +179,9 @@
    latest GitHub push. Every row fails quietly if a feed is down. */
 (function () {
   const strip = document.getElementById('live-strip');
-  if (!strip || typeof fetch !== 'function') return;
+  const caseRow = document.getElementById('coast-case-live-row');
+  const caseText = document.getElementById('coast-case-live');
+  if ((!strip && !caseRow) || typeof fetch !== 'function') return;
 
   const coastRow = document.getElementById('live-coast-row');
   const coastText = document.getElementById('live-coast-text');
@@ -191,7 +193,11 @@
 
   function show(row) {
     row.hidden = false;
-    strip.hidden = false;
+    if (strip) strip.hidden = false;
+  }
+
+  function cleanTitle(value) {
+    return String(value || '').trim().replace(/\s*\(\d{2}:\d{2}(:\d{2})?\)\s*$/, '');
   }
 
   function updateCoast() {
@@ -200,15 +206,26 @@
       .then((data) => {
         if (!data || data.online === false) return;
         const listeners = Number(data.listeners);
-        coastText.textContent = Number.isFinite(listeners) && listeners > 0
-          ? `is on air with ${listeners} listening right now`
-          : 'is on air right now';
-        show(coastRow);
+        const title = cleanTitle(data.title);
 
-        const title = String(data.title || '').trim();
-        if (title) {
-          trackText.textContent = `Now playing: ${title.replace(/\s*\(\d{2}:\d{2}(:\d{2})?\)\s*$/, '')}`;
-          show(trackRow);
+        if (coastRow && coastText) {
+          coastText.textContent = Number.isFinite(listeners) && listeners > 0
+            ? `is on air with ${listeners} listening right now`
+            : 'is on air right now';
+          show(coastRow);
+          if (title && trackRow && trackText) {
+            trackText.textContent = `Now playing: ${title}`;
+            show(trackRow);
+          }
+        }
+
+        if (caseRow && caseText) {
+          const parts = [Number.isFinite(listeners) && listeners > 0
+            ? `On air, ${listeners} listening`
+            : 'On air'];
+          if (title) parts.push(`playing ${title}`);
+          caseText.textContent = parts.join(', ');
+          caseRow.hidden = false;
         }
       })
       .catch(() => {});
@@ -226,6 +243,7 @@
   }
 
   function updateCommit() {
+    if (!commitRow || !commitText || !commitLink) return;
     const cached = (() => {
       try { return JSON.parse(sessionStorage.getItem('portfolio-live-push') || 'null'); } catch { return null; }
     })();
@@ -313,6 +331,19 @@
     setActive(0);
   }
 
+  /* Brief confirmation note. Kept visible until removal so it still
+     reads when animations are turned off. */
+  function toast(message) {
+    const previous = document.querySelector('.toast');
+    if (previous) previous.remove();
+    const note = document.createElement('p');
+    note.className = 'toast';
+    note.setAttribute('role', 'status');
+    note.textContent = message;
+    document.body.appendChild(note);
+    setTimeout(() => note.remove(), 2400);
+  }
+
   function activate(option) {
     if (!option) return;
     close();
@@ -324,12 +355,26 @@
       window.portfolioToggleText();
       return;
     }
+    if (option.dataset.action === 'copy-email') {
+      const email = 'jamieparr05@hotmail.com';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email)
+          .then(() => toast('Email address copied'))
+          .catch(() => { window.location.href = `mailto:${email}`; });
+      } else {
+        window.location.href = `mailto:${email}`;
+      }
+      return;
+    }
     if (option.dataset.goto) {
       const target = document.querySelector(option.dataset.goto);
       if (target) {
         target.scrollIntoView({ behavior: 'smooth' });
         target.setAttribute('tabindex', '-1');
         target.focus({ preventScroll: true });
+      } else {
+        // Section lives on the homepage; jump across.
+        window.location.href = `index.html${option.dataset.goto}`;
       }
       return;
     }

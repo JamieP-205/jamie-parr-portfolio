@@ -43,6 +43,7 @@
         <a href="index.html#experience">Experience</a>
         <a href="index.html#contact">Contact</a>
         <div class="nav-controls" aria-label="Display options">
+          <button class="utility-button" type="button" data-palette-open aria-haspopup="dialog" aria-controls="palette">Menu <kbd>/</kbd></button>
           <button class="utility-button" type="button" data-theme-toggle aria-pressed="false">Dark</button>
           <button class="utility-button" type="button" data-text-toggle aria-pressed="false">Larger text</button>
           <button class="utility-button" type="button" data-motion-toggle aria-pressed="false">Less motion</button>
@@ -175,6 +176,40 @@
       <a href="#main">Back to top</a>
     </div>
   </footer>
+
+  <div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Quick navigation" hidden>
+    <div class="palette-box">
+      <label class="sr-only" for="palette-input">Type to filter destinations</label>
+      <input id="palette-input"
+             type="text"
+             role="combobox"
+             aria-expanded="true"
+             aria-controls="palette-list"
+             aria-activedescendant=""
+             placeholder="Where to? Try “projects” or “cv”"
+             autocomplete="off"
+             spellcheck="false">
+      <ul id="palette-list" role="listbox" aria-label="Destinations">
+        <li role="option" id="pal-home" data-keywords="home start front page" data-href="index.html">Home</li>
+        <li role="option" id="pal-about" data-keywords="about me early career" data-goto="#about">About</li>
+        <li role="option" id="pal-skills" data-keywords="skills technical workplace" data-goto="#skills">Skills</li>
+        <li role="option" id="pal-projects" data-keywords="projects work portfolio" data-goto="#projects">Projects</li>
+        <li role="option" id="pal-experience" data-keywords="experience jobs work history" data-goto="#experience">Experience</li>
+        <li role="option" id="pal-contact" data-keywords="contact email hire" data-goto="#contact">Contact</li>
+        <li role="option" id="pal-twj" data-keywords="talk with jamie chat app case study serverless" data-href="talk-with-jamie-case-study.html">Case study: Talk With Jamie</li>
+        <li role="option" id="pal-lwf" data-keywords="local web fix service site case study" data-href="local-web-fix-case-study.html">Case study: Local Web Fix</li>
+        <li role="option" id="pal-coast" data-keywords="coast internet radio case study live" data-href="coast-internet-radio-case-study.html">Case study: Coast Internet Radio</li>
+        <li role="option" id="pal-cv" data-keywords="cv resume download pdf" data-href="assets/jamie_parr_public_cv.pdf" data-download="true">Download CV</li>
+        <li role="option" id="pal-email" data-keywords="email contact message" data-href="mailto:jamieparr05@hotmail.com">Email me</li>
+        <li role="option" id="pal-copy" data-keywords="copy email address clipboard" data-action="copy-email">Copy my email address</li>
+        <li role="option" id="pal-github" data-keywords="github code repos source" data-href="https://github.com/JamieP-205" data-external="true">GitHub profile</li>
+        <li role="option" id="pal-linkedin" data-keywords="linkedin profile network" data-href="https://www.linkedin.com/in/jamie-parr-577783292" data-external="true">LinkedIn</li>
+        <li role="option" id="pal-theme" data-keywords="theme dark light mode toggle" data-action="theme">Switch theme</li>
+        <li role="option" id="pal-text" data-keywords="text size larger accessibility" data-action="text">Toggle larger text</li>
+      </ul>
+      <p class="palette-hint" aria-hidden="true"><kbd>↑</kbd><kbd>↓</kbd> choose &nbsp;·&nbsp; <kbd>Enter</kbd> go &nbsp;·&nbsp; <kbd>Esc</kbd> close</p>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
