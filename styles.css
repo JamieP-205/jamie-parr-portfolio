@@ -734,9 +734,7 @@ dd {
 }
 
 .case-summary {
-  background: var(--paper-deep);
-  padding: 1.1rem 1.2rem;
-  border-radius: 4px;
+  padding: 0;
 }
 
 .case-summary h2 {
@@ -818,9 +816,6 @@ dd {
   display: grid;
   gap: 0;
   margin: 1.4rem 0;
-  padding: 0.5rem 1.2rem;
-  background: var(--paper-deep);
-  border-radius: 4px;
   max-width: var(--measure);
 }
 
