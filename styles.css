@@ -364,12 +364,15 @@ dd {
 /* 5. Buttons and links */
 
 .button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
   font-family: var(--sans);
   font-size: 0.92rem;
   font-weight: 600;
   text-decoration: none;
-  padding: 0.62rem 1.05rem;
+  padding: 0.55rem 1.05rem;
   border: 1px solid var(--ink);
   color: var(--ink);
   background: none;
