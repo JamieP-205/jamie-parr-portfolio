@@ -197,7 +197,7 @@ dd {
 }
 
 .section {
-  border-top: 1px solid var(--line);
+  border-top: 0;
 }
 
 .muted-section {
@@ -469,8 +469,6 @@ dd {
 }
 
 .proof-card {
-  border-top: 2px solid var(--line-strong);
-  padding-top: 1rem;
   max-width: 24rem;
 }
 
@@ -495,8 +493,7 @@ dd {
 }
 
 .quick-facts > div {
-  padding: 0.7rem 0;
-  border-top: 1px solid var(--line);
+  padding: 0.55rem 0;
 }
 
 .quick-facts dd {
@@ -544,8 +541,7 @@ dd {
 }
 
 .skill-card h3 {
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--line-strong);
+  padding-bottom: 0.35rem;
 }
 
 .tag-list {
@@ -582,12 +578,10 @@ dd {
 .project-card {
   display: grid;
   gap: 1.4rem 3rem;
-  padding: 2.2rem 0;
-  border-top: 1px solid var(--line);
+  padding: 2.4rem 0;
 }
 
 .project-card:first-child {
-  border-top: 0;
   padding-top: 0;
 }
 
@@ -643,12 +637,7 @@ dd {
 .timeline-item {
   display: grid;
   gap: 0.3rem 2.5rem;
-  padding: 1.3rem 0;
-  border-top: 1px solid var(--line);
-}
-
-.timeline-item:first-child {
-  border-top: 0;
+  padding: 1.1rem 0;
 }
 
 .timeline-date {
@@ -682,8 +671,7 @@ dd {
 }
 
 .info-card {
-  border-top: 2px solid var(--line-strong);
-  padding-top: 1rem;
+  padding-top: 0;
 }
 
 .info-card h2 {
@@ -708,7 +696,7 @@ dd {
 }
 
 .contact-section {
-  border-top: 2px solid var(--line-strong);
+  background: var(--paper-deep);
 }
 
 .contact-card {
@@ -746,8 +734,9 @@ dd {
 }
 
 .case-summary {
-  border-top: 2px solid var(--line-strong);
-  padding-top: 1rem;
+  background: var(--paper-deep);
+  padding: 1.1rem 1.2rem;
+  border-radius: 4px;
 }
 
 .case-summary h2 {
@@ -755,12 +744,11 @@ dd {
 }
 
 .case-summary dl > div {
-  padding: 0.7rem 0;
-  border-top: 1px solid var(--line);
+  padding: 0.55rem 0;
 }
 
 .case-summary dl > div:first-of-type {
-  margin-top: 0.9rem;
+  margin-top: 0.6rem;
 }
 
 .case-summary dd {
@@ -830,15 +818,16 @@ dd {
   display: grid;
   gap: 0;
   margin: 1.4rem 0;
-  border-top: 2px solid var(--line-strong);
+  padding: 0.5rem 1.2rem;
+  background: var(--paper-deep);
+  border-radius: 4px;
   max-width: var(--measure);
 }
 
 .technical-panel > div {
   display: grid;
   gap: 0.15rem 2rem;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--line);
+  padding: 0.6rem 0;
 }
 
 .technical-panel span {
@@ -880,7 +869,7 @@ dd {
 /* 13. Footer, 404 and print */
 
 .site-footer {
-  border-top: 2px solid var(--line-strong);
+  border-top: 1px solid var(--line);
   margin-top: 2rem;
 }
 
