@@ -3,8 +3,8 @@
   "short_name": "Jamie Parr",
   "start_url": "/",
   "display": "minimal-ui",
-  "background_color": "#f8fafc",
-  "theme_color": "#0f766e",
+  "background_color": "#f7f5f0",
+  "theme_color": "#f7f5f0",
   "icons": [
     {
       "src": "/assets/favicon.svg",
