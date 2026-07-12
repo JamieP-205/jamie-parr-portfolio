@@ -208,8 +208,8 @@
             <div class="project-card-body">
               <p class="eyebrow">Serverless app project</p>
               <h3>Talk With Jamie</h3>
-              <p>A privacy-conscious personal chat app built on Netlify. It supports guest sessions, registered accounts, persistent conversations, admin tools, rate limiting and private context retrieval.</p>
-              <p>The main technical challenge was keeping public chat behaviour separate from private administration features. Raw source material stays out of GitHub and the deployed site, while the app uses serverless functions, signed cookies, Netlify Blobs and automated tests to keep the project controlled.</p>
+              <p>An AI chat that answers as me. Guest or registered accounts, saved conversations, and a private admin side, running on Netlify Functions with Netlify Blobs behind it.</p>
+              <p>The interesting problem was not the chat, it was access control. A public visitor and I get answers built from completely different context, and the retrieval layer enforces that rather than the prompt. Nothing personal is committed to the repo or deployed with the site.</p>
               <ul class="tag-list" aria-label="Talk With Jamie project skills">
                 <li>Netlify Functions</li>
                 <li>Authentication</li>
@@ -258,13 +258,16 @@
             <div class="project-card-body">
               <p class="eyebrow">Live website project</p>
               <h3>Coast Internet Radio Website Redevelopment</h3>
-              <p>A real-world website project for a live online radio station. I worked on layout, mobile responsiveness, accessibility, listener experience, stream-related features and content update controls.</p>
+              <p>The website for a small radio station in Newry with real listeners every day. The station streams over plain HTTP and the site is HTTPS, which browsers refuse to play, so the audio goes through two Cloudflare Workers that re-serve the stream and the now-playing feed.</p>
+              <p>Behind the login there is an admin area on Netlify Functions so the station owner can edit the site himself, plus play history, listener feedback and first-party analytics I wrote rather than installed.</p>
               <ul class="tag-list" aria-label="Coast Internet Radio project skills">
-                <li>Responsive layout</li>
-                <li>Accessibility checks</li>
-                <li>Listener journey</li>
-                <li>Testing</li>
-                <li>Performance checks</li>
+                <li>Cloudflare Workers</li>
+                <li>Netlify Functions</li>
+                <li>Netlify Blobs</li>
+                <li>Session auth and CSRF</li>
+                <li>First-party analytics</li>
+                <li>Accessibility</li>
+                <li>Media Session API</li>
               </ul>
               <div class="project-card-actions">
                 <a class="button button-primary" href="https://coastinternetradio.com" target="_blank" rel="noopener noreferrer">View live site</a>
