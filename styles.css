@@ -1029,6 +1029,29 @@ body.palette-open {
   color: var(--muted);
 }
 
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.6rem;
+  transform: translateX(-50%);
+  z-index: 110;
+  margin: 0;
+  padding: 0.5rem 0.95rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  animation: toast-in 180ms ease-out;
+}
+
+@keyframes toast-in {
+  from { opacity: 0; }
+}
+
+html[data-motion="reduced"] .toast {
+  animation: none;
+}
+
 /* Screenshot tilt and theme sweep */
 .project-card-media {
   perspective: 700px;
