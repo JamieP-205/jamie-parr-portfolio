@@ -60,7 +60,7 @@
         <div class="hero-copy">
           <p class="eyebrow">Project case study</p>
           <h1>Talk With Jamie: a privacy-conscious personal chat app.</h1>
-          <p class="hero-text">This is my most technical project so far. It combines a static frontend, Netlify Functions, account sessions, guest chats, persistent conversations, admin tools, private context retrieval and automated tests.</p>
+          <p class="hero-text">An AI chat that answers as me. The chat is the easy half. The half worth talking about is making sure a stranger on the public site can never pull anything private back out of it.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="https://talkwithjamie.netlify.app" target="_blank" rel="noopener noreferrer">View live project</a>
             <a class="button button-secondary" href="https://github.com/JamieP-205/talk-with-jamie" target="_blank" rel="noopener noreferrer">View GitHub repo</a>
@@ -118,7 +118,7 @@
 
         <article class="case-content">
           <h2>Overview</h2>
-          <p>Talk With Jamie started as a personal chat interface, but the interesting part became the system around it. I wanted to explore how a small web app could support guest users, registered users, persistent conversations and admin tools while still being clear about what the app is and how data is handled.</p>
+          <p>Talk With Jamie started as a chat interface and turned into an access-control problem. Anyone can use it, including as a guest, and it answers using context about me. So the real design question was never the chat. It was which context, for whom, and how I stop someone talking the model into handing over the rest.</p>
 
           <h2>What I built</h2>
           <ul class="checked-list">
@@ -127,7 +127,7 @@
             <li>Persistent users, conversations, contacts and rate limits using Netlify Blobs.</li>
             <li>A Netlify Functions backend with route handling, input cleaning and provider logic.</li>
             <li>Private admin tools for conversation review, blocking, deletion and drafting.</li>
-            <li>A v2 deployment path with private context retrieval and public-safe context separation.</li>
+            <li>A retrieval layer that splits context by audience, so public chat can only ever see approved chunks.</li>
             <li>Automated checks covering syntax, site structure, authentication helpers, context boundaries and deployment safeguards.</li>
           </ul>
 
@@ -155,13 +155,13 @@
 
           <h2>Privacy and safety decisions</h2>
           <p>The project is clearly labelled as a chat experiment, and it warns users not to submit sensitive information. Raw personal exports and private source files are not committed or deployed. The v2 version uses a compact, redacted context pack rather than exposing original source material.</p>
-          <p>The important design choice is separation: public users only receive public-safe context, while deeper private context is limited to admin or trusted workflows. That made the project more complicated, but it also made it more realistic and safer.</p>
+          <p>The model is also told to refuse attempts to extract its context, but I do not rely on that. A prompt is a request, not a permission system. The retrieval layer simply never puts a private chunk in front of a public user, so there is nothing sitting there for the model to leak in the first place. There is also no route in the app that reads the pack back out, including for me while signed in as admin.</p>
 
           <h2>Testing and deployment</h2>
           <p>The active app has automated checks covering JavaScript syntax, site structure, authentication helpers, signed sessions, username validation, message cleaning, context validation and retrieval boundaries.</p>
 
-          <h2>What I learned</h2>
-          <p>This project helped me understand the difference between making a page that works and designing an actual application with users, sessions, storage, privacy boundaries and deployment risk. It also gave me practice explaining technical decisions clearly, which is useful for support, admin and junior developer roles.</p>
+          <h2>What I would tell myself at the start</h2>
+          <p>The first version leaned on the system prompt to keep private things private, which is not a boundary, it is a hope. Anything the model can retrieve, it can eventually be talked into repeating. Moving that decision out of the prompt and into the retrieval layer, where it is code and covered by tests, is the change that actually made this safe. The prompt now only shapes tone.</p>
 
           <div class="inline-actions">
             <a class="button button-primary" href="https://talkwithjamie.netlify.app" target="_blank" rel="noopener noreferrer">Open live project</a>

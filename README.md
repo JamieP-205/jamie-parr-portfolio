@@ -2,50 +2,32 @@
 
 [![CI](https://github.com/JamieP-205/jamie-parr-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/JamieP-205/jamie-parr-portfolio/actions/workflows/ci.yml)
 
-## Live site
+Live at [jamie-parr-portfolio.netlify.app](https://jamie-parr-portfolio.netlify.app/).
 
-The production portfolio is hosted on Netlify and can be viewed at [jamie-parr-portfolio.netlify.app](https://jamie-parr-portfolio.netlify.app/).
+My portfolio. It carries my CV, education and work history, and a case study for each of the three projects I can talk about properly: Talk With Jamie, Local Web Fix and Coast Internet Radio. I keep adding to it as the degree goes on.
 
-## Status
+## Why it is built this way
 
-**Live, actively maintained**  -  I add new case studies and refine the site as I progress through my Computing Technologies degree.
+No framework. It is four pages of content, so a build step and a component tree would be tooling I do not need. Plain HTML, CSS and JavaScript means the accessibility and the performance are mine to get right rather than something I inherit and hope about.
 
-## Summary
+## What is in it
 
-I built this portfolio to present my studies, work experience, qualifications and live web and app projects in one accessible site. The codebase is intentionally framework free so that I can directly control accessibility, performance and progressive enhancement. Visitors can find clear evidence of real work and study, read project case studies that explain my decisions and access CV and certificate documents. Screenshots of the site are available on the live site or in the assets folder of this repository.
+- Homepage covering skills, education, employment and what I am looking for
+- Three case studies, one per project, about the decisions rather than the feature list
+- Display preferences (dark mode, larger text, reduced motion) kept in localStorage
+- Quick navigation palette on `/` or `Ctrl+K`. It is a plain listbox with virtual focus, nothing clever
+- A live panel in the hero pulling the real Coast listener count and my latest GitHub push. Each row stays hidden if its feed is down
+- Sitemap, robots, manifest, social card, 404 page
 
-## What I built
+## Files
 
-- A responsive homepage covering my skills, education, employment and availability
-- Detailed case studies for **Talk With Jamie**, **Local Web Fix** and **Coast Internet Radio** explaining scope, decisions and outcomes
-- A featured Talk With Jamie case study covering authentication, serverless functions, storage, privacy boundaries and testing
-- Reusable display preferences (dark/light mode, larger text and reduced motion) stored in localStorage
-- A keyboard quick-navigation palette (press / or Ctrl+K) built with a plain accessible listbox
-- A live panel in the hero showing the real Coast Internet Radio listener feed and my latest GitHub push
-- A mobile navigation menu with keyboard support
-- Social sharing metadata, a web manifest, sitemap, robots file and custom 404 page
-- Automated checks for JavaScript syntax, required files, metadata, JSON and exact case local links
+- `index.html` homepage
+- `*-case-study.html` one per project
+- `styles.css` everything visual, sectioned and commented
+- `script.js` navigation, display preferences, palette, live panel
+- `tools/check-site.js` the checks CI runs
 
-## Key files
-
-- `index.html`  -  main portfolio content
-- `styles.css`  -  layout, responsive design and themes
-- `script.js`  -  navigation and display preferences
-- `tools/check-site.js`  -  automated site validation
-
-## Technical approach
-
-The site uses semantic HTML, modern CSS and vanilla JavaScript. I deliberately avoided frameworks because this is a content focused project; a small static codebase gives me direct control over accessibility, performance and progressive enhancement. The site is deployed to Netlify from this repository with GitHub Actions verifying syntax and site structure on every push.
-
-## Project structure
-
-- `assets/`  -  CV, certificates and social preview images
-- `index.html`  -  homepage and project overview
-- `*-case-study.html`  -  individual project case study pages
-- `styles.css` and `script.js`  -  presentation and interaction logic
-- `tools/`  -  validation scripts used in CI and locally
-
-## Local development
+## Running it
 
 ```bash
 npm install
@@ -53,20 +35,21 @@ npm test
 npx serve .
 ```
 
-There is no build step. `npm test` checks JavaScript syntax and validates the site's files and links before deployment.
+There is no build step. `npm test` checks the JavaScript parses, then walks every HTML file and validates the local links, the required files and the metadata.
 
-## Privacy & security notes
+It also checks the exact casing of every local path. Netlify's file system is case sensitive and Windows is not, so `Assets/Photo.JPG` works on my machine and 404s in production. That check is there to catch it before the deploy does.
 
-The CV and certificate in `assets/` are the same public documents linked from the live portfolio. They do not contain a home address or phone number. `.env` files and other secrets are never committed. See [SECURITY.md](SECURITY.md) for private vulnerability reporting.
+## Known limitations
 
-## What I learned
+- No visual regression testing. A CSS change can quietly break a layout and CI will not notice, because it only checks structure
+- The live panel calls the GitHub API unauthenticated, so it is rate limited per IP. It caches for ten minutes in sessionStorage and fails silently rather than showing an error to a visitor
+- The Coast row depends on that station's metadata worker being up, which is outside this repo
 
-Building this portfolio taught me that presenting work is as important as doing the work itself. I learned how much detail goes into a portfolio beyond just putting projects on a page: accessibility considerations, responsive layouts, metadata, file structure, link checking and keeping public documents safe. The process also reinforced the value of automated CI checks, even for static projects.
+## What is public in here
 
-## Future improvements
+The CV and certificate in `assets/` are the same documents linked from the live site. No home address, no phone number. `.env` files and secrets are not committed. Private reporting is in [SECURITY.md](SECURITY.md).
 
-- Add automated visual regression tests to catch unintended design changes
-- Continue adding new case studies as I complete more projects
-- Refine accessibility and performance budgets and document them in the case studies
+## Next
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidance and [LICENSE](LICENSE) for licensing details.
+- Visual regression tests, so the design cannot drift without me knowing
+- More case studies as I finish more projects

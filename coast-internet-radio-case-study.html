@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Coast Internet Radio Case Study | Jamie Parr</title>
-  <meta name="description" content="Case study for the Coast Internet Radio website redevelopment by Jamie Parr.">
+  <meta name="description" content="Case study for Coast Internet Radio: getting a plain HTTP radio stream to play on an HTTPS site with Cloudflare Workers, plus the serverless admin area, first-party analytics and player built around it.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://jamie-parr-portfolio.netlify.app/coast-internet-radio-case-study.html">
   <meta property="og:title" content="Coast Internet Radio Case Study | Jamie Parr">
-  <meta property="og:description" content="How Jamie Parr improved the responsive listener experience for Coast Internet Radio.">
+  <meta property="og:description" content="Cloudflare Workers to get an HTTP stream onto an HTTPS site, a serverless admin area for the station owner, and analytics I wrote instead of installed.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://jamie-parr-portfolio.netlify.app/coast-internet-radio-case-study.html">
   <meta property="og:image" content="https://jamie-parr-portfolio.netlify.app/assets/coast-home-top.jpg">
@@ -53,7 +53,7 @@
       <div class="container narrow-page">
         <p class="eyebrow">Case study</p>
         <h1>Coast Internet Radio Website Redevelopment</h1>
-        <p class="hero-text">This was a real public website project for a family-run online radio station. My aim was to make the site easier to use, clearer on mobile and stronger for real listeners.</p>
+        <p class="hero-text">The website for a real radio station with real listeners. The interesting part was not the layout. The station streams over plain HTTP, the site is HTTPS, and browsers refuse to play that. Everything else followed from solving it.</p>
         <div class="inline-actions">
           <a class="button button-primary" href="https://coastinternetradio.com" target="_blank" rel="noopener noreferrer">View live site</a>
           <a class="button button-secondary" href="index.html">Back to portfolio</a>
@@ -76,11 +76,11 @@
             </div>
             <div>
               <dt>Focus</dt>
-              <dd>Responsive front-end improvements, usability and testing</dd>
+              <dd>Getting live audio to play over HTTPS, then the listener experience around it</dd>
             </div>
             <div>
               <dt>Role</dt>
-              <dd>Planning, building, improving and testing the site</dd>
+              <dd>All of it: front end, serverless functions, Cloudflare Workers, deployment</dd>
             </div>
             <div id="coast-case-live-row" hidden>
               <dt>Right now</dt>
@@ -91,43 +91,38 @@
 
         <article class="case-content">
           <h2>Overview</h2>
-          <p>Coast Internet Radio is a live online radio station website for a real station and a real audience. This was not coursework or a made-up brief. I built and improved the site so listeners could reach the stream, station information and support links more easily.</p>
+          <p>Coast Internet Radio is a small station in Newry run by Jim Parr. It plays country and Irish country to real listeners every day. This is not coursework. If I break the site, somebody notices, and I get told.</p>
 
           <figure class="case-figure">
             <img src="assets/coast-home-top.jpg" alt="Screenshot showing the upper part of the Coast Internet Radio homepage.">
             <figcaption>The main live listening area on the Coast Internet Radio homepage.</figcaption>
           </figure>
 
-          <h2>The problem</h2>
-          <p>The station needed a cleaner listener experience that worked better across mobile and desktop. The site also needed clearer structure, easier access to the stream, better usability and improvements based on real feedback from use.</p>
+          <h2>The problem nobody could see</h2>
+          <p>The obvious job was a site that worked properly on a phone. The real problem was underneath it. The station's audio stream and its now-playing feed are both served over plain HTTP, and the website is HTTPS. Browsers block that as mixed content, so the player simply does not play. No amount of layout work fixes it.</p>
 
-          <h2>My role</h2>
-          <p>I handled the practical website work: planning improvements, updating the structure, making the layout respond properly across devices, checking usability and refining the listener journey. I also spent time testing, debugging and making sure the site felt easier to use in practice.</p>
+          <p>So the first thing I built was not a page. Two Cloudflare Workers sit in front of the station's source and re-serve the stream and the metadata over HTTPS. The site only ever talks to the workers, never to the origin. That is the decision the whole project rests on.</p>
 
-          <h2>What I worked on</h2>
-          <ul class="checked-list">
-            <li>Site layout and structure</li>
-            <li>Mobile responsiveness and small-screen behaviour</li>
-            <li>Accessibility and usability improvements</li>
-            <li>Listener-focused improvements around live radio access</li>
-            <li>Content/admin update controls</li>
-            <li>Testing across devices and fixing practical issues</li>
-            <li>Visual polish and performance checks</li>
-          </ul>
+          <h2>The player</h2>
+          <p>The player polls the metadata worker every ten seconds for the current track, what is coming up and what has recently played. It uses the Media Session API, so the lock screen controls on a phone work like a real radio app instead of a browser tab. If the feed goes quiet the site shows a calm placeholder rather than an error, because a listener does not care whose fault it is.</p>
+
+          <h2>Giving Jim the keys</h2>
+          <p>Jim needed to change the homepage himself without asking me, so I built him an admin area on Netlify Functions. The password is hashed with scrypt. The session is a signed HttpOnly cookie, every write carries a CSRF token, requests are checked for same origin, and six failed logins locks the address out for fifteen minutes. Content, playlists and feedback live in Netlify Blobs, and a scheduled function records the play history every minute.</p>
 
           <figure class="case-figure secondary-figure">
             <img src="assets/coast-home-lower.jpg" alt="Screenshot showing the lower sections of the Coast Internet Radio homepage, including show times, about content, help information and support panel.">
             <figcaption>Lower-page sections used for show information, help content and support links.</figcaption>
           </figure>
 
-          <h2>Challenges</h2>
-          <p>The main challenge was building for real people rather than for a neat classroom brief. Small details mattered: mobile spacing, button clarity, stream behaviour, visual contrast and wording that made sense to listeners who were not technical.</p>
+          <h2>Analytics I wrote instead of installed</h2>
+          <p>Jim wanted to know what listeners actually use. I did not want to hand a small station's audience to a third party to find out, so the analytics are first party. Event names and their fields are allowlisted, so anything unexpected is dropped rather than stored. Addresses are hashed and the raw IP is never written down. There is a consent banner, and choosing not to be counted is a real option rather than a dark pattern.</p>
 
-          <h2>What I learned</h2>
-          <p>This project helped me understand that a useful website is not just about making it look good. It needs to work clearly, load quickly, respond well on different devices and stay understandable for real users.</p>
+          <h2>What went wrong</h2>
+          <p>Checking the live site in a browser console, I found the page was quietly breaking its own security policy. The site allows its inline scripts by hash. I had edited the script that applies a saved theme before the first paint, which changed its hash, and the header had never been updated to match, so the browser was blocking it. Every returning listener using dark mode, larger text or high contrast was getting a flash of the wrong theme.</p>
+          <p>Adding the right hash was a one-line fix. That was not the interesting part. I wrote a check that recomputes the hash of every inline script and compares it to the header, and put it in the build, so the next time I edit one of those scripts the build fails instead of the listener finding out.</p>
 
-          <h2>What I would improve next</h2>
-          <p>I would keep refining listener help content, continue testing across devices and browsers, and keep improving how station updates can be managed over time without making the site complicated.</p>
+          <h2>What I would do next</h2>
+          <p>There are no end-to-end tests for the admin area yet, so I still click through it by hand before a deploy, which is exactly the kind of thing that gets skipped when you are tired. The analytics also aggregate on read, which is fine at this size and will stop being fine if the station grows.</p>
 
           <div class="inline-actions">
             <a class="button button-secondary" href="local-web-fix-case-study.html">Read Local Web Fix case study</a>
