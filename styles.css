@@ -1,9 +1,9 @@
 /*
  * Jamie Parr portfolio stylesheet.
  *
- * The site is set like a printed CV: serif text on warm paper, hairline
- * rules between sections, and one rust accent. Boxes and shadows are
- * avoided on purpose; hierarchy comes from type and spacing.
+ * The site is set like a printed CV: serif text on warm paper with one
+ * rust accent. Boxes and shadows are avoided on purpose; hierarchy comes
+ * from type and spacing.
  *
  * Contents:
  *   1. Tokens and themes
@@ -100,6 +100,8 @@ svg {
   display: block;
   max-width: 100%;
 }
+
+img { height: auto; }
 
 figure {
   margin: 0;
@@ -199,10 +201,6 @@ dd {
 
 .section {
   border-top: 0;
-}
-
-.muted-section {
-  background: var(--paper-deep);
 }
 
 .skip-link {
@@ -615,6 +613,20 @@ dd {
   margin-top: 1.2rem;
 }
 
+.project-more {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.2rem;
+}
+
+.project-more p {
+  max-width: 44rem;
+  color: var(--muted);
+}
+
 @media (min-width: 860px) {
   .project-card {
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
@@ -694,10 +706,6 @@ dd {
   .education-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-}
-
-.contact-section {
-  background: var(--paper-deep);
 }
 
 .contact-card {
