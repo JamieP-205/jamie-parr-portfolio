@@ -1,0 +1,170 @@
+/* Progressive project-workbench extras.
+   These styles only load with the enhanced project explorer. */
+
+.project-workbench {
+  --active-project-accent: var(--accent);
+  border-top-color: var(--active-project-accent);
+  transition: border-color 160ms ease;
+}
+
+.project-index-item {
+  --item-accent: var(--accent);
+}
+
+.project-index-item[aria-current="true"] {
+  box-shadow: inset 4px 0 0 var(--item-accent);
+}
+
+.project-index-item[aria-current="true"] .project-index-number,
+.project-index-item[aria-current="true"] .project-index-status {
+  color: var(--item-accent);
+}
+
+.project-index-item[aria-current="true"] .project-index-status {
+  border-color: var(--item-accent);
+}
+
+.project-stage-panel:not([hidden]) .project-stage-media img {
+  box-shadow: 10px 10px 0 color-mix(in srgb, var(--project-accent) 13%, transparent);
+}
+
+.project-key-hint {
+  margin: -0.9rem 0 1.2rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  max-width: none;
+}
+
+.project-key-hint kbd {
+  padding: 0.08rem 0.3rem;
+  border: 1px solid var(--line);
+  background: var(--paper-deep);
+  font: inherit;
+}
+
+.build-ledger {
+  margin-top: clamp(2rem, 5vw, 3.5rem);
+  padding-top: 1.25rem;
+  border-top: 2px solid var(--line-strong);
+}
+
+.build-ledger-heading {
+  display: grid;
+  gap: 0.65rem 2.5rem;
+  align-items: end;
+  margin-bottom: 1rem;
+}
+
+.build-ledger-heading h3 {
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+}
+
+.build-ledger-heading p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.build-ledger-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.build-ledger-item {
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.42fr) minmax(0, 1.58fr) auto;
+  gap: 0.7rem 1.2rem;
+  align-items: baseline;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.build-ledger-repo,
+.build-ledger-time {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+
+.build-ledger-repo {
+  color: var(--accent-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.build-ledger-message {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.96rem;
+  line-height: 1.4;
+}
+
+.build-ledger-message a,
+.build-ledger-repo a {
+  text-decoration: none;
+}
+
+.build-ledger-message a:hover,
+.build-ledger-repo a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
+.build-ledger-time {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.build-ledger-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  padding-top: 0.8rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.build-ledger-footer p {
+  margin: 0;
+}
+
+@media (min-width: 760px) {
+  .build-ledger-heading {
+    grid-template-columns: minmax(0, 0.8fr) minmax(18rem, 1.2fr);
+  }
+}
+
+@media (max-width: 859px) {
+  .project-index-item[aria-current="true"] {
+    box-shadow: inset 0 -4px 0 var(--item-accent);
+  }
+}
+
+@media (max-width: 680px) {
+  .project-key-hint {
+    display: none;
+  }
+
+  .build-ledger-item {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .build-ledger-message {
+    grid-column: 1 / -1;
+  }
+}
+
+html[data-motion="reduced"] .project-workbench,
+html[data-motion="reduced"] .project-stage-media img {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-workbench,
+  .project-stage-media img {
+    transition: none;
+  }
+}
