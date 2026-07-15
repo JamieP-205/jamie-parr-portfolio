@@ -1,4 +1,12 @@
 (function () {
+  const sectionAliases = { about: 'background', skills: 'background', experience: 'background' };
+  const incomingHash = window.location.hash.slice(1);
+  if (sectionAliases[incomingHash]) {
+    const targetId = sectionAliases[incomingHash];
+    if (window.history && history.replaceState) history.replaceState(null, '', `#${targetId}`);
+    requestAnimationFrame(() => document.getElementById(targetId)?.scrollIntoView());
+  }
+
   const desk = document.querySelector('[data-project-desk]');
   if (!desk) return;
 
