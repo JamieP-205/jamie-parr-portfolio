@@ -4,7 +4,7 @@
   "private": true,
   "description": "Accessible static portfolio and project case studies for Jamie Parr",
   "scripts": {
-    "check:js": "node --check script.js",
+    "check:js": "node --check script.js && node --check project-desk.js",
     "check:site": "node tools/check-site.js",
     "test": "npm run check:js && npm run check:site"
   },
