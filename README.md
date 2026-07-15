@@ -4,7 +4,7 @@
 
 Live at [jamie-parr-portfolio.netlify.app](https://jamie-parr-portfolio.netlify.app/).
 
-My portfolio. It carries my CV, education and work history, and a case study for each of the three projects I can talk about properly: Talk With Jamie, Local Web Fix and Coast Internet Radio. I keep adding to it as the degree goes on.
+My portfolio. It carries my CV, education and work history, four live projects I can talk about properly, and detailed case studies for Talk With Jamie, Local Web Fix and Coast Internet Radio. French for Life is included as a live project, with source available for its no-account public demo. I keep adding to it as the degree goes on.
 
 ## Why it is built this way
 
@@ -13,7 +13,7 @@ No framework. It is four pages of content, so a build step and a component tree 
 ## What is in it
 
 - Homepage covering skills, education, employment and what I am looking for
-- Three case studies, one per project, about the decisions rather than the feature list
+- Four live project cards and three detailed case studies about the decisions rather than the feature list
 - Display preferences (dark mode, larger text, reduced motion) kept in localStorage
 - Quick navigation palette on `/` or `Ctrl+K`. It is a plain listbox with virtual focus, nothing clever
 - A live panel in the hero pulling the real Coast listener count and my latest GitHub push. Each row stays hidden if its feed is down
