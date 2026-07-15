@@ -19,6 +19,45 @@
     'local-web-fix': 'local-web-fix'
   };
 
+  const decisionTraces = {
+    'the-world-forgot-us': [
+      ['Constraint', 'Campaign state had to survive four maps, saves and a browser export.'],
+      ['Decision', 'Keep one persistent campaign record and share map-building rules.'],
+      ['Build', 'One authored opening area, then region-specific runtime construction.'],
+      ['Proof', 'The complete campaign smoke test and Web export run in CI.']
+    ],
+    'french-for-life': [
+      ['Constraint', 'A learner must be taught a phrase before the app scores it.'],
+      ['Decision', 'Model prerequisites explicitly and gate scored practice against them.'],
+      ['Build', 'A concept graph, source-backed vocabulary checks and guarded account sync.'],
+      ['Proof', 'Deterministic tests, Playwright flows and a fail-closed release gate.']
+    ],
+    groundwork: [
+      ['Constraint', 'A study app should choose the next useful task, not add another dashboard.'],
+      ['Decision', 'Use recorded evidence and fixed precedence rules rather than generated advice.'],
+      ['Build', 'Guided lessons, real SQLite stages, migrations and a derived Guidebook.'],
+      ['Proof', '206 runtime assertions and 45 browser checks cover the learning rules.']
+    ],
+    'coast-internet-radio': [
+      ['Constraint', 'Browsers block the station’s HTTP stream inside an HTTPS website.'],
+      ['Decision', 'Re-serve the stream and metadata through controlled HTTPS workers.'],
+      ['Build', 'Two Cloudflare Workers plus a serverless owner-admin system.'],
+      ['Proof', 'Real listeners use it, while auth and CSP drift are checked automatically.']
+    ],
+    'talk-with-jamie': [
+      ['Constraint', 'A public visitor must never retrieve private personal context.'],
+      ['Decision', 'Enforce audience permissions before context reaches the model.'],
+      ['Build', 'Signed sessions, serverless routes, storage controls and split retrieval.'],
+      ['Proof', 'Authentication and context-boundary tests cover the access rules.']
+    ],
+    'local-web-fix': [
+      ['Constraint', 'A small business needs trust and clarity before technical detail.'],
+      ['Decision', 'Publish scope and prices, and never request passwords in the enquiry flow.'],
+      ['Build', 'A fast static service site with a direct mobile-first contact path.'],
+      ['Proof', 'The live site keeps the offer, limits and next step visible without sales theatre.']
+    ]
+  };
+
   function repairLegacySectionHash() {
     const requested = window.location.hash.slice(1);
     const replacement = legacySections[requested];
@@ -143,6 +182,44 @@
     const id = idFromHash();
     if (id) select(id, { focus: true });
   });
+
+  function makeDecisionTraces() {
+    panels.forEach((panel) => {
+      const steps = decisionTraces[panel.dataset.projectPanel];
+      const stageGrid = panel.querySelector('.project-stage-grid');
+      const heading = panel.querySelector('h3')?.textContent?.trim() || 'Project';
+      if (!steps || !stageGrid || panel.querySelector('.decision-trace')) return;
+
+      const trace = document.createElement('section');
+      trace.className = 'decision-trace';
+      trace.setAttribute('aria-label', `${heading} engineering decision trace`);
+
+      const header = document.createElement('div');
+      header.className = 'decision-trace-heading';
+      header.innerHTML = '<p class="eyebrow">Engineering decision trace</p><p>Constraint → decision → build → evidence</p>';
+
+      const list = document.createElement('ol');
+      list.className = 'decision-trace-list';
+
+      steps.forEach(([label, text], index) => {
+        const item = document.createElement('li');
+        const marker = document.createElement('span');
+        marker.className = 'decision-trace-marker';
+        marker.textContent = String(index + 1).padStart(2, '0');
+        const copy = document.createElement('div');
+        const title = document.createElement('strong');
+        title.textContent = label;
+        const body = document.createElement('p');
+        body.textContent = text;
+        copy.append(title, body);
+        item.append(marker, copy);
+        list.appendChild(item);
+      });
+
+      trace.append(header, list);
+      stageGrid.insertAdjacentElement('afterend', trace);
+    });
+  }
 
   function relativeTime(iso) {
     const then = new Date(iso).getTime();
@@ -273,6 +350,7 @@
   }
 
   document.documentElement.classList.add('project-explorer-ready');
+  makeDecisionTraces();
   select(idFromHash() || triggers[0]?.dataset.projectTrigger || '', { updateHash: false });
   makeBuildLedger();
 }());
