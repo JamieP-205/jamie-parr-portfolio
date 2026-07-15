@@ -1,4 +1,24 @@
 (function () {
+  const legacySections = {
+    about: 'profile',
+    skills: 'profile',
+    experience: 'background'
+  };
+
+  function repairLegacySectionHash() {
+    const requested = window.location.hash.slice(1);
+    const replacement = legacySections[requested];
+    if (!replacement) return false;
+
+    if (window.history && history.replaceState) {
+      history.replaceState(null, '', `#${replacement}`);
+    }
+    requestAnimationFrame(() => document.getElementById(replacement)?.scrollIntoView());
+    return true;
+  }
+
+  repairLegacySectionHash();
+
   const explorer = document.querySelector('[data-project-explorer]');
   if (!explorer) return;
 
@@ -67,6 +87,7 @@
   });
 
   window.addEventListener('hashchange', () => {
+    if (repairLegacySectionHash()) return;
     const id = idFromHash();
     if (id) select(id, { focus: true });
   });
