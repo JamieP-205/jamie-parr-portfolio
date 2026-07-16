@@ -17,7 +17,7 @@ The project workbench replaces six long stacked write-ups. The project index sta
 - Compact profile and working-toolkit section
 - Six-project workbench with keyboard navigation and hash links
 - Evidence rows, engineering notes and honest current limitations for every project
-- Detailed case studies for Talk With Jamie, Local Web Fix and Coast Internet Radio
+- Detailed case studies for Talk With Jamie, Local Web Fix and Coast Internet Radio, including the stakeholder collaboration behind the live radio-site redevelopment
 - Work experience, education, certification and placement focus
 - Display preferences (dark mode, larger text, reduced motion) kept in localStorage
 - Quick navigation palette on `/` or `Ctrl+K`
