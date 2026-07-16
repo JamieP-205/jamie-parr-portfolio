@@ -356,7 +356,7 @@
       return;
     }
     if (option.dataset.action === 'copy-email') {
-      const email = 'jamieparr05@hotmail.com';
+      const email = 'jamieparr205@gmail.com';
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(email)
           .then(() => toast('Email address copied'))
