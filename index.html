@@ -21,6 +21,7 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="project-showcase.css">
+  <link rel="stylesheet" href="project-evidence.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -197,6 +198,18 @@
                   </div>
                 </div>
               </div>
+              <section class="decision-trace" aria-labelledby="trace-the-world-forgot-us">
+                <div class="decision-trace-heading">
+                  <p class="eyebrow" id="trace-the-world-forgot-us">Engineering decision trace</p>
+                  <p>Constraint → decision → build → evidence</p>
+                </div>
+                <ol class="decision-trace-list">
+                  <li><span class="decision-trace-marker" aria-hidden="true">01</span><div><strong>Constraint</strong><p>Campaign state had to survive four maps, saves and a browser export.</p></div></li>
+                  <li><span class="decision-trace-marker" aria-hidden="true">02</span><div><strong>Decision</strong><p>Keep one persistent campaign record and share map-building rules.</p></div></li>
+                  <li><span class="decision-trace-marker" aria-hidden="true">03</span><div><strong>Build</strong><p>One authored opening area, then region-specific runtime construction.</p></div></li>
+                  <li><span class="decision-trace-marker" aria-hidden="true">04</span><div><strong>Evidence</strong><p>The complete campaign smoke test and Web export run in CI.</p></div></li>
+                </ol>
+              </section>
               <div class="project-detail-grid">
                 <details>
                   <summary>Engineering notes</summary>
@@ -239,6 +252,18 @@
                   </div>
                 </div>
               </div>
+              <section class="decision-trace" aria-labelledby="trace-french-for-life">
+                <div class="decision-trace-heading">
+                  <p class="eyebrow" id="trace-french-for-life">Engineering decision trace</p>
+                  <p>Constraint → decision → build → evidence</p>
+                </div>
+                <ol class="decision-trace-list">
+                  <li><span class="decision-trace-marker" aria-hidden="true">01</span><div><strong>Constraint</strong><p>A learner must be taught a phrase before the app scores it.</p></div></li>
+                  <li><span class="decision-trace-marker" aria-hidden="true">02</span><div><strong>Decision</strong><p>Model prerequisites explicitly and gate scored practice against them.</p></div></li>
+                  <li><span class="decision-trace-marker" aria-hidden="true">03</span><div><strong>Build</strong><p>A concept graph, source-backed vocabulary checks and guarded account sync.</p></div></li>
+                  <li><span class="decision-trace-marker" aria-hidden="true">04</span><div><strong>Evidence</strong><p>Deterministic tests, Playwright flows and a fail-closed release gate.</p></div></li>
+                </ol>
+              </section>
               <div class="project-detail-grid">
                 <details>
                   <summary>Engineering notes</summary>
@@ -278,6 +303,18 @@
                   <p class="project-availability">This is a private local project because it contains my own learning data and working plans. The architecture and verification figures are included here without publishing that personal material.</p>
                 </div>
               </div>
+              <section class="decision-trace" aria-labelledby="trace-groundwork">
+                <div class="decision-trace-heading">
+                  <p class="eyebrow" id="trace-groundwork">Engineering decision trace</p>
+                  <p>Constraint → decision → build → evidence</p>
+                </div>
+                <ol class="decision-trace-list">
+                  <li><span class="decision-trace-marker" aria-hidden="true">01</span><div><strong>Constraint</strong><p>A study app should choose the next useful task, not add another dashboard.</p></div></li>
+                  <li><span class="decision-trace-marker" aria-hidden="true">02</span><div><strong>Decision</strong><p>Use recorded evidence and fixed precedence rules rather than generated advice.</p></div></li>
+                  <li><span class="decision-trace-marker" aria-hidden="true">03</span><div><strong>Build</strong><p>Guided lessons, real SQLite stages, migrations and a derived Guidebook.</p></div></li>
+                  <li><span class="decision-trace-marker" aria-hidden="true">04</span><div><strong>Evidence</strong><p>206 runtime assertions and 45 browser checks cover the learning rules.</p></div></li>
+                </ol>
+              </section>
               <div class="project-detail-grid">
                 <details>
                   <summary>Engineering notes</summary>
@@ -321,6 +358,18 @@
                   </div>
                 </div>
               </div>
+              <section class="decision-trace" aria-labelledby="trace-coast-internet-radio">
+                <div class="decision-trace-heading">
+                  <p class="eyebrow" id="trace-coast-internet-radio">Engineering decision trace</p>
+                  <p>Constraint → decision → build → evidence</p>
+                </div>
+                <ol class="decision-trace-list">
+                  <li><span class="decision-trace-marker" aria-hidden="true">01</span><div><strong>Constraint</strong><p>Browsers block the station's HTTP stream inside an HTTPS website.</p></div></li>
+                  <li><span class="decision-trace-marker" aria-hidden="true">02</span><div><strong>Decision</strong><p>Re-serve the stream and metadata through controlled HTTPS workers.</p></div></li>
+                  <li><span class="decision-trace-marker" aria-hidden="true">03</span><div><strong>Build</strong><p>Two Cloudflare Workers plus a serverless owner-admin system.</p></div></li>
+                  <li><span class="decision-trace-marker" aria-hidden="true">04</span><div><strong>Evidence</strong><p>Real listeners use it, while auth and CSP drift are checked automatically.</p></div></li>
+                </ol>
+              </section>
               <div class="project-detail-grid">
                 <details>
                   <summary>Engineering notes</summary>
@@ -363,6 +412,18 @@
                   </div>
                 </div>
               </div>
+              <section class="decision-trace" aria-labelledby="trace-talk-with-jamie">
+                <div class="decision-trace-heading">
+                  <p class="eyebrow" id="trace-talk-with-jamie">Engineering decision trace</p>
+                  <p>Constraint → decision → build → evidence</p>
+                </div>
+                <ol class="decision-trace-list">
+                  <li><span class="decision-trace-marker" aria-hidden="true">01</span><div><strong>Constraint</strong><p>A public visitor must never retrieve private personal context.</p></div></li>
+                  <li><span class="decision-trace-marker" aria-hidden="true">02</span><div><strong>Decision</strong><p>Enforce audience permissions before context reaches the model.</p></div></li>
+                  <li><span class="decision-trace-marker" aria-hidden="true">03</span><div><strong>Build</strong><p>Signed sessions, serverless routes, storage controls and split retrieval.</p></div></li>
+                  <li><span class="decision-trace-marker" aria-hidden="true">04</span><div><strong>Evidence</strong><p>Authentication and context-boundary tests cover the access rules.</p></div></li>
+                </ol>
+              </section>
               <div class="project-detail-grid">
                 <details>
                   <summary>Engineering notes</summary>
@@ -405,6 +466,18 @@
                   </div>
                 </div>
               </div>
+              <section class="decision-trace" aria-labelledby="trace-local-web-fix">
+                <div class="decision-trace-heading">
+                  <p class="eyebrow" id="trace-local-web-fix">Engineering decision trace</p>
+                  <p>Constraint → decision → build → evidence</p>
+                </div>
+                <ol class="decision-trace-list">
+                  <li><span class="decision-trace-marker" aria-hidden="true">01</span><div><strong>Constraint</strong><p>A small business needs trust and clarity before technical detail.</p></div></li>
+                  <li><span class="decision-trace-marker" aria-hidden="true">02</span><div><strong>Decision</strong><p>Publish scope and prices, and never request passwords in the enquiry flow.</p></div></li>
+                  <li><span class="decision-trace-marker" aria-hidden="true">03</span><div><strong>Build</strong><p>A fast static service site with a direct mobile-first contact path.</p></div></li>
+                  <li><span class="decision-trace-marker" aria-hidden="true">04</span><div><strong>Evidence</strong><p>The live site keeps the offer, limits and next step visible without sales theatre.</p></div></li>
+                </ol>
+              </section>
               <div class="project-detail-grid">
                 <details>
                   <summary>Design decisions</summary>

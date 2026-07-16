@@ -53,6 +53,32 @@ for (const file of files.filter((item) => /\.html?$/i.test(item))) {
   }
 }
 
+const homepage = fs.readFileSync(path.join(root, "index.html"), "utf8");
+const projectPanels = Array.from(homepage.matchAll(
+  /<article\b[^>]*data-project-panel=["']([^"']+)["'][^>]*>([\s\S]*?)<\/article>/gi
+));
+const projectTriggers = Array.from(
+  homepage.matchAll(/data-project-trigger=["']([^"']+)["']/gi),
+  (match) => match[1]
+);
+const panelIds = projectPanels.map((match) => match[1]);
+
+if (!/<link\s+rel=["']stylesheet["']\s+href=["']project-evidence\.css["']\s*>/i.test(homepage)) {
+  errors.push("index.html must load project-evidence.css without JavaScript");
+}
+if (projectPanels.length !== 6 || new Set(panelIds).size !== projectPanels.length) {
+  errors.push("index.html must contain six uniquely named project panels");
+}
+if (projectTriggers.length !== projectPanels.length
+    || projectTriggers.some((id) => !panelIds.includes(id))) {
+  errors.push("project workbench triggers and panels do not match");
+}
+for (const [, id, panel] of projectPanels) {
+  if (!/class=["'][^"']*\bdecision-trace\b/i.test(panel)) {
+    errors.push(`project panel ${id} is missing its static decision trace`);
+  }
+}
+
 for (const required of ["index.html", "404.html", "robots.txt", "sitemap.xml", "site.webmanifest", "netlify.toml"]) {
   const file = path.join(root, required);
   if (!fs.existsSync(file) || fs.statSync(file).size === 0) errors.push(`${required} is missing or empty`);
