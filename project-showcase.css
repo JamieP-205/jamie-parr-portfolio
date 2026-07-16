@@ -110,6 +110,8 @@
 
 .project-workbench {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
   border-top: 2px solid var(--line-strong);
   border-bottom: 2px solid var(--line-strong);
 }
@@ -117,6 +119,8 @@
 .project-index {
   display: grid;
   align-content: start;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .project-index-item {
@@ -471,6 +475,7 @@
 
   .project-stage-topline,
   .project-stage-grid,
+  .decision-trace,
   .project-detail-grid,
   .project-stage-panel > .tag-list {
     margin-inline: 1rem;

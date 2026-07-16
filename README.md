@@ -29,9 +29,11 @@ The project workbench replaces six long stacked write-ups. The project index sta
 - `*-case-study.html` one per detailed case study
 - `styles.css` base site styling
 - `project-showcase.css` compact homepage and project-workbench layout
+- `project-evidence.css` decision-trace and public build-ledger styling
 - `script.js` navigation, display preferences, palette and live project details
 - `project-explorer.js` project switching, hash state and keyboard controls
 - `tools/check-site.js` the checks CI runs
+- `tools/smoke-site.js` deterministic browser coverage for the homepage workbench
 
 ## Running it
 
@@ -41,16 +43,22 @@ npm test
 npx serve .
 ```
 
-There is no build step. `npm test` checks that the JavaScript parses, then walks every HTML file and validates the local links, required files and metadata.
+There is no build step. `npm test` checks that the JavaScript parses, walks
+every HTML file, validates the local links and metadata, then runs the homepage
+in a real browser. The browser check covers project switching, hash and keyboard
+navigation, the stubbed public build ledger, reduced motion, the no-JavaScript
+fallback and widths from 320 to 1280 pixels.
 
 It also checks the exact casing of every local path. Netlify's file system is case sensitive and Windows is not, so `Assets/Photo.JPG` works locally and 404s in production. That check catches it before deployment.
 
 ## Known limitations
 
-- No visual regression testing. A CSS change can quietly break a layout because CI only checks structure
+- Browser smoke coverage checks behaviour and horizontal overflow, but it does
+  not compare screenshots pixel-for-pixel
 - The live project details call public endpoints and fail silently when those services are unavailable
 - Groundwork is a private local project, so the portfolio documents its architecture and verification rather than linking to a public build
-- The project workbench is tested structurally but still needs routine checks in real browsers after larger layout changes
+- Larger layout changes still need a short manual pass in a real desktop and
+  mobile browser
 
 ## What is public in here
 
@@ -58,5 +66,5 @@ The CV and certificate in `assets/` are the same documents linked from the live 
 
 ## Next
 
-- Add visual regression tests for the homepage and case studies
+- Extend browser coverage to the three longer case-study pages
 - Add deeper case studies when the flagship projects have stable screenshots and externally tested releases

@@ -412,6 +412,11 @@ dd {
   gap: 2.5rem;
 }
 
+.hero-copy,
+.hero-aside {
+  min-width: 0;
+}
+
 .eyebrow {
   margin: 0 0 0.9rem;
   font-family: var(--mono);

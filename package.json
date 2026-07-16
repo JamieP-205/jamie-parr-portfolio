@@ -4,9 +4,13 @@
   "private": true,
   "description": "Accessible static portfolio and project case studies for Jamie Parr",
   "scripts": {
-    "check:js": "node --check script.js && node --check project-explorer.js",
+    "check:js": "node --check script.js && node --check project-explorer.js && node --check tools/smoke-site.js",
     "check:site": "node tools/check-site.js",
-    "test": "npm run check:js && npm run check:site"
+    "test:browser": "node tools/smoke-site.js",
+    "test": "npm run check:js && npm run check:site && npm run test:browser"
+  },
+  "devDependencies": {
+    "playwright": "^1.61.1"
   },
   "engines": {
     "node": ">=20"

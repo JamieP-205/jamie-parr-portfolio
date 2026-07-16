@@ -1,5 +1,4 @@
-/* Progressive project-workbench extras.
-   These styles only load with the enhanced project explorer. */
+/* Project evidence, keyboard hints and the public build ledger. */
 
 .project-workbench {
   --active-project-accent: var(--accent);
