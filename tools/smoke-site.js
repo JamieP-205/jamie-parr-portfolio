@@ -165,6 +165,9 @@ async function run() {
 
     for (const width of [320, 390, 768, 1280]) {
       await page.setViewportSize({ width, height: width < 500 ? 844 : 900 });
+      await page.evaluate(() => new Promise((resolve) => {
+        requestAnimationFrame(() => requestAnimationFrame(resolve));
+      }));
       const layout = await page.evaluate(() => {
         const viewportWidth = document.documentElement.clientWidth;
         const offenders = Array.from(document.querySelectorAll("body *"))

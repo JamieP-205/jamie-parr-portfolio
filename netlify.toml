@@ -1,5 +1,7 @@
 [build]
-  command = "npm test"
+  # Chromium is installed and exercised in GitHub Actions. Keep the deploy
+  # preflight to checks that Netlify's build image can run deterministically.
+  command = "npm run check:js && npm run check:site"
   publish = "."
 
 [[headers]]
