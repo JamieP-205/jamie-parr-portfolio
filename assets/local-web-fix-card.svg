@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">Local Web Fix project card</title>
+  <desc id="description">A wide green and cream graphic showing a small-business website check with clear pricing and safe contact boundaries.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbf5e9"/>
+      <stop offset="1" stop-color="#eee4d3"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#244d3b"/>
+      <stop offset="1" stop-color="#376b52"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" rx="40" fill="url(#background)"/>
+  <circle cx="1090" cy="75" r="200" fill="#3d7055" opacity=".11"/>
+  <circle cx="1070" cy="680" r="260" fill="#ce7c48" opacity=".1"/>
+  <g transform="translate(72 70)">
+    <rect width="228" height="42" rx="21" fill="#3d7055"/>
+    <text x="114" y="28" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="1.4">SERVICE WEBSITE</text>
+    <text x="0" y="134" fill="#20352a" font-family="Georgia,serif" font-size="68" font-weight="700">Local Web Fix</text>
+    <text x="0" y="190" fill="#59675f" font-family="Arial,sans-serif" font-size="25">Practical fixes without the sales theatre.</text>
+    <g transform="translate(0 260)" font-family="Arial,sans-serif">
+      <text x="0" y="0" fill="#3d7055" font-size="16" font-weight="700" letter-spacing="1.5">A CLEAR, SAFE OFFER</text>
+      <g transform="translate(0 34)">
+        <rect width="430" height="232" rx="24" fill="#fff" stroke="#d0c4b3" stroke-width="3"/>
+        <g transform="translate(26 25)">
+          <circle cx="13" cy="13" r="13" fill="#3d7055"/>
+          <path d="m7 13 4 4 9-10" fill="none" stroke="#fff" stroke-width="3"/>
+          <text x="40" y="20" fill="#26382f" font-size="20" font-weight="700">Free public website check</text>
+          <circle cx="13" cy="70" r="13" fill="#3d7055"/>
+          <path d="m7 70 4 4 9-10" fill="none" stroke="#fff" stroke-width="3"/>
+          <text x="40" y="77" fill="#26382f" font-size="20" font-weight="700">Scope and prices published</text>
+          <circle cx="13" cy="127" r="13" fill="#3d7055"/>
+          <path d="m7 127 4 4 9-10" fill="none" stroke="#fff" stroke-width="3"/>
+          <text x="40" y="134" fill="#26382f" font-size="20" font-weight="700">No passwords requested</text>
+          <rect y="166" width="378" height="40" rx="10" fill="#f3e9da"/>
+          <text x="189" y="192" text-anchor="middle" fill="#8d5635" font-size="16" font-weight="700">SEND A PUBLIC LINK, NOTHING SENSITIVE</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g transform="translate(600 74)">
+    <rect width="530" height="560" rx="32" fill="url(#screen)" stroke="#6b907c" stroke-width="3"/>
+    <g transform="translate(28 26)" font-family="Arial,sans-serif">
+      <rect width="474" height="54" rx="14" fill="#1d3e30"/>
+      <circle cx="24" cy="27" r="7" fill="#d66f48"/>
+      <text x="44" y="34" fill="#f7f2e8" font-size="17" font-weight="700">LOCAL WEB FIX</text>
+      <text x="450" y="34" text-anchor="end" fill="#a9c4b5" font-size="14">MOBILE-FIRST</text>
+      <text x="0" y="137" fill="#fff8ec" font-family="Georgia,serif" font-size="36" font-weight="700">Is your website helping</text>
+      <text x="0" y="179" fill="#fff8ec" font-family="Georgia,serif" font-size="36" font-weight="700">customers find you?</text>
+      <text x="0" y="219" fill="#c5d9cc" font-size="18">Start with a free check of the public site.</text>
+      <rect y="250" width="210" height="54" rx="12" fill="#d57b4a"/>
+      <text x="105" y="284" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">Request a free check</text>
+      <g transform="translate(0 344)">
+        <rect width="474" height="150" rx="20" fill="#fffaf1"/>
+        <text x="24" y="36" fill="#3d7055" font-size="15" font-weight="700" letter-spacing="1.4">QUICK REVIEW</text>
+        <g transform="translate(24 58)">
+          <rect width="126" height="62" rx="12" fill="#e1eee6"/>
+          <text x="63" y="27" text-anchor="middle" fill="#3d7055" font-size="14" font-weight="700">MOBILE</text>
+          <text x="63" y="47" text-anchor="middle" fill="#5d7165" font-size="13">layout check</text>
+          <rect x="150" width="126" height="62" rx="12" fill="#e1eee6"/>
+          <text x="213" y="27" text-anchor="middle" fill="#3d7055" font-size="14" font-weight="700">DETAILS</text>
+          <text x="213" y="47" text-anchor="middle" fill="#5d7165" font-size="13">accuracy check</text>
+          <rect x="300" width="126" height="62" rx="12" fill="#e1eee6"/>
+          <text x="363" y="27" text-anchor="middle" fill="#3d7055" font-size="14" font-weight="700">CONTACT</text>
+          <text x="363" y="47" text-anchor="middle" fill="#5d7165" font-size="13">journey check</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
