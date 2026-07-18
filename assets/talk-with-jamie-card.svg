@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">Talk With Jamie project card</title>
+  <desc id="description">A wide blue graphic showing a privacy-conscious chat interface with separated public and private context.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eaf1f4"/>
+      <stop offset="1" stop-color="#d7e3e8"/>
+    </linearGradient>
+    <linearGradient id="console" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b2731"/>
+      <stop offset="1" stop-color="#293e4c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" rx="40" fill="url(#background)"/>
+  <circle cx="1050" cy="80" r="210" fill="#52778b" opacity=".13"/>
+  <circle cx="1100" cy="690" r="260" fill="#8a6ba8" opacity=".09"/>
+  <g transform="translate(72 70)">
+    <rect width="214" height="42" rx="21" fill="#526d80"/>
+    <text x="107" y="28" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="1.4">SERVERLESS APP</text>
+    <text x="0" y="132" fill="#202b34" font-family="Georgia,serif" font-size="67" font-weight="700">Talk With</text>
+    <text x="0" y="202" fill="#202b34" font-family="Georgia,serif" font-size="67" font-weight="700">Jamie</text>
+    <text x="0" y="252" fill="#5a6871" font-family="Arial,sans-serif" font-size="25">Privacy boundaries enforced before retrieval.</text>
+    <g transform="translate(0 326)" font-family="Arial,sans-serif">
+      <rect width="430" height="206" rx="24" fill="#fff" stroke="#b8c7ce" stroke-width="3"/>
+      <text x="28" y="42" fill="#526d80" font-size="15" font-weight="700" letter-spacing="1.5">ACCESS RULE</text>
+      <text x="28" y="86" fill="#202b34" font-family="Georgia,serif" font-size="27" font-weight="700">Check the audience first.</text>
+      <path d="M30 116H400" stroke="#d2dde1" stroke-width="2"/>
+      <circle cx="44" cy="150" r="12" fill="#4c8b73"/>
+      <path d="m38 150 4 4 8-9" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="68" y="157" fill="#45545c" font-size="18">Public context stays public</text>
+      <circle cx="44" cy="176" r="12" fill="#526d80"/>
+      <path d="M39 174v-5a5 5 0 0 1 10 0v5m-12 0h14v10H37Z" fill="none" stroke="#fff" stroke-width="2"/>
+      <text x="68" y="183" fill="#45545c" font-size="18">Private context requires a session</text>
+    </g>
+  </g>
+  <g transform="translate(590 80)">
+    <rect width="540" height="550" rx="30" fill="url(#console)" stroke="#536d7a" stroke-width="3"/>
+    <g transform="translate(28 26)" font-family="Arial,sans-serif">
+      <circle cx="9" cy="9" r="6" fill="#e07168"/>
+      <circle cx="31" cy="9" r="6" fill="#d9b45c"/>
+      <circle cx="53" cy="9" r="6" fill="#5ca885"/>
+      <text x="484" y="15" text-anchor="end" fill="#9db1bc" font-size="14">TALKWITHJAMIE.NETLIFY.APP</text>
+      <g transform="translate(0 60)">
+        <rect x="90" width="394" height="94" rx="20" fill="#334e5d"/>
+        <text x="116" y="36" fill="#f1f5f7" font-size="17" font-weight="700">What can this project tell me?</text>
+        <text x="116" y="66" fill="#b8cbd4" font-size="15">Public portfolio context only.</text>
+        <circle cx="50" cy="47" r="34" fill="#526d80"/>
+        <text x="50" y="56" text-anchor="middle" fill="#fff" font-family="Georgia,serif" font-size="28" font-weight="700">J</text>
+      </g>
+      <g transform="translate(0 190)">
+        <rect width="420" height="112" rx="20" fill="#f1f5f7"/>
+        <text x="24" y="36" fill="#263740" font-size="17" font-weight="700">I can explain Jamie's public projects,</text>
+        <text x="24" y="65" fill="#52636d" font-size="16">technical decisions and stated limitations.</text>
+        <rect x="24" y="82" width="122" height="22" rx="11" fill="#d9e6eb"/>
+        <text x="85" y="98" text-anchor="middle" fill="#526d80" font-size="12" font-weight="700">PUBLIC SOURCE</text>
+      </g>
+      <g transform="translate(0 338)">
+        <rect width="484" height="128" rx="20" fill="#20313b" stroke="#66808c" stroke-width="2"/>
+        <g transform="translate(24 24)">
+          <rect x="6" y="28" width="48" height="42" rx="8" fill="#526d80"/>
+          <path d="M16 28V18a14 14 0 0 1 28 0v10" fill="none" stroke="#bfe1ef" stroke-width="5"/>
+          <circle cx="30" cy="49" r="5" fill="#fff"/>
+          <path d="M30 53v8" stroke="#fff" stroke-width="3"/>
+        </g>
+        <text x="104" y="48" fill="#f1f5f7" font-size="18" font-weight="700">Private retrieval boundary</text>
+        <text x="104" y="78" fill="#a7bbc4" font-size="15">Authentication checked before model context.</text>
+        <text x="104" y="104" fill="#7fd0b0" font-size="14" font-weight="700">COVERED BY AUTOMATED TESTS</text>
+      </g>
+    </g>
+  </g>
+</svg>
