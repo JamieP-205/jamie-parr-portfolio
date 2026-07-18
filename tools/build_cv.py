@@ -275,7 +275,7 @@ def build() -> Path:
     story.extend(
         [
             Paragraph(
-                "<b>Temporary Production Operative - Saica Pack UK, Warrenpoint</b> | Jun 2026 - Present<br/>"
+                "<b>Temporary Production Operative - Saica Pack UK, Warrenpoint</b> | Jun 2026 - 12 Sep 2026 (fixed term)<br/>"
                 "Operate and monitor large automated corrugated-packaging machinery, including DRO flexographic printing "
                 "and rotary die-cutting equipment and the C4 line. Diagnose and resolve routine mechanical faults and "
                 "production stoppages through safe, hands-on intervention, helping restore operation and escalating "
@@ -283,13 +283,17 @@ def build() -> Path:
                 compact_style,
             ),
             Paragraph(
-                "<b>Warehouse Operative - Pet Connection, Newry</b> | Oct 2021 - Present<br/>"
+                "<b>Warehouse Operative - Pet Connection, Newry</b> | Oct 2021 - Jul 2026<br/>"
                 "Prepare customer and fulfilment orders accurately, organise stock and follow safety and dispatch procedures while balancing long-term employment with study.",
                 compact_style,
             ),
             Paragraph(
-                "<b>Kitchen Porter - The Garden Room, Warrenpoint</b> | Aug 2024 - Present<br/>"
+                "<b>Kitchen Porter - The Garden Room, Warrenpoint</b> | Aug 2024 - Jul 2026<br/>"
                 "Support kitchen and front-of-house teams during busy services, maintain hygiene standards and assist with stock rotation and changing priorities.",
+                compact_style,
+            ),
+            Paragraph(
+                "<b>Floor Staff - No.7 Duke, Warrenpoint</b> | Jun 2022 - Sep 2022 - Supported customers, event preparation and stock replenishment in a public-facing environment.",
                 compact_style,
             ),
         ]
