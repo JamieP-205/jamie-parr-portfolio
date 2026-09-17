@@ -42,7 +42,7 @@ for (const file of files.filter((item) => /\.html?$/i.test(item))) {
 
   for (const match of source.matchAll(/(?:href|src)=["']([^"'#?]+)["']/gi)) {
     const reference = match[1];
-    if (/^(?:[a-z]+:|\/\/)/i.test(reference)) continue;
+    if (/^(?:[a-z]+:|\/\/|data:)/i.test(reference)) continue;
     let target = reference.startsWith("/")
       ? path.join(root, reference.slice(1))
       : path.resolve(path.dirname(file), reference);
@@ -57,26 +57,26 @@ const homepage = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const projectPanels = Array.from(homepage.matchAll(
   /<article\b[^>]*data-project-panel=["']([^"']+)["'][^>]*>([\s\S]*?)<\/article>/gi
 ));
-const projectTriggers = Array.from(
-  homepage.matchAll(/data-project-trigger=["']([^"']+)["']/gi),
-  (match) => match[1]
-);
 const panelIds = projectPanels.map((match) => match[1]);
+const expectedPanels = ["coast-internet-radio", "local-web-fix"];
 
 if (!/<link\s+rel=["']stylesheet["']\s+href=["']project-evidence\.css["']\s*>/i.test(homepage)) {
-  errors.push("index.html must load project-evidence.css without JavaScript");
+  errors.push("index.html must load project-evidence.css");
 }
-if (projectPanels.length !== 6 || new Set(panelIds).size !== projectPanels.length) {
-  errors.push("index.html must contain six uniquely named project panels");
+if (projectPanels.length !== 2 || expectedPanels.some((id) => !panelIds.includes(id))) {
+  errors.push("index.html must contain only Coast Internet Radio and Local Web Fix project panels");
 }
-if (projectTriggers.length !== projectPanels.length
-    || projectTriggers.some((id) => !panelIds.includes(id))) {
-  errors.push("project workbench triggers and panels do not match");
-}
-for (const [, id, panel] of projectPanels) {
-  if (!/class=["'][^"']*\bdecision-trace\b/i.test(panel)) {
-    errors.push(`project panel ${id} is missing its static decision trace`);
+for (const retired of ["the-world-forgot-us", "french-for-life", "groundwork", "talk-with-jamie"]) {
+  if (homepage.toLowerCase().includes(retired)) {
+    errors.push(`index.html still contains retired project reference: ${retired}`);
   }
+}
+if (/project-stage-media/i.test(homepage)) {
+  errors.push("index.html should not contain project artwork containers");
+}
+if (!/<img\b[^>]*class=["'][^"']*\bportrait\b[^"']*["'][^>]*src=["']data:image\/jpeg;base64,/i.test(homepage)
+    && !/<img\b[^>]*src=["']data:image\/jpeg;base64,[^"']+["'][^>]*class=["'][^"']*\bportrait\b/i.test(homepage)) {
+  errors.push("index.html must embed the portrait directly as a JPEG data URI");
 }
 
 for (const required of ["index.html", "404.html", "robots.txt", "sitemap.xml", "site.webmanifest", "netlify.toml"]) {

@@ -22,7 +22,17 @@
 [[headers]]
   for = "/*.html"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
 
 [[redirects]]
   from = "/case-study.html"
@@ -43,11 +53,6 @@
 [[redirects]]
   from = "/local-web-fix-case-study"
   to = "/local-web-fix-case-study.html"
-  status = 200
-
-[[redirects]]
-  from = "/talk-with-jamie-case-study"
-  to = "/talk-with-jamie-case-study.html"
   status = 200
 
 [[redirects]]
