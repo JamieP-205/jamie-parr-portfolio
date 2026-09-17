@@ -119,20 +119,16 @@ async function run() {
 
     check(await page.locator('link[href="project-evidence.css"]').count() === 1,
       "project evidence stylesheet is not linked in the document");
-    check(await page.locator("[data-project-panel]").count() === 6,
-      "all six project panels should still be present");
-    check(await page.locator("[data-project-panel][hidden]").count() === 0,
-      "the simple project layout should leave every project visible");
-    check(await page.locator(".project-index").evaluate((element) => getComputedStyle(element).display) === "none",
-      "the old project selector should not be visible");
-    check((await page.locator(".projects-intro h2").textContent())?.trim() === "Selected projects, shown simply.",
-      "projects heading was not simplified");
-    check(await page.locator("#project-coast-internet-radio .project-stage-media img").getAttribute("src") === "assets/coast-home-top.jpg",
-      "Coast project should use the real site screenshot");
-    check(await page.locator("#project-talk-with-jamie .project-stage-media img").getAttribute("src") === "assets/talk-with-jamie-home.jpg",
-      "Talk With Jamie should use the real site screenshot");
-    check(await page.locator("#project-local-web-fix .project-stage-media img").getAttribute("src") === "assets/local-web-fix-home.jpg",
-      "Local Web Fix should use the real site screenshot");
+    check(await page.locator("[data-project-panel]").count() === 5,
+      "only the five public project panels should remain");
+    check(await page.locator("#project-groundwork").count() === 0,
+      "Groundwork should not be shown on the portfolio");
+    check(await page.locator(".project-stage-media").count() === 0,
+      "project artwork should be removed from the portfolio");
+    check((await page.locator(".projects-intro h2").textContent())?.trim() === "Selected public projects.",
+      "projects heading was not updated");
+    check(await page.locator(".portrait-card .portrait").getAttribute("src") === "assets/jamie-parr-suit.jpg?v=20260917b",
+      "the suit portrait should use the cache-busted asset URL");
 
     for (const width of [320, 390, 768, 1280]) {
       await page.setViewportSize({ width, height: width < 500 ? 844 : 900 });
@@ -165,15 +161,19 @@ async function run() {
     });
     const fallbackPage = await noScript.newPage();
     await fallbackPage.goto(baseUrl, { waitUntil: "domcontentloaded" });
-    check(await fallbackPage.locator("[data-project-panel][hidden]").count() === 0,
-      "the no-JavaScript fallback should leave every project available");
-    check(await fallbackPage.locator("[data-project-panel]").count() === 6,
-      "all projects should remain in the no-JavaScript page");
+    check(await fallbackPage.locator("[data-project-panel]:visible").count() === 5,
+      "the no-JavaScript page should show only the five public projects");
+    check(await fallbackPage.locator("#project-groundwork").evaluate((element) => getComputedStyle(element).display) === "none",
+      "Groundwork should stay hidden without JavaScript");
+    check(await fallbackPage.locator(".project-stage-media").first().evaluate((element) => getComputedStyle(element).display) === "none",
+      "project artwork should stay hidden without JavaScript");
+    check(await fallbackPage.locator(".portrait-card-horizontal").evaluate((element) => getComputedStyle(element, "::after").backgroundImage.includes("jamie-parr-suit.jpg")),
+      "the suit portrait fallback should be present without JavaScript");
     await noScript.close();
 
     if (browserErrors.length) failures.push(...browserErrors);
     if (failures.length) throw new Error(failures.map((item) => `- ${item}`).join("\n"));
-    console.log("Portfolio browser smoke passed: simple project stack, real screenshots, no-JS fallback and 320-1280px layouts.");
+    console.log("Portfolio browser smoke passed: public projects only, no project artwork, suit portrait and responsive layouts.");
   } finally {
     if (browser) await browser.close();
     await new Promise((resolve) => server.close(resolve));
