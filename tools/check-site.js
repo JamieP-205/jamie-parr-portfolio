@@ -28,8 +28,11 @@ function exactPathExists(target) {
 
 const files = walk(root);
 for (const file of files.filter((item) => item.endsWith(".json"))) {
-  try { JSON.parse(fs.readFileSync(file, "utf8")); }
-  catch (error) { errors.push(`${path.relative(root, file)} contains invalid JSON: ${error.message}`); }
+  try {
+    JSON.parse(fs.readFileSync(file, "utf8"));
+  } catch (error) {
+    errors.push(`${path.relative(root, file)} contains invalid JSON: ${error.message}`);
+  }
 }
 
 for (const file of files.filter((item) => /\.html?$/i.test(item))) {
@@ -44,24 +47,39 @@ for (const file of files.filter((item) => /\.html?$/i.test(item))) {
       ? path.join(root, reference.slice(1))
       : path.resolve(path.dirname(file), reference);
     if (reference.endsWith("/")) target = path.join(target, "index.html");
-    if (!exactPathExists(target)) errors.push(`${path.relative(root, file)} references missing or case-mismatched file: ${reference}`);
+    if (!exactPathExists(target)) {
+      errors.push(`${path.relative(root, file)} references missing or case-mismatched file: ${reference}`);
+    }
   }
 }
 
 const homepage = fs.readFileSync(path.join(root, "index.html"), "utf8");
-const projectCards = Array.from(homepage.matchAll(/<article\b[^>]*class=["'][^"']*\bsimple-project\b[^"']*["']/gi));
+const projectPanels = Array.from(homepage.matchAll(
+  /<article\b[^>]*data-project-panel=["']([^"']+)["'][^>]*>([\s\S]*?)<\/article>/gi
+));
+const projectTriggers = Array.from(
+  homepage.matchAll(/data-project-trigger=["']([^"']+)["']/gi),
+  (match) => match[1]
+);
+const panelIds = projectPanels.map((match) => match[1]);
 
-if (projectCards.length !== 6) errors.push(`index.html should contain 6 simple project cards, found ${projectCards.length}`);
-if (/data-project-explorer|data-project-trigger|data-project-panel|project-explorer\.js/i.test(homepage)) {
-  errors.push("index.html still contains the old project workbench");
+if (!/<link\s+rel=["']stylesheet["']\s+href=["']project-evidence\.css["']\s*>/i.test(homepage)) {
+  errors.push("index.html must load project-evidence.css without JavaScript");
 }
-if (!/class=["'][^"']*\bstar-photo\b/i.test(homepage)) errors.push("index.html is missing the hero portrait");
-if (!/raw\.githubusercontent\.com\/JamieP-205\/local-web-fix\/eaf1535aaab003c0e36662977c4f8933edb95995\/assets\/jamie-parr\.webp/i.test(homepage)) {
-  errors.push("hero portrait is not the verified suit photo");
+if (projectPanels.length !== 6 || new Set(panelIds).size !== projectPanels.length) {
+  errors.push("index.html must contain six uniquely named project panels");
 }
-if (!/portfolio-refresh\.css/i.test(homepage)) errors.push("portfolio-refresh.css is not loaded");
+if (projectTriggers.length !== projectPanels.length
+    || projectTriggers.some((id) => !panelIds.includes(id))) {
+  errors.push("project workbench triggers and panels do not match");
+}
+for (const [, id, panel] of projectPanels) {
+  if (!/class=["'][^"']*\bdecision-trace\b/i.test(panel)) {
+    errors.push(`project panel ${id} is missing its static decision trace`);
+  }
+}
 
-for (const required of ["index.html", "404.html", "robots.txt", "sitemap.xml", "site.webmanifest", "netlify.toml", "portfolio-refresh.css"]) {
+for (const required of ["index.html", "404.html", "robots.txt", "sitemap.xml", "site.webmanifest", "netlify.toml"]) {
   const file = path.join(root, required);
   if (!fs.existsSync(file) || fs.statSync(file).size === 0) errors.push(`${required} is missing or empty`);
 }
@@ -70,4 +88,4 @@ if (errors.length) {
   console.error(errors.map((error) => `- ${error}`).join("\n"));
   process.exit(1);
 }
-console.log("Portfolio site validation passed: simple projects, suit portrait and required files are present.");
+console.log("Portfolio site validation passed.");
