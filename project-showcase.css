@@ -1,105 +1,103 @@
 :root {
   --paper: #ffffff;
-  --paper-deep: #f6f6f9;
-  --ink: #111114;
-  --muted: #646471;
-  --line: #e3e3e9;
-  --line-strong: #b8b8c4;
+  --paper-deep: #f7f7fa;
+  --ink: #101014;
+  --muted: #666671;
+  --line: #e4e4e9;
+  --line-strong: #b9b9c4;
   --accent: #7c3aed;
-  --accent-ink: #6528d7;
+  --accent-ink: #6427d3;
   --focus: #7c3aed;
 }
 
 html[data-theme="dark"] {
-  --paper: #0c0c0f;
-  --paper-deep: #131318;
-  --ink: #f5f5f7;
-  --muted: #aaaab6;
-  --line: #292932;
-  --line-strong: #4a4a58;
-  --accent: #a978ff;
-  --accent-ink: #ba96ff;
-  --focus: #a978ff;
+  --paper: #0b0b0e;
+  --paper-deep: #121217;
+  --ink: #f7f7f8;
+  --muted: #aaaab5;
+  --line: #292930;
+  --line-strong: #4b4b56;
+  --accent: #9d72ff;
+  --accent-ink: #b695ff;
+  --focus: #9d72ff;
 }
 
-body { 
+body {
   font-family: var(--sans);
   background-color: var(--paper);
   background-image:
-    radial-gradient(circle at 12% 6%, color-mix(in srgb, var(--accent) 7%, transparent) 0, transparent 24rem),
-    linear-gradient(180deg, color-mix(in srgb, var(--paper-deep) 55%, transparent), transparent 24rem);
+    radial-gradient(circle at 8% 4%, color-mix(in srgb, var(--accent) 5%, transparent) 0, transparent 22rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--paper-deep) 62%, transparent), transparent 24rem);
   background-attachment: fixed;
 }
 
-h1, h2, h3, .brand-text, .portrait-copy h2 { font-family: var(--serif); }
-h1 { font-size: clamp(2.55rem, 6vw, 4.35rem); letter-spacing: -0.035em; line-height: 0.98; max-width: 16ch; }
-h2 { letter-spacing: -0.02em; }
+h1, h2, h3, .brand-text { font-family: var(--serif); }
+h1 {
+  font-size: clamp(2.7rem, 6.6vw, 4.8rem);
+  letter-spacing: -0.045em;
+  line-height: 0.96;
+  max-width: 15ch;
+}
+h2 { letter-spacing: -0.025em; }
 .hero-text, .section-copy p, .project-stage-lede, .project-stage-copy > p { color: var(--muted); }
-.hero-grid-compact { gap: clamp(2.2rem, 6vw, 5rem); }
 
-.portrait-card-horizontal {
-  position: relative;
-  max-width: 22rem;
-  padding: 0.7rem;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  box-shadow: 0 18px 42px rgba(0, 0, 0, .10);
-  overflow: hidden;
-}
-
-.portrait-card-horizontal::before {
-  content: "";
-  position: absolute;
-  left: -1px;
-  top: 1.25rem;
-  width: 3px;
-  height: 4.5rem;
-  background: var(--accent);
-  z-index: 4;
-}
-
-.portrait-card-horizontal::after {
-  content: "";
-  position: absolute;
-  top: .7rem;
-  left: .7rem;
-  right: .7rem;
-  aspect-ratio: 1 / 1;
-  background: url("assets/jamie-parr-suit-final.jpg") center 30% / cover no-repeat;
-  border-radius: 13px;
-  pointer-events: none;
-  z-index: 3;
-}
-
-.portrait-card-horizontal .portrait {
+/* The hero is intentionally text-led. There is no profile portrait. */
+.hero-grid-compact {
   display: block;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: center 30%;
-  opacity: 0 !important;
 }
-
-.portrait-card-horizontal .portrait-copy {
+.hero-aside {
+  display: none !important;
+}
+.hero-copy {
   position: relative;
-  z-index: 4;
-  padding: 1rem .45rem .35rem;
+  max-width: 52rem;
+  padding: clamp(.25rem, 2vw, 1rem) 0 clamp(1rem, 3vw, 2rem);
+}
+.hero-copy::after {
+  content: "";
+  display: block;
+  width: min(9rem, 30vw);
+  height: 3px;
+  margin-top: clamp(1.6rem, 4vw, 2.5rem);
+  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 18%, transparent));
+}
+.hero-text {
+  max-width: 44rem;
+  font-size: clamp(1.08rem, 1.7vw, 1.25rem);
+  line-height: 1.65;
+}
+.hero-actions {
+  margin-top: 1.6rem;
 }
 
-.eyebrow { display: flex; align-items: center; gap: .55rem; color: var(--muted); }
-.eyebrow::before { content: ""; width: 1.35rem; height: 2px; background: var(--accent); flex: 0 0 auto; }
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  color: var(--muted);
+}
+.eyebrow::before {
+  content: "";
+  width: 1.45rem;
+  height: 2px;
+  background: var(--accent);
+  flex: 0 0 auto;
+}
 
 .button-primary {
   background: var(--ink);
   border-color: var(--ink);
   color: var(--paper);
 }
-.button-primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.button-primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
 .button-secondary, .button-ghost { border-color: var(--line-strong); }
 
 .site-header {
-  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  background: color-mix(in srgb, var(--paper) 93%, transparent);
   backdrop-filter: blur(14px);
 }
 
@@ -116,7 +114,11 @@ h2 { letter-spacing: -0.02em; }
 .project-stage-grid { display: block; }
 .project-stage-media { display: none !important; }
 .project-stage-copy { max-width: 58rem; }
-.project-stage-copy h3 { margin: .15rem 0 .85rem; font-size: clamp(1.8rem, 4vw, 2.65rem); max-width: 18ch; }
+.project-stage-copy h3 {
+  margin: .15rem 0 .85rem;
+  font-size: clamp(1.8rem, 4vw, 2.65rem);
+  max-width: 18ch;
+}
 .project-stage-lede { font-size: 1.02rem; line-height: 1.65; }
 .project-proof-inline {
   display: grid;
@@ -129,26 +131,74 @@ h2 { letter-spacing: -0.02em; }
   border-bottom: 1px solid var(--line);
 }
 .project-proof-inline li { display: grid; gap: .15rem; padding: .85rem 0; }
-.project-proof-inline li:nth-child(even) { padding-left: 1rem; border-left: 1px solid var(--line); }
-.project-proof-inline strong { font-family: var(--mono); color: var(--accent-ink); font-size: 1.15rem; }
+.project-proof-inline li:nth-child(even) {
+  padding-left: 1rem;
+  border-left: 1px solid var(--line);
+}
+.project-proof-inline strong {
+  font-family: var(--mono);
+  color: var(--accent-ink);
+  font-size: 1.15rem;
+}
 .project-proof-inline span { color: var(--muted); font-size: .86rem; }
 .project-card-actions { margin-top: 1.35rem; }
 .projects-intro { display: grid; gap: .75rem; margin-bottom: 1.7rem; }
 .projects-intro > p { color: var(--muted); max-width: 48rem; }
-.project-more-compact { margin-top: .4rem; }
+
+/* Give the final GitHub link a deliberate ending instead of a stray text link. */
+.project-more-compact {
+  position: relative;
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+  padding: clamp(1.15rem, 3vw, 1.6rem);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 6%, var(--paper-deep)), var(--paper-deep));
+}
+.project-more-compact::before {
+  content: "More code";
+  display: block;
+  margin-bottom: .75rem;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.project-more-compact .button {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .72rem 1rem;
+  border: 1px solid var(--ink);
+  border-radius: 10px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--sans);
+  font-weight: 700;
+  text-decoration: none !important;
+}
+.project-more-compact .button::after {
+  content: "↗";
+  font-size: .95em;
+}
+.project-more-compact .button:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
 
 a:hover { color: var(--accent-ink); }
 
-@media (min-width: 860px) {
-  .hero-grid-compact { grid-template-columns: minmax(0, 1.25fr) minmax(19rem, .75fr); align-items: center; }
-}
-
 @media (max-width: 620px) {
-  h1 { font-size: clamp(2.35rem, 12vw, 3.35rem); }
+  h1 { font-size: clamp(2.45rem, 12vw, 3.5rem); }
+  .hero-actions { display: grid; align-items: stretch; }
+  .hero-actions .button { justify-content: center; }
   .project-proof-inline { grid-template-columns: 1fr; }
   .project-proof-inline li:nth-child(even) { padding-left: 0; border-left: 0; }
   .project-proof-inline li + li { border-top: 1px solid var(--line); }
-  .portrait-card-horizontal { max-width: 100%; }
+  .project-more-compact .button { width: 100%; justify-content: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {

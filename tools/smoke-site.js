@@ -122,15 +122,17 @@ async function run() {
       "project artwork should be removed from the portfolio");
     check((await page.locator(".projects-intro h2").textContent())?.trim() === "Selected public projects.",
       "projects heading was not updated");
+    check(await page.locator('.hero-aside:visible').count() === 0,
+      "the portrait area should not be visible in the redesigned hero");
 
-    const portraitState = await page.locator('.portrait-card-horizontal').evaluate((element) => ({
-      background: getComputedStyle(element, '::after').backgroundImage,
-      pseudoDisplay: getComputedStyle(element, '::after').display
+    const repoLink = page.getByRole('link', { name: 'View public repositories' });
+    check(await repoLink.count() === 1, "public repositories link is missing");
+    const repoLinkStyle = await repoLink.evaluate((element) => ({
+      decoration: getComputedStyle(element).textDecorationLine,
+      background: getComputedStyle(element).backgroundColor
     }));
-    check(portraitState.pseudoDisplay !== 'none' && portraitState.background.includes('jamie-parr-suit-final.jpg'),
-      "the final suit portrait is not being rendered by the portrait card");
-    const portraitAssetStatus = await page.evaluate(() => fetch('assets/jamie-parr-suit-final.jpg').then((response) => response.status));
-    check(portraitAssetStatus === 200, "the final suit portrait asset is not available");
+    check(!repoLinkStyle.decoration.includes('underline'),
+      "public repositories link should be styled as a button, not an underlined text link");
 
     for (const width of [320, 390, 768, 1280]) {
       await page.setViewportSize({ width, height: width < 500 ? 844 : 900 });
@@ -173,14 +175,13 @@ async function run() {
     }
     check(await fallbackPage.locator(".project-stage-media").count() === 0,
       "project artwork should not exist without JavaScript");
-    const noScriptPortrait = await fallbackPage.locator('.portrait-card-horizontal').evaluate((element) => getComputedStyle(element, '::after').backgroundImage);
-    check(noScriptPortrait.includes('jamie-parr-suit-final.jpg'),
-      "the final suit portrait should render without JavaScript");
+    check(await fallbackPage.locator('.hero-aside:visible').count() === 0,
+      "the portrait area should remain hidden without JavaScript");
     await noScript.close();
 
     if (browserErrors.length) failures.push(...browserErrors);
     if (failures.length) throw new Error(failures.map((item) => `- ${item}`).join("\n"));
-    console.log("Portfolio browser smoke passed: two public projects, no project artwork, final suit portrait and responsive layouts.");
+    console.log("Portfolio browser smoke passed: two public projects, portrait-free hero, styled repository link and responsive layouts.");
   } finally {
     if (browser) await browser.close();
     await new Promise((resolve) => server.close(resolve));
