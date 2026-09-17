@@ -63,6 +63,9 @@ const expectedPanels = ["coast-internet-radio", "local-web-fix"];
 if (!/<link\s+rel=["']stylesheet["']\s+href=["']project-evidence\.css["']\s*>/i.test(homepage)) {
   errors.push("index.html must load project-evidence.css");
 }
+if (!/<script\s+src=["']enhancements\.js["']><\/script>/i.test(homepage)) {
+  errors.push("index.html must load enhancements.js");
+}
 if (projectPanels.length !== 2 || expectedPanels.some((id) => !panelIds.includes(id))) {
   errors.push("index.html must contain only Coast Internet Radio and Local Web Fix project panels");
 }
@@ -74,12 +77,38 @@ for (const retired of ["the-world-forgot-us", "french-for-life", "groundwork", "
 if (/project-stage-media/i.test(homepage)) {
   errors.push("index.html should not contain project artwork containers");
 }
-if (!/<img\b[^>]*class=["'][^"']*\bportrait\b[^"']*["'][^>]*src=["']data:image\/jpeg;base64,/i.test(homepage)
-    && !/<img\b[^>]*src=["']data:image\/jpeg;base64,[^"']+["'][^>]*class=["'][^"']*\bportrait\b/i.test(homepage)) {
-  errors.push("index.html must embed the portrait directly as a JPEG data URI");
+if (/\bportrait\b/i.test(homepage)) {
+  errors.push("index.html should not contain the retired portrait layout");
+}
+if (!/data-lava-toggle/i.test(homepage)) {
+  errors.push("index.html is missing the Lava lampe easter-egg toggle");
 }
 
-for (const required of ["index.html", "404.html", "robots.txt", "sitemap.xml", "site.webmanifest", "netlify.toml"]) {
+for (const caseFile of ["coast-internet-radio-case-study.html", "local-web-fix-case-study.html"]) {
+  const source = fs.readFileSync(path.join(root, caseFile), "utf8");
+  if (!/class=["'][^"']*\bcase-page\b/i.test(source)) {
+    errors.push(`${caseFile} is missing the refreshed case-page layout`);
+  }
+  if (!/<link\s+rel=["']stylesheet["']\s+href=["']project-showcase\.css["']\s*>/i.test(source)) {
+    errors.push(`${caseFile} must load project-showcase.css`);
+  }
+  if (!/<script\s+src=["']enhancements\.js["']><\/script>/i.test(source)) {
+    errors.push(`${caseFile} must load enhancements.js`);
+  }
+  if (!/data-lava-toggle/i.test(source)) {
+    errors.push(`${caseFile} is missing the Lava lampe toggle`);
+  }
+}
+
+for (const required of [
+  "index.html",
+  "404.html",
+  "robots.txt",
+  "sitemap.xml",
+  "site.webmanifest",
+  "netlify.toml",
+  "enhancements.js"
+]) {
   const file = path.join(root, required);
   if (!fs.existsSync(file) || fs.statSync(file).size === 0) errors.push(`${required} is missing or empty`);
 }
