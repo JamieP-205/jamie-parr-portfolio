@@ -1,4 +1,7 @@
 (() => {
+  const portrait = document.querySelector('.portrait-card .portrait');
+  if (portrait) portrait.src = 'assets/jamie-parr-suit.jpg';
+
   const intro = document.querySelector('.projects-intro');
   if (intro) {
     const label = intro.querySelector('.eyebrow');
