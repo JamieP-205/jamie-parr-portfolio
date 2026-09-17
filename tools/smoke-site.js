@@ -86,22 +86,10 @@ async function run() {
       viewport: { width: 1280, height: 900 }
     });
 
-    const events = [{
-      type: "PushEvent",
-      repo: { name: "JamieP-205/coast-internet-radio" },
-      payload: {
-        commits: [{
-          message: "Keep the owner controls working after a CSP update",
-          sha: "0123456789abcdef"
-        }]
-      },
-      created_at: new Date(Date.now() - 30 * 60 * 1000).toISOString()
-    }];
-
     await context.route("https://api.github.com/**", (route) => route.fulfill({
       status: 200,
       contentType: "application/json",
-      body: JSON.stringify(events)
+      body: "[]"
     }));
     await context.route("https://coast-metadata.jamieparr05.workers.dev/**", (route) => route.fulfill({
       status: 200,
@@ -124,7 +112,7 @@ async function run() {
 
     for (const id of ["the-world-forgot-us", "french-for-life", "groundwork", "talk-with-jamie"]) {
       check(await page.locator(`#project-${id}`).count() === 0,
-        `${id} should not be shown on the portfolio`);
+        `${id} should not be present on the portfolio`);
     }
 
     check(await page.locator(".project-stage-media").count() === 0,
@@ -167,21 +155,23 @@ async function run() {
     });
     const fallbackPage = await noScript.newPage();
     await fallbackPage.goto(baseUrl, { waitUntil: "domcontentloaded" });
+    check(await fallbackPage.locator("[data-project-panel]").count() === 2,
+      "the no-JavaScript page should contain only two projects");
     check(await fallbackPage.locator("[data-project-panel]:visible").count() === 2,
-      "the no-JavaScript page should show only Coast Internet Radio and Local Web Fix");
+      "both public projects should remain visible without JavaScript");
     for (const id of ["the-world-forgot-us", "french-for-life", "groundwork", "talk-with-jamie"]) {
-      check(await fallbackPage.locator(`#project-${id}`).evaluate((element) => getComputedStyle(element).display) === "none",
-        `${id} should stay hidden without JavaScript`);
+      check(await fallbackPage.locator(`#project-${id}`).count() === 0,
+        `${id} should not exist without JavaScript`);
     }
-    check(await fallbackPage.locator(".project-stage-media").first().evaluate((element) => getComputedStyle(element).display) === "none",
-      "project artwork should stay hidden without JavaScript");
-    check(await fallbackPage.locator(".portrait-card .portrait").evaluate((element) => getComputedStyle(element).content.includes("jamie-parr-suit.jpg")),
-      "the suit portrait CSS fallback should be present without JavaScript");
+    check(await fallbackPage.locator(".project-stage-media").count() === 0,
+      "project artwork should not exist without JavaScript");
+    check((await fallbackPage.locator(".portrait-card .portrait").getAttribute("src"))?.startsWith("data:image/jpeg;base64,"),
+      "the embedded suit portrait should be available without JavaScript");
     await noScript.close();
 
     if (browserErrors.length) failures.push(...browserErrors);
     if (failures.length) throw new Error(failures.map((item) => `- ${item}`).join("\n"));
-    console.log("Portfolio browser smoke passed: two public projects, no project artwork, suit portrait and responsive layouts.");
+    console.log("Portfolio browser smoke passed: two public projects, no project artwork, embedded suit portrait and responsive layouts.");
   } finally {
     if (browser) await browser.close();
     await new Promise((resolve) => server.close(resolve));
