@@ -86,18 +86,6 @@ async function run() {
       viewport: { width: 1280, height: 900 }
     });
 
-    await context.addInitScript(() => {
-      const original = Element.prototype.scrollIntoView;
-      window.__portfolioScrollCalls = [];
-      Element.prototype.scrollIntoView = function (options) {
-        window.__portfolioScrollCalls.push({
-          target: this.matches?.("[data-project-explorer]") ? "workbench" : "other",
-          behavior: typeof options === "object" ? options.behavior || "" : ""
-        });
-        return original.call(this, options);
-      };
-    });
-
     const events = [{
       type: "PushEvent",
       repo: { name: "JamieP-205/coast-internet-radio" },
@@ -128,40 +116,29 @@ async function run() {
     });
 
     await page.goto(baseUrl, { waitUntil: "networkidle" });
+
     check(await page.locator('link[href="project-evidence.css"]').count() === 1,
       "project evidence stylesheet is not linked in the document");
-    check(await page.locator(".decision-trace").count() === 6,
-      "all six project decision traces should exist before enhancement");
-    check(await page.locator("[data-project-panel][hidden]").count() === 5,
-      "the enhanced workbench should show exactly one project");
-
-    const frenchTrigger = page.locator('[data-project-trigger="french-for-life"]');
-    await frenchTrigger.click();
-    check(new URL(page.url()).hash === "#project-french-for-life",
-      "clicking a project did not update the hash");
-    check(await page.locator('[data-project-panel="french-for-life"]:not([hidden])').count() === 1,
-      "clicking French for Life did not show its panel");
-
-    await frenchTrigger.focus();
-    await page.keyboard.press("ArrowRight");
-    check(await page.locator('[data-project-trigger="groundwork"]').getAttribute("aria-current") === "true",
-      "arrow-key navigation did not select the next project");
-
-    await page.locator("[data-project-explorer]").scrollIntoViewIfNeeded();
-    await page.keyboard.press("6");
-    check(await page.locator('[data-project-trigger="local-web-fix"]').getAttribute("aria-current") === "true",
-      "number-key navigation did not select the sixth project");
+    check(await page.locator("[data-project-panel]").count() === 6,
+      "all six project panels should still be present");
+    check(await page.locator("[data-project-panel][hidden]").count() === 0,
+      "the simple project layout should leave every project visible");
+    check(await page.locator(".project-index").evaluate((element) => getComputedStyle(element).display) === "none",
+      "the old project selector should not be visible");
+    check((await page.locator(".projects-intro h2").textContent())?.trim() === "Selected projects, shown simply.",
+      "projects heading was not simplified");
+    check(await page.locator("#project-coast-internet-radio .project-stage-media img").getAttribute("src") === "assets/coast-home-top.jpg",
+      "Coast project should use the real site screenshot");
+    check(await page.locator("#project-talk-with-jamie .project-stage-media img").getAttribute("src") === "assets/talk-with-jamie-home.jpg",
+      "Talk With Jamie should use the real site screenshot");
+    check(await page.locator("#project-local-web-fix .project-stage-media img").getAttribute("src") === "assets/local-web-fix-home.jpg",
+      "Local Web Fix should use the real site screenshot");
 
     const ledger = page.locator(".build-ledger:not([hidden])");
     await ledger.waitFor();
     await ledger.locator(".build-ledger-repo a").click();
     check(new URL(page.url()).hash === "#project-coast-internet-radio",
-      "the build ledger did not open its matching project");
-    const workbenchScrolls = await page.evaluate(() =>
-      window.__portfolioScrollCalls.filter((call) => call.target === "workbench")
-    );
-    check(workbenchScrolls.at(-1)?.behavior === "auto",
-      "project navigation should avoid smooth scrolling when reduced motion is requested");
+      "the build ledger did not link to its matching project");
 
     for (const width of [320, 390, 768, 1280]) {
       await page.setViewportSize({ width, height: width < 500 ? 844 : 900 });
@@ -196,13 +173,13 @@ async function run() {
     await fallbackPage.goto(baseUrl, { waitUntil: "domcontentloaded" });
     check(await fallbackPage.locator("[data-project-panel][hidden]").count() === 0,
       "the no-JavaScript fallback should leave every project available");
-    check(await fallbackPage.locator(".decision-trace").count() === 6,
-      "decision evidence should remain available without JavaScript");
+    check(await fallbackPage.locator("[data-project-panel]").count() === 6,
+      "all projects should remain in the no-JavaScript page");
     await noScript.close();
 
     if (browserErrors.length) failures.push(...browserErrors);
     if (failures.length) throw new Error(failures.map((item) => `- ${item}`).join("\n"));
-    console.log("Portfolio browser smoke passed: workbench, evidence, ledger, reduced motion, no-JS fallback and 320–1280px layouts.");
+    console.log("Portfolio browser smoke passed: simple project stack, real screenshots, build ledger, no-JS fallback and 320-1280px layouts.");
   } finally {
     if (browser) await browser.close();
     await new Promise((resolve) => server.close(resolve));
