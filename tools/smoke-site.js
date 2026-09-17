@@ -119,16 +119,22 @@ async function run() {
 
     check(await page.locator('link[href="project-evidence.css"]').count() === 1,
       "project evidence stylesheet is not linked in the document");
-    check(await page.locator("[data-project-panel]").count() === 5,
-      "only the five public project panels should remain");
-    check(await page.locator("#project-groundwork").count() === 0,
-      "Groundwork should not be shown on the portfolio");
+    check(await page.locator("[data-project-panel]").count() === 2,
+      "only Coast Internet Radio and Local Web Fix should remain");
+
+    for (const id of ["the-world-forgot-us", "french-for-life", "groundwork", "talk-with-jamie"]) {
+      check(await page.locator(`#project-${id}`).count() === 0,
+        `${id} should not be shown on the portfolio`);
+    }
+
     check(await page.locator(".project-stage-media").count() === 0,
       "project artwork should be removed from the portfolio");
     check((await page.locator(".projects-intro h2").textContent())?.trim() === "Selected public projects.",
       "projects heading was not updated");
-    check(await page.locator(".portrait-card .portrait").getAttribute("src") === "assets/jamie-parr-suit.jpg?v=20260917b",
-      "the suit portrait should use the cache-busted asset URL");
+    check((await page.locator(".portrait-card .portrait").getAttribute("src"))?.startsWith("data:image/jpeg;base64,"),
+      "the suit portrait should be embedded directly instead of relying on a cached asset");
+    check(await page.locator(".portrait-card .portrait").evaluate((element) => getComputedStyle(element).opacity === "1"),
+      "the suit portrait should be visible");
 
     for (const width of [320, 390, 768, 1280]) {
       await page.setViewportSize({ width, height: width < 500 ? 844 : 900 });
@@ -161,19 +167,21 @@ async function run() {
     });
     const fallbackPage = await noScript.newPage();
     await fallbackPage.goto(baseUrl, { waitUntil: "domcontentloaded" });
-    check(await fallbackPage.locator("[data-project-panel]:visible").count() === 5,
-      "the no-JavaScript page should show only the five public projects");
-    check(await fallbackPage.locator("#project-groundwork").evaluate((element) => getComputedStyle(element).display) === "none",
-      "Groundwork should stay hidden without JavaScript");
+    check(await fallbackPage.locator("[data-project-panel]:visible").count() === 2,
+      "the no-JavaScript page should show only Coast Internet Radio and Local Web Fix");
+    for (const id of ["the-world-forgot-us", "french-for-life", "groundwork", "talk-with-jamie"]) {
+      check(await fallbackPage.locator(`#project-${id}`).evaluate((element) => getComputedStyle(element).display) === "none",
+        `${id} should stay hidden without JavaScript`);
+    }
     check(await fallbackPage.locator(".project-stage-media").first().evaluate((element) => getComputedStyle(element).display) === "none",
       "project artwork should stay hidden without JavaScript");
-    check(await fallbackPage.locator(".portrait-card-horizontal").evaluate((element) => getComputedStyle(element, "::after").backgroundImage.includes("jamie-parr-suit.jpg")),
-      "the suit portrait fallback should be present without JavaScript");
+    check(await fallbackPage.locator(".portrait-card .portrait").evaluate((element) => getComputedStyle(element).content.includes("jamie-parr-suit.jpg")),
+      "the suit portrait CSS fallback should be present without JavaScript");
     await noScript.close();
 
     if (browserErrors.length) failures.push(...browserErrors);
     if (failures.length) throw new Error(failures.map((item) => `- ${item}`).join("\n"));
-    console.log("Portfolio browser smoke passed: public projects only, no project artwork, suit portrait and responsive layouts.");
+    console.log("Portfolio browser smoke passed: two public projects, no project artwork, suit portrait and responsive layouts.");
   } finally {
     if (browser) await browser.close();
     await new Promise((resolve) => server.close(resolve));
