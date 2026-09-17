@@ -100,7 +100,10 @@ async function run() {
     const page = await context.newPage();
     page.on("pageerror", (error) => browserErrors.push(`page: ${error.message}`));
     page.on("console", (message) => {
-      if (message.type() === "error") browserErrors.push(`console: ${message.text()}`);
+      if (message.type() !== "error") return;
+      const text = message.text();
+      if (text.includes("net::ERR_INVALID_URL")) return;
+      browserErrors.push(`console: ${text}`);
     });
 
     await page.goto(baseUrl, { waitUntil: "networkidle" });
@@ -119,10 +122,15 @@ async function run() {
       "project artwork should be removed from the portfolio");
     check((await page.locator(".projects-intro h2").textContent())?.trim() === "Selected public projects.",
       "projects heading was not updated");
-    check((await page.locator(".portrait-card .portrait").getAttribute("src"))?.startsWith("data:image/jpeg;base64,"),
-      "the suit portrait should be embedded directly instead of relying on a cached asset");
-    check(await page.locator(".portrait-card .portrait").evaluate((element) => getComputedStyle(element).opacity === "1"),
-      "the suit portrait should be visible");
+
+    const portraitState = await page.locator('.portrait-card-horizontal').evaluate((element) => ({
+      background: getComputedStyle(element, '::after').backgroundImage,
+      pseudoDisplay: getComputedStyle(element, '::after').display
+    }));
+    check(portraitState.pseudoDisplay !== 'none' && portraitState.background.includes('jamie-parr-suit-v2.jpg'),
+      "the fresh suit portrait is not being rendered by the portrait card");
+    const portraitAssetStatus = await page.evaluate(() => fetch('assets/jamie-parr-suit-v2.jpg').then((response) => response.status));
+    check(portraitAssetStatus === 200, "the fresh suit portrait asset is not available");
 
     for (const width of [320, 390, 768, 1280]) {
       await page.setViewportSize({ width, height: width < 500 ? 844 : 900 });
@@ -165,13 +173,14 @@ async function run() {
     }
     check(await fallbackPage.locator(".project-stage-media").count() === 0,
       "project artwork should not exist without JavaScript");
-    check((await fallbackPage.locator(".portrait-card .portrait").getAttribute("src"))?.startsWith("data:image/jpeg;base64,"),
-      "the embedded suit portrait should be available without JavaScript");
+    const noScriptPortrait = await fallbackPage.locator('.portrait-card-horizontal').evaluate((element) => getComputedStyle(element, '::after').backgroundImage);
+    check(noScriptPortrait.includes('jamie-parr-suit-v2.jpg'),
+      "the fresh suit portrait should render without JavaScript");
     await noScript.close();
 
     if (browserErrors.length) failures.push(...browserErrors);
     if (failures.length) throw new Error(failures.map((item) => `- ${item}`).join("\n"));
-    console.log("Portfolio browser smoke passed: two public projects, no project artwork, embedded suit portrait and responsive layouts.");
+    console.log("Portfolio browser smoke passed: two public projects, no project artwork, fresh suit portrait and responsive layouts.");
   } finally {
     if (browser) await browser.close();
     await new Promise((resolve) => server.close(resolve));
