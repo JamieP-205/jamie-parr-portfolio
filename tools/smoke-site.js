@@ -127,10 +127,10 @@ async function run() {
       background: getComputedStyle(element, '::after').backgroundImage,
       pseudoDisplay: getComputedStyle(element, '::after').display
     }));
-    check(portraitState.pseudoDisplay !== 'none' && portraitState.background.includes('jamie-parr-suit-v2.jpg'),
-      "the fresh suit portrait is not being rendered by the portrait card");
-    const portraitAssetStatus = await page.evaluate(() => fetch('assets/jamie-parr-suit-v2.jpg').then((response) => response.status));
-    check(portraitAssetStatus === 200, "the fresh suit portrait asset is not available");
+    check(portraitState.pseudoDisplay !== 'none' && portraitState.background.includes('jamie-parr-suit-final.jpg'),
+      "the final suit portrait is not being rendered by the portrait card");
+    const portraitAssetStatus = await page.evaluate(() => fetch('assets/jamie-parr-suit-final.jpg').then((response) => response.status));
+    check(portraitAssetStatus === 200, "the final suit portrait asset is not available");
 
     for (const width of [320, 390, 768, 1280]) {
       await page.setViewportSize({ width, height: width < 500 ? 844 : 900 });
@@ -174,13 +174,13 @@ async function run() {
     check(await fallbackPage.locator(".project-stage-media").count() === 0,
       "project artwork should not exist without JavaScript");
     const noScriptPortrait = await fallbackPage.locator('.portrait-card-horizontal').evaluate((element) => getComputedStyle(element, '::after').backgroundImage);
-    check(noScriptPortrait.includes('jamie-parr-suit-v2.jpg'),
-      "the fresh suit portrait should render without JavaScript");
+    check(noScriptPortrait.includes('jamie-parr-suit-final.jpg'),
+      "the final suit portrait should render without JavaScript");
     await noScript.close();
 
     if (browserErrors.length) failures.push(...browserErrors);
     if (failures.length) throw new Error(failures.map((item) => `- ${item}`).join("\n"));
-    console.log("Portfolio browser smoke passed: two public projects, no project artwork, fresh suit portrait and responsive layouts.");
+    console.log("Portfolio browser smoke passed: two public projects, no project artwork, final suit portrait and responsive layouts.");
   } finally {
     if (browser) await browser.close();
     await new Promise((resolve) => server.close(resolve));
