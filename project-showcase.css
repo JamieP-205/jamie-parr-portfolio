@@ -6,10 +6,10 @@ h2 { letter-spacing: -0.02em; }
 body { background-image: radial-gradient(circle at 14% 8%, color-mix(in srgb, var(--accent) 5%, transparent) 0, transparent 24rem), linear-gradient(180deg, color-mix(in srgb, var(--paper-deep) 28%, transparent), transparent 26rem); background-attachment: fixed; }
 .hero-grid-compact { gap: clamp(2.2rem, 6vw, 5rem); }
 .portrait-card-horizontal { position: relative; max-width: 22rem; padding: 0.7rem; background: color-mix(in srgb, var(--paper) 92%, var(--paper-deep)); border: 1px solid var(--line-strong); box-shadow: 0 18px 42px rgba(31,28,22,.10); }
-.portrait-card-horizontal::before { content:""; position:absolute; left:-1px; top:1.25rem; width:3px; height:4.5rem; background:var(--accent); z-index:2; }
-.portrait-card-horizontal::after { display:none !important; }
-.portrait-card-horizontal .portrait { aspect-ratio:1/1; object-fit:cover; object-position:center 30%; opacity:1 !important; }
-.portrait-card-horizontal .portrait-copy { padding:1rem .45rem .35rem; }
+.portrait-card-horizontal::before { content:""; position:absolute; left:-1px; top:1.25rem; width:3px; height:4.5rem; background:var(--accent); z-index:4; }
+.portrait-card-horizontal::after { content:""; position:absolute; top:.7rem; left:.7rem; right:.7rem; aspect-ratio:1/1; background:url("assets/jamie-parr-suit-v2.jpg") center 30% / cover no-repeat; pointer-events:none; z-index:3; }
+.portrait-card-horizontal .portrait { display:block; width:100%; aspect-ratio:1/1; object-fit:cover; object-position:center 30%; opacity:0 !important; }
+.portrait-card-horizontal .portrait-copy { position:relative; z-index:4; padding:1rem .45rem .35rem; }
 .eyebrow { display:flex; align-items:center; gap:.55rem; color:var(--muted); }
 .eyebrow::before { content:""; width:1.35rem; height:2px; background:var(--accent); flex:0 0 auto; }
 .project-index { display:none !important; }
