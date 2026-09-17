@@ -1,6 +1,14 @@
 (() => {
   const portrait = document.querySelector('.portrait-card .portrait');
-  if (portrait) portrait.src = 'assets/jamie-parr-suit.jpg';
+  if (portrait) {
+    portrait.src = 'assets/jamie-parr-suit.jpg?v=20260917b';
+    portrait.alt = 'Jamie Parr wearing a dark suit, white shirt, tie and sunglasses outdoors';
+  }
+
+  document.querySelector('[data-project-trigger="groundwork"]')?.remove();
+  document.querySelector('#project-groundwork')?.remove();
+  document.querySelector('#pal-groundwork')?.remove();
+  document.querySelectorAll('.project-stage-media').forEach((media) => media.remove());
 
   const intro = document.querySelector('.projects-intro');
   if (intro) {
@@ -8,18 +16,10 @@
     const heading = intro.querySelector('h2');
     const copy = intro.querySelector(':scope > p');
     if (label) label.textContent = 'Projects';
-    if (heading) heading.textContent = 'Selected projects, shown simply.';
-    if (copy) copy.textContent = 'A straightforward look at what I built, what each project does and the main tools behind it.';
+    if (heading) heading.textContent = 'Selected public projects.';
+    if (copy) copy.textContent = 'Only projects with public GitHub repositories are included here.';
   }
-  const replacements = {
-    'project-coast-internet-radio': 'assets/coast-home-top.jpg',
-    'project-talk-with-jamie': 'assets/talk-with-jamie-home.jpg',
-    'project-local-web-fix': 'assets/local-web-fix-home.jpg'
-  };
-  for (const [id, src] of Object.entries(replacements)) {
-    const image = document.querySelector(`#${id} .project-stage-media img`);
-    if (image) image.src = src;
-  }
+
   const stage = document.querySelector('.project-stage');
   if (stage) stage.removeAttribute('aria-live');
 })();
