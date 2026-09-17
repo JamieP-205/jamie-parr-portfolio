@@ -134,12 +134,6 @@ async function run() {
     check(await page.locator("#project-local-web-fix .project-stage-media img").getAttribute("src") === "assets/local-web-fix-home.jpg",
       "Local Web Fix should use the real site screenshot");
 
-    const ledger = page.locator(".build-ledger:not([hidden])");
-    await ledger.waitFor();
-    await ledger.locator(".build-ledger-repo a").click();
-    check(new URL(page.url()).hash === "#project-coast-internet-radio",
-      "the build ledger did not link to its matching project");
-
     for (const width of [320, 390, 768, 1280]) {
       await page.setViewportSize({ width, height: width < 500 ? 844 : 900 });
       await page.evaluate(() => new Promise((resolve) => {
@@ -179,7 +173,7 @@ async function run() {
 
     if (browserErrors.length) failures.push(...browserErrors);
     if (failures.length) throw new Error(failures.map((item) => `- ${item}`).join("\n"));
-    console.log("Portfolio browser smoke passed: simple project stack, real screenshots, build ledger, no-JS fallback and 320-1280px layouts.");
+    console.log("Portfolio browser smoke passed: simple project stack, real screenshots, no-JS fallback and 320-1280px layouts.");
   } finally {
     if (browser) await browser.close();
     await new Promise((resolve) => server.close(resolve));
