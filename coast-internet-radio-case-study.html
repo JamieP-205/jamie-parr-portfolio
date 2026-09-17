@@ -4,19 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Coast Internet Radio Case Study | Jamie Parr</title>
-  <meta name="description" content="Stakeholder collaboration case study for Coast Internet Radio: modernising a real station website, getting a plain HTTP radio stream to play on HTTPS, and building an owner-run admin area.">
+  <meta name="description" content="Case study for Jamie Parr's Coast Internet Radio redevelopment: live audio delivery, metadata, admin tools and a cleaner listener experience.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://jamie-parr-portfolio.netlify.app/coast-internet-radio-case-study.html">
   <meta property="og:title" content="Coast Internet Radio Case Study | Jamie Parr">
-  <meta property="og:description" content="Cloudflare Workers to get an HTTP stream onto an HTTPS site, a serverless admin area for the station owner, and analytics I wrote instead of installed.">
+  <meta property="og:description" content="How I rebuilt a live radio website around real listener and owner requirements.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://jamie-parr-portfolio.netlify.app/coast-internet-radio-case-study.html">
   <meta property="og:image" content="https://jamie-parr-portfolio.netlify.app/assets/coast-home-top.jpg">
-  <meta name="theme-color" content="#f7f5f0">
+  <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="project-showcase.css">
 </head>
-<body>
+<body class="case-page">
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="site-header">
@@ -39,7 +40,6 @@
         <a href="local-web-fix-case-study.html">Local Web Fix</a>
         <a href="index.html#contact">Contact</a>
         <div class="nav-controls" aria-label="Display options">
-          <button class="utility-button" type="button" data-palette-open aria-haspopup="dialog" aria-controls="palette">Menu <kbd>/</kbd></button>
           <button class="utility-button" type="button" data-theme-toggle aria-pressed="false">Dark</button>
           <button class="utility-button" type="button" data-text-toggle aria-pressed="false">Larger text</button>
           <button class="utility-button" type="button" data-motion-toggle aria-pressed="false">Less motion</button>
@@ -52,11 +52,11 @@
     <section class="hero section-pad case-hero">
       <div class="container narrow-page">
         <p class="eyebrow">Case study</p>
-        <h1>Coast Internet Radio Website Redevelopment</h1>
-          <p class="hero-text">A stakeholder-led redevelopment for a real radio station with real listeners. I worked with the owner to replace the older site with a modern listener experience, then solved the technical and operational constraints behind it.</p>
+        <h1>Coast Internet Radio</h1>
+        <p class="hero-text">A live redevelopment for a small Newry radio station. I worked directly with the owner on what listeners needed, then built the site and the technical pieces behind it.</p>
         <div class="inline-actions">
           <a class="button button-primary" href="https://coastinternetradio.com" target="_blank" rel="noopener noreferrer">View live site</a>
-          <a class="button button-secondary" href="index.html">Back to portfolio</a>
+          <a class="button button-secondary" href="index.html#projects">Back to projects</a>
         </div>
       </div>
     </section>
@@ -66,69 +66,37 @@
         <aside class="case-summary">
           <h2>At a glance</h2>
           <dl>
-            <div>
-              <dt>Project</dt>
-              <dd>Coast Internet Radio</dd>
-            </div>
-            <div>
-              <dt>Type</dt>
-              <dd>Live public website</dd>
-            </div>
-            <div>
-              <dt>Focus</dt>
-              <dd>Getting live audio to play over HTTPS, then the listener experience around it</dd>
-            </div>
-            <div>
-              <dt>Role</dt>
-              <dd>Sole developer and technical contact, working with the station owner on requirements, feedback and releases</dd>
-            </div>
-            <div id="coast-case-live-row" hidden>
-              <dt>Right now</dt>
-              <dd id="coast-case-live"></dd>
-            </div>
+            <div><dt>Type</dt><dd>Live public website</dd></div>
+            <div><dt>Role</dt><dd>Sole developer and technical contact</dd></div>
+            <div><dt>Focus</dt><dd>Streaming, metadata, admin and listener UX</dd></div>
+            <div><dt>Stack</dt><dd>HTML, CSS, JavaScript, Netlify and Cloudflare Workers</dd></div>
           </dl>
         </aside>
 
         <article class="case-content">
-          <h2>Overview</h2>
-          <p>Coast Internet Radio is a small station in Newry run by Jim Parr. It plays country and Irish country to real listeners every day. I worked with Jim to replace the older website with a more modern, mobile-friendly service while preserving the station's identity and giving him practical control over day-to-day content.</p>
-
-          <h2>How we collaborated</h2>
-          <p>Jim supplied the stakeholder view: what listeners ask for, which information changes, and what he needs to manage without calling a developer. I translated those needs into designs and technical options, explained constraints, released changes, and responded to feedback from the live service. I am the only developer in the repository, so this is stakeholder collaboration rather than shared-code collaboration.</p>
+          <h2>What I was solving</h2>
+          <p>The station needed a site that felt straightforward on both desktop and mobile, but the bigger problem sat underneath the layout. The audio stream and now-playing feed were served over plain HTTP while the website itself was HTTPS, so modern browsers blocked them as mixed content.</p>
+          <p>I put Cloudflare Workers in front of those sources and served them securely to the site. That gave the front end a stable HTTPS path for both the live stream and metadata.</p>
 
           <figure class="case-figure">
-            <img src="assets/coast-home-top.jpg" alt="Screenshot showing the upper part of the Coast Internet Radio homepage.">
-            <figcaption>The main live listening area on the Coast Internet Radio homepage.</figcaption>
+            <img src="assets/coast-home-top.jpg" alt="Coast Internet Radio homepage showing the main listener area.">
+            <figcaption>The live homepage after the redevelopment.</figcaption>
           </figure>
 
-          <h2>The problem nobody could see</h2>
-          <p>The obvious job was a site that worked properly on a phone. The real problem was underneath it. The station's audio stream and its now-playing feed are both served over plain HTTP, and the website is HTTPS. Browsers block that as mixed content, so the player simply does not play. No amount of layout work fixes it.</p>
+          <h2>What I built</h2>
+          <p>The listener side includes the stream player, now-playing information, recent tracks, show information and mobile-friendly controls. I also built an admin area so the station owner can update day-to-day content without changing code.</p>
+          <p>The admin side uses signed sessions, CSRF protection and rate limiting. Content and feedback are stored through Netlify services, while scheduled functions record play history.</p>
 
-          <p>So the first thing I built was not a page. Two Cloudflare Workers sit in front of the station's source and re-serve the stream and the metadata over HTTPS. The site only ever talks to the workers, never to the origin. That is the decision the whole project rests on.</p>
+          <h2>One useful failure</h2>
+          <p>While checking the live site I found that an inline script had changed without the matching Content Security Policy hash being updated. The result was subtle: saved display preferences could be blocked before the page rendered.</p>
+          <p>I fixed the hash, then added a build check that recalculates those hashes so the same mistake fails during validation instead of reaching the live site.</p>
 
-          <h2>The player</h2>
-          <p>The player polls the metadata worker every ten seconds for the current track, what is coming up and what has recently played. It uses the Media Session API, so the lock screen controls on a phone work like a real radio app instead of a browser tab. If the feed goes quiet the site shows a calm placeholder rather than an error, because a listener does not care whose fault it is.</p>
-
-          <h2>Giving Jim the keys</h2>
-          <p>Jim needed to change the homepage himself without asking me, so I built him an admin area on Netlify Functions. The password is hashed with scrypt. The session is a signed HttpOnly cookie, every write carries a CSRF token, requests are checked for same origin, and six failed logins locks the address out for fifteen minutes. Content, playlists and feedback live in Netlify Blobs, and a scheduled function records the play history every minute.</p>
-
-          <figure class="case-figure secondary-figure">
-            <img src="assets/coast-home-lower.jpg" alt="Screenshot showing the lower sections of the Coast Internet Radio homepage, including show times, about content, help information and support panel.">
-            <figcaption>Lower-page sections used for show information, help content and support links.</figcaption>
-          </figure>
-
-          <h2>Analytics I wrote instead of installed</h2>
-          <p>Jim wanted to know what listeners actually use. I did not want to hand a small station's audience to a third party to find out, so the analytics are first party. Event names and their fields are allowlisted, so anything unexpected is dropped rather than stored. Addresses are hashed and the raw IP is never written down. There is a consent banner, and choosing not to be counted is a real option rather than a dark pattern.</p>
-
-          <h2>What went wrong</h2>
-          <p>Checking the live site in a browser console, I found the page was quietly breaking its own security policy. The site allows its inline scripts by hash. I had edited the script that applies a saved theme before the first paint, which changed its hash, and the header had never been updated to match, so the browser was blocking it. Every returning listener using dark mode, larger text or high contrast was getting a flash of the wrong theme.</p>
-          <p>Adding the right hash was a one-line fix. That was not the interesting part. I wrote a check that recomputes the hash of every inline script and compares it to the header, and put it in the build, so the next time I edit one of those scripts the build fails instead of the listener finding out.</p>
-
-          <h2>What I would do next</h2>
-          <p>There are no end-to-end tests for the admin area yet, so I still click through it by hand before a deploy, which is exactly the kind of thing that gets skipped when you are tired. The analytics also aggregate on read, which is fine at this size and will stop being fine if the station grows.</p>
+          <h2>What I would improve next</h2>
+          <p>The next useful improvement would be stronger end-to-end coverage for the admin area. The core paths work, but some release checks still depend on manually clicking through the interface.</p>
 
           <div class="inline-actions">
-            <a class="button button-secondary" href="local-web-fix-case-study.html">Read Local Web Fix case study</a>
+            <a class="button button-primary" href="https://coastinternetradio.com" target="_blank" rel="noopener noreferrer">Open Coast Internet Radio</a>
+            <a class="button button-secondary" href="local-web-fix-case-study.html">Read Local Web Fix</a>
           </div>
         </article>
       </div>
@@ -139,42 +107,11 @@
     <div class="container footer-inner">
       <p>&copy; <span data-year></span> Jamie Parr.</p>
       <a href="index.html">Back to portfolio</a>
+      <button class="lava-toggle" type="button" data-lava-toggle aria-pressed="false">Lava lampe</button>
     </div>
   </footer>
 
-  <div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Quick navigation" hidden>
-    <div class="palette-box">
-      <label class="sr-only" for="palette-input">Type to filter destinations</label>
-      <input id="palette-input"
-             type="text"
-             role="combobox"
-             aria-expanded="true"
-             aria-controls="palette-list"
-             aria-activedescendant=""
-             placeholder="Where to? Try “projects” or “cv”"
-             autocomplete="off"
-             spellcheck="false">
-      <ul id="palette-list" role="listbox" aria-label="Destinations">
-        <li role="option" id="pal-home" data-keywords="home start front page" data-href="index.html">Home</li>
-        <li role="option" id="pal-about" data-keywords="about me early career" data-goto="#about">About</li>
-        <li role="option" id="pal-skills" data-keywords="skills technical workplace" data-goto="#skills">Skills</li>
-        <li role="option" id="pal-projects" data-keywords="projects work portfolio" data-goto="#projects">Projects</li>
-        <li role="option" id="pal-experience" data-keywords="experience jobs work history" data-goto="#experience">Experience</li>
-        <li role="option" id="pal-contact" data-keywords="contact email hire" data-goto="#contact">Contact</li>
-        <li role="option" id="pal-lwf" data-keywords="local web fix service site case study" data-href="local-web-fix-case-study.html">Case study: Local Web Fix</li>
-        <li role="option" id="pal-coast" data-keywords="coast internet radio case study live" data-href="coast-internet-radio-case-study.html">Case study: Coast Internet Radio</li>
-        <li role="option" id="pal-cv" data-keywords="cv resume download pdf" data-href="assets/jamie_parr_public_cv.pdf" data-download="true">Download CV</li>
-        <li role="option" id="pal-email" data-keywords="email contact message" data-href="mailto:jamieparr205@gmail.com">Email me</li>
-        <li role="option" id="pal-copy" data-keywords="copy email address clipboard" data-action="copy-email">Copy my email address</li>
-        <li role="option" id="pal-github" data-keywords="github code repos source" data-href="https://github.com/JamieP-205" data-external="true">GitHub profile</li>
-        <li role="option" id="pal-linkedin" data-keywords="linkedin profile network" data-href="https://www.linkedin.com/in/jamie-parr-577783292" data-external="true">LinkedIn</li>
-        <li role="option" id="pal-theme" data-keywords="theme dark light mode toggle" data-action="theme">Switch theme</li>
-        <li role="option" id="pal-text" data-keywords="text size larger accessibility" data-action="text">Toggle larger text</li>
-      </ul>
-      <p class="palette-hint" aria-hidden="true"><kbd>↑</kbd><kbd>↓</kbd> choose &nbsp;·&nbsp; <kbd>Enter</kbd> go &nbsp;·&nbsp; <kbd>Esc</kbd> close</p>
-    </div>
-  </div>
-
   <script src="script.js"></script>
+  <script src="enhancements.js"></script>
 </body>
 </html>
