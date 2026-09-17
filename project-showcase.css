@@ -7,17 +7,26 @@ body { background-image: radial-gradient(circle at 14% 8%, color-mix(in srgb, va
 .hero-grid-compact { gap: clamp(2.2rem, 6vw, 5rem); }
 .portrait-card-horizontal { position: relative; max-width: 22rem; padding: 0.7rem; background: color-mix(in srgb, var(--paper) 92%, var(--paper-deep)); border: 1px solid var(--line-strong); box-shadow: 0 18px 42px rgba(31,28,22,.10); }
 .portrait-card-horizontal::before { content:""; position:absolute; left:-1px; top:1.25rem; width:3px; height:4.5rem; background:var(--accent); z-index:2; }
-.portrait-card-horizontal::after { content:""; position:absolute; top:.7rem; left:.7rem; right:.7rem; aspect-ratio:1/1; background:url("assets/jamie-parr-suit.jpg?v=20260917b") center 30% / cover no-repeat; pointer-events:none; z-index:1; }
-.portrait-card-horizontal .portrait { aspect-ratio:1/1; object-fit:cover; object-position:center 30%; opacity:0; }
+.portrait-card-horizontal::after { display:none !important; }
+.portrait-card-horizontal .portrait { aspect-ratio:1/1; object-fit:cover; object-position:center 30%; opacity:1 !important; content:url("assets/jamie-parr-suit.jpg?v=20260917c"); }
 .portrait-card-horizontal .portrait-copy { padding:1rem .45rem .35rem; }
 .eyebrow { display:flex; align-items:center; gap:.55rem; color:var(--muted); }
 .eyebrow::before { content:""; width:1.35rem; height:2px; background:var(--accent); flex:0 0 auto; }
 .project-index { display:none !important; }
 .project-workbench { display:block; }
 .project-stage { display:grid; gap:0; }
+#project-the-world-forgot-us,
+#project-french-for-life,
 #project-groundwork,
+#project-talk-with-jamie,
+[data-project-trigger="the-world-forgot-us"],
+[data-project-trigger="french-for-life"],
 [data-project-trigger="groundwork"],
-#pal-groundwork { display:none !important; }
+[data-project-trigger="talk-with-jamie"],
+#pal-world,
+#pal-french,
+#pal-groundwork,
+#pal-talk { display:none !important; }
 .project-stage-panel { display:block !important; padding:clamp(2.8rem,7vw,5rem) 0; border-top:1px solid var(--line); }
 .project-stage-panel:first-child { border-top:2px solid var(--line-strong); }
 .project-stage-topline { display:none; }
