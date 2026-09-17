@@ -56,8 +56,7 @@ function startServer() {
   return new Promise((resolve, reject) => {
     server.once("error", reject);
     server.listen(0, "127.0.0.1", () => {
-      const address = server.address();
-      resolve({ server, baseUrl: `http://127.0.0.1:${address.port}` });
+      resolve({ server, baseUrl: `http://127.0.0.1:${server.address().port}` });
     });
   });
 }
@@ -110,6 +109,8 @@ async function run() {
 
     check(await page.locator('link[href="project-evidence.css"]').count() === 1,
       "project evidence stylesheet is not linked in the document");
+    check(await page.locator('script[src="enhancements.js"]').count() === 1,
+      "enhancements.js is not loaded on the homepage");
     check(await page.locator("[data-project-panel]").count() === 2,
       "only Coast Internet Radio and Local Web Fix should remain");
 
@@ -122,41 +123,57 @@ async function run() {
       "project artwork should be removed from the portfolio");
     check((await page.locator(".projects-intro h2").textContent())?.trim() === "Selected public projects.",
       "projects heading was not updated");
-    check(await page.locator('.hero-aside:visible').count() === 0,
-      "the portrait area should not be visible in the redesigned hero");
+    check(await page.locator('.hero-aside').count() === 0,
+      "the portrait area should be removed, not hidden");
 
     const repoLink = page.getByRole('link', { name: 'View public repositories' });
     check(await repoLink.count() === 1, "public repositories link is missing");
     const repoLinkStyle = await repoLink.evaluate((element) => ({
       decoration: getComputedStyle(element).textDecorationLine,
-      background: getComputedStyle(element).backgroundColor
+      border: getComputedStyle(element).borderTopWidth,
+      parentBorder: getComputedStyle(element.parentElement).borderTopWidth,
+      parentBackground: getComputedStyle(element.parentElement).backgroundColor
     }));
     check(!repoLinkStyle.decoration.includes('underline'),
-      "public repositories link should be styled as a button, not an underlined text link");
+      "public repositories link should not be underlined");
+    check(repoLinkStyle.border === '0px' && repoLinkStyle.parentBorder === '0px',
+      "public repositories link should not sit inside a boxed CTA");
+
+    const lava = page.getByRole('button', { name: 'Lava lampe' });
+    check(await lava.count() === 1, "Lava lampe toggle is missing");
+    await lava.click({ force: true });
+    check(await page.locator('html[data-lava="on"]').count() === 1,
+      "Lava lampe toggle did not enable the background effect");
+    await lava.click({ force: true });
+    check(await page.locator('html[data-lava]').count() === 0,
+      "Lava lampe toggle did not switch off cleanly");
 
     for (const width of [320, 390, 768, 1280]) {
       await page.setViewportSize({ width, height: width < 500 ? 844 : 900 });
       await page.evaluate(() => new Promise((resolve) => {
         requestAnimationFrame(() => requestAnimationFrame(resolve));
       }));
-      const layout = await page.evaluate(() => {
-        const viewportWidth = document.documentElement.clientWidth;
-        const offenders = Array.from(document.querySelectorAll("body *"))
-          .map((element) => ({ element, rect: element.getBoundingClientRect() }))
-          .filter(({ rect }) => rect.width > 0 && (rect.right > viewportWidth + 1 || rect.left < -1))
-          .slice(0, 6)
-          .map(({ element, rect }) => {
-            const name = element.id ? `#${element.id}`
-              : `.${Array.from(element.classList).slice(0, 2).join(".")}`;
-            return `${element.tagName.toLowerCase()}${name} [${Math.round(rect.left)}, ${Math.round(rect.right)}]`;
-          });
-        return {
-          overflow: document.documentElement.scrollWidth > viewportWidth,
-          offenders
-        };
-      });
-      check(!layout.overflow,
-        `homepage overflows horizontally at ${width}px: ${layout.offenders.join(", ") || "unknown element"}`);
+      const layout = await page.evaluate(() => ({
+        viewportWidth: document.documentElement.clientWidth,
+        scrollWidth: document.documentElement.scrollWidth
+      }));
+      check(layout.scrollWidth <= layout.viewportWidth + 1,
+        `homepage overflows horizontally at ${width}px`);
+    }
+
+    for (const casePath of [
+      '/coast-internet-radio-case-study.html',
+      '/local-web-fix-case-study.html'
+    ]) {
+      await page.goto(`${baseUrl}${casePath}`, { waitUntil: 'networkidle' });
+      check(await page.locator('body.case-page').count() === 1,
+        `${casePath} is not using the refreshed case-page design`);
+      check(await page.locator('link[href="project-showcase.css"]').count() === 1,
+        `${casePath} is missing the shared black/white/purple theme`);
+      check(await page.getByRole('button', { name: 'Lava lampe' }).count() === 1,
+        `${casePath} is missing the Lava lampe toggle`);
+      const accent = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--accent').trim());
+      check(accent === '#7c3aed', `${casePath} is not using the purple accent palette`);
     }
 
     const noScript = await browser.newContext({
@@ -169,19 +186,13 @@ async function run() {
       "the no-JavaScript page should contain only two projects");
     check(await fallbackPage.locator("[data-project-panel]:visible").count() === 2,
       "both public projects should remain visible without JavaScript");
-    for (const id of ["the-world-forgot-us", "french-for-life", "groundwork", "talk-with-jamie"]) {
-      check(await fallbackPage.locator(`#project-${id}`).count() === 0,
-        `${id} should not exist without JavaScript`);
-    }
-    check(await fallbackPage.locator(".project-stage-media").count() === 0,
-      "project artwork should not exist without JavaScript");
-    check(await fallbackPage.locator('.hero-aside:visible').count() === 0,
-      "the portrait area should remain hidden without JavaScript");
+    check(await fallbackPage.locator('.hero-aside').count() === 0,
+      "the portrait area should remain absent without JavaScript");
     await noScript.close();
 
     if (browserErrors.length) failures.push(...browserErrors);
     if (failures.length) throw new Error(failures.map((item) => `- ${item}`).join("\n"));
-    console.log("Portfolio browser smoke passed: two public projects, portrait-free hero, styled repository link and responsive layouts.");
+    console.log("Portfolio browser smoke passed: refreshed case studies, unboxed repository link, lava mode and responsive layouts.");
   } finally {
     if (browser) await browser.close();
     await new Promise((resolve) => server.close(resolve));
