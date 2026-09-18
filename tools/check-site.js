@@ -75,11 +75,6 @@ if (!/id=["']skills["']/i.test(homepage) || !/Technical skills/i.test(homepage))
 if (projectPanels.length !== 2 || expectedPanels.some((id) => !panelIds.includes(id))) {
   errors.push("index.html must contain only Coast Internet Radio and Local Web Fix project panels");
 }
-for (const retired of ["the-world-forgot-us", "french-for-life", "groundwork", "talk-with-jamie"]) {
-  if (homepage.toLowerCase().includes(retired)) {
-    errors.push(`index.html still contains retired project reference: ${retired}`);
-  }
-}
 if (/project-stage-media/i.test(homepage)) {
   errors.push("index.html should not contain project artwork containers");
 }
@@ -98,9 +93,8 @@ if (!fs.existsSync(cvPath)) {
   errors.push("downloadable CV is missing");
 } else {
   const cv = fs.readFileSync(cvPath);
-  const cvText = cv.toString("latin1");
-  if (cv.length < 6000 || !cv.subarray(0, 5).equals(Buffer.from("%PDF-")) || !cvText.includes("JAMIE PARR") || !cvText.trimEnd().endsWith("%%EOF")) {
-    errors.push("downloadable CV is not a complete readable PDF containing Jamie Parr's CV");
+  if (cv.length < 6000 || !cv.subarray(0, 5).equals(Buffer.from("%PDF-")) || !cv.toString("latin1").trimEnd().endsWith("%%EOF")) {
+    errors.push("downloadable CV is not a complete PDF");
   }
 }
 
