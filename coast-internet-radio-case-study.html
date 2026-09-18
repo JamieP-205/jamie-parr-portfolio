@@ -11,11 +11,12 @@
   <meta property="og:description" content="How I rebuilt a live radio website around real listener and owner requirements.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://jamie-parr-portfolio.netlify.app/coast-internet-radio-case-study.html">
-  <meta property="og:image" content="https://jamie-parr-portfolio.netlify.app/assets/coast-home-top.jpg">
+  <meta property="og:image" content="https://jamie-parr-portfolio.netlify.app/assets/og-card.png">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="project-showcase.css">
+  <link rel="stylesheet" href="lava-tune.css">
 </head>
 <body class="case-page">
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -53,7 +54,7 @@
       <div class="container narrow-page">
         <p class="eyebrow">Case study</p>
         <h1>Coast Internet Radio</h1>
-        <p class="hero-text">A live redevelopment for a small Newry radio station. I worked directly with the owner on what listeners needed, then built the site and the technical pieces behind it.</p>
+        <p class="hero-text">A live redevelopment for a small Newry radio station. I worked directly with the owner on what listeners needed, then built and maintained the public site and the technical pieces behind it.</p>
         <div class="inline-actions">
           <a class="button button-primary" href="https://coastinternetradio.com" target="_blank" rel="noopener noreferrer">View live site</a>
           <a class="button button-secondary" href="index.html#projects">Back to projects</a>
@@ -68,34 +69,34 @@
           <dl>
             <div><dt>Type</dt><dd>Live public website</dd></div>
             <div><dt>Role</dt><dd>Sole developer and technical contact</dd></div>
-            <div><dt>Focus</dt><dd>Streaming, metadata, admin and listener UX</dd></div>
+            <div><dt>Focus</dt><dd>Streaming, metadata, admin tools and listener UX</dd></div>
             <div><dt>Stack</dt><dd>HTML, CSS, JavaScript, Netlify and Cloudflare Workers</dd></div>
           </dl>
         </aside>
 
         <article class="case-content">
           <h2>What I was solving</h2>
-          <p>The station needed a site that felt straightforward on both desktop and mobile, but the bigger problem sat underneath the layout. The audio stream and now-playing feed were served over plain HTTP while the website itself was HTTPS, so modern browsers blocked them as mixed content.</p>
-          <p>I put Cloudflare Workers in front of those sources and served them securely to the site. That gave the front end a stable HTTPS path for both the live stream and metadata.</p>
-
-          <figure class="case-figure">
-            <img src="assets/coast-home-top.jpg" alt="Coast Internet Radio homepage showing the main listener area.">
-            <figcaption>The live homepage after the redevelopment.</figcaption>
-          </figure>
+          <p>The station's audio stream and now-playing source are served over HTTP while the website is HTTPS. Browsers block that mixed content, so the player could not simply point at the original sources.</p>
+          <p>I put two Cloudflare Workers in front of them: one for the audio stream and one for metadata. The website can then use HTTPS for both.</p>
 
           <h2>What I built</h2>
-          <p>The listener side includes the stream player, now-playing information, recent tracks, show information and mobile-friendly controls. I also built an admin area so the station owner can update day-to-day content without changing code.</p>
-          <p>The admin side uses signed sessions, CSRF protection and rate limiting. Content and feedback are stored through Netlify services, while scheduled functions record play history.</p>
+          <p>The public site has the live player, now playing, coming up, recent tracks, show information, listening options and display preferences. The player also uses the Media Session API so phone media controls behave more like a normal radio app.</p>
+          <p>I also built an admin area so the station owner can change day-to-day content, review feedback, view analytics and inspect play history without editing the site files.</p>
+
+          <h2>Admin and security</h2>
+          <p>The admin functions run on Netlify. Sessions are signed and stored in an HttpOnly, Secure, SameSite=Strict cookie. Passwords are checked using scrypt hashes, writes require a CSRF token and same-origin check, and six failed logins trigger a fifteen-minute block for that address.</p>
+          <p>Site content, rate-limit data and other server-side records use Netlify Blobs. The analytics are first party and the implementation does not store raw IP addresses.</p>
 
           <h2>One useful failure</h2>
-          <p>While checking the live site I found that an inline script had changed without the matching Content Security Policy hash being updated. The result was subtle: saved display preferences could be blocked before the page rendered.</p>
-          <p>I fixed the hash, then added a build check that recalculates those hashes so the same mistake fails during validation instead of reaching the live site.</p>
+          <p>While checking the live site I found that an inline script had changed without the matching Content Security Policy hash being updated. Saved display preferences could therefore be blocked before the page rendered.</p>
+          <p>I fixed the hash and added a build check that recalculates the inline-script hashes, so the same mismatch now fails validation instead of quietly reaching the live site.</p>
 
           <h2>What I would improve next</h2>
-          <p>The next useful improvement would be stronger end-to-end coverage for the admin area. The core paths work, but some release checks still depend on manually clicking through the interface.</p>
+          <p>The main gap is end-to-end coverage for the admin area. The repository has focused automated checks, but some admin release checks still depend on me clicking through the interface manually.</p>
 
           <div class="inline-actions">
             <a class="button button-primary" href="https://coastinternetradio.com" target="_blank" rel="noopener noreferrer">Open Coast Internet Radio</a>
+            <a class="button button-secondary" href="https://github.com/JamieP-205/coast-internet-radio" target="_blank" rel="noopener noreferrer">View source</a>
             <a class="button button-secondary" href="local-web-fix-case-study.html">Read Local Web Fix</a>
           </div>
         </article>
