@@ -6,8 +6,8 @@ const { chromium } = require('playwright');
 const outDir = path.join(process.cwd(), 'tmp', 'live-project-screenshots');
 fs.mkdirSync(outDir, { recursive: true });
 
-async function settle(page) {
-  await page.waitForTimeout(1800);
+async function settle(page, ms = 1200) {
+  await page.waitForTimeout(ms);
   await page.evaluate(() => new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve))));
 }
 
@@ -18,11 +18,12 @@ async function captureViewport(page, selector, filename) {
   await page.evaluate((sel) => {
     const el = document.querySelector(sel);
     if (!el) return;
-    const top = el.getBoundingClientRect().top + window.scrollY;
-    const desired = Math.max(0, top - Math.max(90, (window.innerHeight - Math.min(el.getBoundingClientRect().height, window.innerHeight)) / 2));
+    const rect = el.getBoundingClientRect();
+    const top = rect.top + window.scrollY;
+    const desired = Math.max(0, top - Math.max(88, (window.innerHeight - Math.min(rect.height, window.innerHeight)) / 2));
     window.scrollTo({ top: desired, behavior: 'instant' });
   }, selector);
-  await settle(page);
+  await settle(page, 450);
   await page.screenshot({ path: path.join(outDir, filename), fullPage: false });
 }
 
@@ -34,6 +35,13 @@ async function captureCoast(browser) {
   const page = await context.newPage();
   await page.goto('https://coastinternetradio.com/', { waitUntil: 'domcontentloaded', timeout: 45000 });
   await settle(page);
+
+  const anonymous = page.getByRole('button', { name: /just anonymous/i });
+  if (await anonymous.count()) {
+    await anonymous.first().click({ timeout: 5000 }).catch(() => {});
+    await settle(page, 350);
+  }
+
   await captureViewport(page, '#listen', 'coast-listen.png');
   await captureViewport(page, '#schedule', 'coast-schedule.png');
   await captureViewport(page, '#about', 'coast-about.png');
