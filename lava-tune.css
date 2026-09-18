@@ -1,0 +1,13 @@
+/* Small adjustment to the optional Lava lampe background. */
+body::before,
+body::after {
+  filter: blur(64px);
+}
+
+html[data-lava="on"] body::before {
+  animation-duration: 16s;
+}
+
+html[data-lava="on"] body::after {
+  animation-duration: 19.5s;
+}
