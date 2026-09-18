@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Local Web Fix Case Study | Jamie Parr</title>
-  <meta name="description" content="Case study for Jamie Parr's Local Web Fix project: a small service website for practical local-business website fixes.">
+  <meta name="description" content="Case study for Jamie Parr's Local Web Fix portfolio concept: a published mock business website focused on clear scope, pricing, forms and trust.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://jamie-parr-portfolio.netlify.app/local-web-fix-case-study.html">
   <meta property="og:title" content="Local Web Fix Case Study | Jamie Parr">
-  <meta property="og:description" content="How I planned, built and published Local Web Fix as a small, practical service website.">
+  <meta property="og:description" content="How I designed and built a realistic local-business service website as a portfolio concept.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://jamie-parr-portfolio.netlify.app/local-web-fix-case-study.html">
   <meta property="og:image" content="https://jamie-parr-portfolio.netlify.app/assets/og-card.png">
@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="project-showcase.css">
   <link rel="stylesheet" href="lava-tune.css">
+  <link rel="stylesheet" href="placement-refresh.css">
 </head>
 <body class="case-page">
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -54,9 +55,10 @@
       <div class="container narrow-page">
         <p class="eyebrow">Case study</p>
         <h1>Local Web Fix</h1>
-        <p class="hero-text">A small service website I built around a simple idea: help local businesses fix practical website and online-information problems without pretending every job needs a full redesign.</p>
+        <p class="hero-text">A published portfolio concept for a small local-business web service. I built it to practise turning a simple business idea into a believable customer journey without presenting it as real client work.</p>
+        <p class="concept-note">This is a concept project, not a service I am currently operating or taking bookings for.</p>
         <div class="inline-actions">
-          <a class="button button-primary" href="https://localwebfix.co.uk" target="_blank" rel="noopener noreferrer">View live site</a>
+          <a class="button button-primary" href="https://localwebfix.co.uk" target="_blank" rel="noopener noreferrer">View concept site</a>
           <a class="button button-secondary" href="index.html#projects">Back to projects</a>
         </div>
       </div>
@@ -67,7 +69,7 @@
         <aside class="case-summary">
           <h2>At a glance</h2>
           <dl>
-            <div><dt>Type</dt><dd>Personal service website</dd></div>
+            <div><dt>Type</dt><dd>Portfolio business concept</dd></div>
             <div><dt>Role</dt><dd>Planning, writing, design, build and deployment</dd></div>
             <div><dt>Focus</dt><dd>Mobile usability, clear scope, forms and trust</dd></div>
             <div><dt>Stack</dt><dd>HTML, CSS, JavaScript and Netlify</dd></div>
@@ -76,26 +78,50 @@
 
         <article class="case-content">
           <h2>Why I built it</h2>
-          <p>Small business websites often have ordinary problems that still get in a customer's way: opening hours are inconsistent, a menu is hard to find, a phone link is awkward on mobile or an old booking link is still public.</p>
-          <p>I built Local Web Fix around those smaller jobs and made the limits clear instead of presenting it as a full agency service.</p>
+          <p>I wanted to practise designing a small-business website around an offer that was deliberately narrow rather than inventing another generic software dashboard. The idea was a service that checks ordinary customer-facing problems such as inconsistent opening hours, hard-to-find menus, awkward phone links and outdated booking links.</p>
+          <p>The point of the project is the product thinking around the website: what the offer is, what it is not, how pricing is explained and how someone gets from the homepage to an enquiry without unnecessary steps.</p>
 
-          <h2>What the site actually does</h2>
-          <p>The first step is a free check using public links only. The site then explains fixed £50, £100 and £150 options for small agreed pieces of work. It also says what is outside the scope and tells clients not to send passwords.</p>
-          <p>The enquiry flow uses Netlify Forms. The payment page is deliberately unlisted and marked noindex, because it is only meant to be sent after a scope has been agreed.</p>
+          <div class="case-gallery" data-case-gallery tabindex="0" aria-label="Local Web Fix screenshots">
+            <div class="case-gallery-head">
+              <strong>Published concept</strong>
+              <p>Captured from the public demo site.</p>
+            </div>
+            <figure class="case-slide" data-case-slide>
+              <img src="assets/project-shots/local-web-fix-hero.png" alt="Local Web Fix homepage showing the service concept and quick-check summary." loading="lazy">
+              <figcaption>The homepage leads with the problem being solved, the limits of the offer and a short path to the next step.</figcaption>
+            </figure>
+            <figure class="case-slide" data-case-slide hidden>
+              <img src="assets/project-shots/local-web-fix-pricing.png" alt="Local Web Fix example pricing section with four clearly scoped options." loading="lazy">
+              <figcaption>The pricing section was an exercise in making scope visible instead of hiding everything behind a quote form.</figcaption>
+            </figure>
+            <figure class="case-slide" data-case-slide hidden>
+              <img src="assets/project-shots/local-web-fix-access.png" alt="Local Web Fix process, access and safety guidance." loading="lazy">
+              <figcaption>The concept also includes explicit access and safety rules, including not asking people to send passwords.</figcaption>
+            </figure>
+            <div class="case-gallery-controls">
+              <button type="button" data-gallery-prev aria-label="Previous screenshot">Previous</button>
+              <span class="case-gallery-status" data-gallery-status aria-live="polite">1 / 3</span>
+              <button type="button" data-gallery-next aria-label="Next screenshot">Next</button>
+            </div>
+          </div>
+
+          <h2>What the concept includes</h2>
+          <p>The site lays out a free public-link check, example fixed-price packages, an enquiry flow, scope limits and guidance about safe access. Those pieces make the mock business feel complete enough to test as a website without pretending that I have completed client jobs through it.</p>
+          <p>The enquiry form uses Netlify Forms and the repository includes a deliberately unlisted payment page to model what a later stage in the customer flow could look like.</p>
 
           <h2>What the code actually is</h2>
-          <p>The site is deliberately simple: static HTML and CSS with a small JavaScript theme toggle stored in localStorage. There is no application framework or unnecessary backend.</p>
-          <p>The repository includes checks for required pages, local links and the Netlify form setup so a small markup mistake is less likely to break the enquiry path unnoticed.</p>
+          <p>The implementation is deliberately simple: static HTML and CSS with a small JavaScript theme toggle stored in localStorage. There is no application framework or unnecessary backend.</p>
+          <p>The repository includes checks for required pages, local links and the Netlify form setup so a small markup mistake is less likely to break the main flow unnoticed.</p>
 
           <h2>What I learned from it</h2>
           <p>The harder part was deciding what to say and what not to promise. Pricing, access rules and scope have to make sense to somebody who does not care what technology the site uses.</p>
-          <p>It also pushed me to leave the implementation small. Adding more features would not automatically make the service clearer or more useful.</p>
+          <p>It also pushed me to leave the implementation small. Adding more features would not automatically make the concept clearer or more convincing.</p>
 
           <h2>What I would improve next</h2>
-          <p>The biggest gap is evidence from real jobs. The example check is clearly labelled fictional, so the next useful addition is a real before-and-after report once a client is happy for me to publish one.</p>
+          <p>If I take the concept further, I would test it with a few real small-business owners and simplify any wording or steps they found unclear. That would be more useful than pretending the site already has client results.</p>
 
           <div class="inline-actions">
-            <a class="button button-primary" href="https://localwebfix.co.uk" target="_blank" rel="noopener noreferrer">Open Local Web Fix</a>
+            <a class="button button-primary" href="https://localwebfix.co.uk" target="_blank" rel="noopener noreferrer">Open concept site</a>
             <a class="button button-secondary" href="https://github.com/JamieP-205/local-web-fix" target="_blank" rel="noopener noreferrer">View source</a>
             <a class="button button-secondary" href="coast-internet-radio-case-study.html">Read Coast Internet Radio</a>
           </div>
@@ -114,5 +140,6 @@
 
   <script src="script.js"></script>
   <script src="enhancements.js"></script>
+  <script src="case-gallery.js"></script>
 </body>
 </html>
