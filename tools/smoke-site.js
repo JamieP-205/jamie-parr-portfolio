@@ -114,11 +114,6 @@ async function run() {
     check(await page.locator("[data-project-panel]").count() === 2,
       "only Coast Internet Radio and Local Web Fix should remain");
 
-    for (const id of ["the-world-forgot-us", "french-for-life", "groundwork", "talk-with-jamie"]) {
-      check(await page.locator(`#project-${id}`).count() === 0,
-        `${id} should not be present on the portfolio`);
-    }
-
     check(await page.locator(".project-stage-media").count() === 0,
       "project artwork should be removed from the portfolio");
     check((await page.locator(".projects-intro h2").textContent())?.trim() === "Selected public projects.",

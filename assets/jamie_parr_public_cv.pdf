@@ -1,109 +1,138 @@
 %PDF-1.4
-%
+%“Œ‹ž ReportLab Generated PDF document (opensource)
 1 0 obj
-<< /F1 2 0 R /F2 3 0 R >>
+<<
+/F1 2 0 R /F2 3 0 R
+>>
 endobj
 2 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
 endobj
 3 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
 endobj
 4 0 obj
-<< /Length 6744 >>
-stream
-0.060 g BT /F2 22.00 Tf 1 0 0 1 40.00 800.00 Tm (JAMIE PARR) Tj ET
-0.270 g BT /F2 11.00 Tf 1 0 0 1 40.00 777.00 Tm (Computing Technologies Student | Seeking 2027/28 Technology Placement) Tj ET
-0.270 g BT /F1 8.40 Tf 1 0 0 1 40.00 760.00 Tm (Belfast, Northern Ireland | Full UK driving licence | jamieparr205@gmail.com | linkedin.com/in/jamie-parr-tech) Tj ET
-0.070 g BT /F2 10.70 Tf 1 0 0 1 40.00 744.00 Tm (PROFILE) Tj ET
-0.720 G 0.50 w 40.00 739.00 m 555.28 739.00 l S
-0.070 g BT /F1 8.65 Tf 1 0 0 1 40.00 729.00 Tm (Second-year BSc \(Hons\) Computing Technologies student at Ulster University seeking a 2027/28 industrial placement. Practical) Tj ET
-0.070 g BT /F1 8.65 Tf 1 0 0 1 40.00 718.75 Tm (experience across programming, databases, web development, operating systems and troubleshooting, supported by nearly five years) Tj ET
-0.070 g BT /F1 8.65 Tf 1 0 0 1 40.00 708.50 Tm (of continuous employment in warehouse and production environments. Comfortable learning unfamiliar software, diagnosing routine) Tj ET
-0.070 g BT /F1 8.65 Tf 1 0 0 1 40.00 698.25 Tm (technical issues, documenting work and contributing within fast-paced teams. Interested in software development, IT support and) Tj ET
-0.070 g BT /F1 8.65 Tf 1 0 0 1 40.00 688.00 Tm (infrastructure, QA/testing, cloud and technical analyst roles.) Tj ET
-0.070 g BT /F2 10.70 Tf 1 0 0 1 40.00 676.75 Tm (TECHNICAL SKILLS) Tj ET
-0.720 G 0.50 w 40.00 671.75 m 555.28 671.75 l S
-0.070 g BT /F2 8.80 Tf 1 0 0 1 40.00 661.75 Tm (Programming & web:) Tj ET
-0.070 g BT /F1 8.80 Tf 1 0 0 1 130.95 661.75 Tm (Python, SQL, HTML/CSS, JavaScript/TypeScript, Next.js.) Tj ET
-0.070 g BT /F2 8.80 Tf 1 0 0 1 40.00 650.95 Tm (Development:) Tj ET
-0.070 g BT /F1 8.80 Tf 1 0 0 1 100.63 650.95 Tm (Git/GitHub, REST APIs and JSON, relational databases, authentication/validation, testing, debugging and) Tj ET
-0.070 g BT /F1 8.80 Tf 1 0 0 1 40.00 640.45 Tm (documentation.) Tj ET
-0.070 g BT /F2 8.80 Tf 1 0 0 1 40.00 629.65 Tm (Systems & support:) Tj ET
-0.070 g BT /F1 8.80 Tf 1 0 0 1 125.57 629.65 Tm (Windows 11, Linux, PowerShell, VirtualBox, basic IP/DNS networking and general technical troubleshooting.) Tj ET
-0.070 g BT /F2 10.70 Tf 1 0 0 1 40.00 619.15 Tm (ACADEMIC & TECHNICAL EXPERIENCE) Tj ET
-0.720 G 0.50 w 40.00 614.15 m 555.28 614.15 l S
-0.070 g BT /F2 8.15 Tf 1 0 0 1 45.00 604.15 Tm (-) Tj ET
-0.070 g BT /F1 8.15 Tf 1 0 0 1 56.00 604.15 Tm (Built and deployed database-backed web applications, using authentication, validation, responsive interfaces, testing and structured) Tj ET
-0.070 g BT /F1 8.15 Tf 1 0 0 1 56.00 594.60 Tm (debugging.) Tj ET
-0.070 g BT /F2 8.15 Tf 1 0 0 1 45.00 584.95 Tm (-) Tj ET
-0.070 g BT /F1 8.15 Tf 1 0 0 1 56.00 584.95 Tm (Applied Python, SQL and object-oriented programming to coursework involving relational data modelling, queries, APIs/JSON and) Tj ET
-0.070 g BT /F1 8.15 Tf 1 0 0 1 56.00 575.40 Tm (server-side concepts.) Tj ET
-0.070 g BT /F2 8.15 Tf 1 0 0 1 45.00 565.75 Tm (-) Tj ET
-0.070 g BT /F1 8.15 Tf 1 0 0 1 56.00 565.75 Tm (Used Git-based workflows, Linux virtual machines and Windows development tooling to configure environments, troubleshoot problems) Tj ET
-0.070 g BT /F1 8.15 Tf 1 0 0 1 56.00 556.20 Tm (and document solutions.) Tj ET
-0.070 g BT /F2 8.15 Tf 1 0 0 1 45.00 546.55 Tm (-) Tj ET
-0.070 g BT /F1 8.15 Tf 1 0 0 1 56.00 546.55 Tm (Maintained and updated a live radio website for a real stakeholder, testing changes and resolving unfamiliar technical issues.) Tj ET
-0.070 g BT /F2 10.70 Tf 1 0 0 1 40.00 537.90 Tm (WORK EXPERIENCE) Tj ET
-0.720 G 0.50 w 40.00 532.90 m 555.28 532.90 l S
-0.070 g BT /F2 8.45 Tf 1 0 0 1 40.00 522.90 Tm (Temporary Production Operative) Tj ET
-0.070 g BT /F1 8.45 Tf 1 0 0 1 173.95 522.90 Tm (- Saica Pack UK, Warrenpoint | Jun 2026 - Aug 2026) Tj ET
-0.070 g BT /F2 7.90 Tf 1 0 0 1 45.00 513.40 Tm (-) Tj ET
-0.070 g BT /F1 7.90 Tf 1 0 0 1 56.00 513.40 Tm (Operated and monitored automated corrugated-packaging machinery, completed output quality checks and responded promptly to production) Tj ET
-0.070 g BT /F1 7.90 Tf 1 0 0 1 56.00 504.40 Tm (stoppages.) Tj ET
-0.070 g BT /F2 7.90 Tf 1 0 0 1 45.00 495.40 Tm (-) Tj ET
-0.070 g BT /F1 7.90 Tf 1 0 0 1 56.00 495.40 Tm (Diagnosed and safely resolved routine equipment faults, followed site quality and safety procedures and escalated maintenance-critical) Tj ET
-0.070 g BT /F1 7.90 Tf 1 0 0 1 56.00 486.40 Tm (issues.) Tj ET
-0.070 g BT /F2 8.45 Tf 1 0 0 1 40.00 476.90 Tm (Warehouse Operative) Tj ET
-0.070 g BT /F1 8.45 Tf 1 0 0 1 128.87 476.90 Tm (- Pet Connection, Newry | Oct 2021 - Jul 2026) Tj ET
-0.070 g BT /F2 7.90 Tf 1 0 0 1 45.00 467.40 Tm (-) Tj ET
-0.070 g BT /F1 7.90 Tf 1 0 0 1 56.00 467.40 Tm (Picked and prepared customer and fulfilment orders accurately; organised, replenished and rotated stock; supported dispatch and inventory) Tj ET
-0.070 g BT /F1 7.90 Tf 1 0 0 1 56.00 458.40 Tm (accuracy.) Tj ET
-0.070 g BT /F2 7.90 Tf 1 0 0 1 45.00 449.40 Tm (-) Tj ET
-0.070 g BT /F1 7.90 Tf 1 0 0 1 56.00 449.40 Tm (Maintained dependable attendance and safe working standards while balancing long-term employment with college and university study.) Tj ET
-0.070 g BT /F2 8.45 Tf 1 0 0 1 40.00 439.90 Tm (Kitchen Porter) Tj ET
-0.070 g BT /F1 8.45 Tf 1 0 0 1 100.22 439.90 Tm (- The Garden Room, Warrenpoint | Aug 2024 - Jul 2026) Tj ET
-0.070 g BT /F2 7.90 Tf 1 0 0 1 45.00 430.40 Tm (-) Tj ET
-0.070 g BT /F1 7.90 Tf 1 0 0 1 56.00 430.40 Tm (Supported busy teams, maintained hygiene standards, assisted with stock rotation and adapted quickly to changing priorities.) Tj ET
-0.270 g BT /F2 8.25 Tf 1 0 0 1 40.00 420.90 Tm (Earlier experience:) Tj ET
-0.270 g BT /F1 8.25 Tf 1 0 0 1 116.12 420.90 Tm (Floor Staff, No.7 Duke, Warrenpoint | Jun 2022 - Sep 2022) Tj ET
-0.070 g BT /F2 10.70 Tf 1 0 0 1 40.00 408.90 Tm (EDUCATION & CERTIFICATION) Tj ET
-0.720 G 0.50 w 40.00 403.90 m 555.28 403.90 l S
-0.070 g BT /F2 8.40 Tf 1 0 0 1 40.00 393.90 Tm (BSc \(Hons\) Computing Technologies) Tj ET
-0.070 g BT /F1 8.40 Tf 1 0 0 1 192.41 393.90 Tm (- Ulster University, Belfast | 2025 - 2029 expected) Tj ET
-0.070 g BT /F1 8.15 Tf 1 0 0 1 40.00 384.50 Tm (Year 2. Relevant study includes programming, databases, web development, object-oriented programming, networking and professional) Tj ET
-0.070 g BT /F1 8.15 Tf 1 0 0 1 40.00 375.30 Tm (placement preparation.) Tj ET
-0.070 g BT /F2 8.40 Tf 1 0 0 1 40.00 366.10 Tm (Level 3 Extended Diploma in Technology) Tj ET
-0.070 g BT /F1 8.40 Tf 1 0 0 1 207.38 366.10 Tm (- Southern Regional College | 2022 - 2024 | D*DD) Tj ET
-0.070 g BT /F2 8.40 Tf 1 0 0 1 40.00 356.70 Tm (Information Technology Specialist in HTML and CSS) Tj ET
-0.070 g BT /F1 8.40 Tf 1 0 0 1 253.57 356.70 Tm (- Certiport / Pearson VUE | 2023) Tj ET
-endstream
+<<
+/A <<
+/S /URI /Type /Action /URI (mailto:jamieparr205@gmail.com)
+>> /Border [ 0 0 0 ] /Rect [ 233.2066 747.302 331.2982 757.622 ] /Subtype /Link /Type /Annot
+>>
 endobj
 5 0 obj
-<< /Type /Page /Parent 6 0 R /MediaBox [0 0 595.276 841.89] /Resources << /Font 1 0 R >> /Contents 4 0 R >>
+<<
+/A <<
+/S /URI /Type /Action /URI (https://jamie-parr-portfolio.netlify.app/)
+>> /Border [ 0 0 0 ] /Rect [ 347.879 747.302 379.4238 757.622 ] /Subtype /Link /Type /Annot
+>>
 endobj
 6 0 obj
-<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/JamieP-205)
+>> /Border [ 0 0 0 ] /Rect [ 396.0046 747.302 422.7678 757.622 ] /Subtype /Link /Type /Annot
+>>
 endobj
 7 0 obj
-<< /Type /Catalog /Pages 6 0 R >>
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.linkedin.com/in/jamie-parr-577783292)
+>> /Border [ 0 0 0 ] /Rect [ 439.3486 747.302 471.8566 757.622 ] /Subtype /Link /Type /Annot
+>>
 endobj
 8 0 obj
-<< /Title (Jamie Parr - Placement CV 2027) /Author (Jamie Parr) >>
+<<
+/A <<
+/S /URI /Type /Action /URI (https://coastinternetradio.com/)
+>> /Border [ 0 0 0 ] /Rect [ 62.69291 626.362 158.5271 638.122 ] /Subtype /Link /Type /Annot
+>>
+endobj
+9 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/JamieP-205/coast-internet-radio)
+>> /Border [ 0 0 0 ] /Rect [ 263.1127 626.362 296.3347 638.122 ] /Subtype /Link /Type /Annot
+>>
+endobj
+10 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://localwebfix.co.uk/)
+>> /Border [ 0 0 0 ] /Rect [ 62.69291 567.312 128.5881 579.072 ] /Subtype /Link /Type /Annot
+>>
+endobj
+11 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/JamieP-205/local-web-fix)
+>> /Border [ 0 0 0 ] /Rect [ 274.0005 567.312 307.2225 579.072 ] /Subtype /Link /Type /Annot
+>>
+endobj
+12 0 obj
+<<
+/Annots [ 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R 10 0 R 11 0 R ] /Contents 16 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 15 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+13 0 obj
+<<
+/PageMode /UseNone /Pages 15 0 R /Type /Catalog
+>>
+endobj
+14 0 obj
+<<
+/Author (Jamie Parr) /CreationDate (D:20260918134419+00'00') /Creator (Jamie Parr portfolio CV builder) /Keywords () /ModDate (D:20260918134419+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (Public CV for 2027/28 industrial placement applications) /Title (Jamie Parr - Software, Web and IT Placement CV) /Trapped /False
+>>
+endobj
+15 0 obj
+<<
+/Count 1 /Kids [ 12 0 R ] /Type /Pages
+>>
+endobj
+16 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 3504
+>>
+stream
+Gb!#]>BAN>&q9SYkXT7nADIFPkr=2,'!K1kZ8ng404S^HM1p]7`AU`nj3Q=%+^fp92TMfN9#Voe1u7bGpX^3$ZLQ6qJ)_9klPWu53TR\,S!2l:50^6E1ctTpbR/]j)[0b@!PWhiopgJEpZV=qRH4\GGa;2<>%-=U466&c2iJrI<YXJ=cuYu<]p,C,QKJI$T.DW&rQ$/*G9]=k-srK%$:Iq5)Y>V*WrX8$NNu=*Yp.L%aGh_m8q]$*dJ;mV:oUrt--^R-Jm@&i0&.MI/?+L^=!FJ`.UorO=\4+k<L'HRnNA2/H;N:H;AIA+QEOuqKkA*(`8>P!XiSk+NYY'T'tQ$5@SH.&%2?m(C],j2JCL+,BsDe__2Bh1>`VZ\T?.CfbBA:UcY!QT^UsDd4JKsZmHmr.mbnMJd;b_/rglk[%B\[bD&49WgZuIYCLm+H3]W4#>MEYi4DYos@B\'nTNCHZA:.uE?=l7K$RH1LQ;pi#\4(\CkN/J[AVWIk3tb[_iu(S"Gdg1(h#86_nfr\=*m*pr(Tup)DVo)NM0co!Yj5l]7(*ig3?/]*<oeuu/$oD^^1M$$aR'-2,':8/4=>dag&:k,T''7Jj0\].Tl&JFJ%-hWLBg,W`jbi2'5hCQRU[IMUWDOn0kY[r3iL]STd_5dCc'N7CRNI:;0M.mkN,V()3&^*!a^NC3Ahm4"RY)l%Pci2Mc_F=(4#?%_7pd:"H=/^<W1YCMYr:+$$;d)<9^$[q&<>JXmUYXcIXPXQcV4&SbCE\hf;m:0%2e^@l_bj%_[4T-B.uq*q5u0DtSF)(;Xn\S,b4LJm,t[kH8GddGH5t/,Y83>kZrg=Rc%%ebFH45`3lYG5'uRBM\VTdeJ/:#ALtAIuE=aSn/0"aW)Q=P>?-_kf,!>b#i:JG9]OOc]DDZOIR``@p5*PViR6lOEmPB%2Ddto,HT/1TL,Bo:fg;7keHt+(VD'AeEJA3Yue8@_=do=nK:'Bk^*PiL,u+%ll(L6RQk,QT@j6%CUg;P,a*KGpaZO1sXX_m-I-_*;ZP<-tlpu&>6AHCc`J@%#,c8WQl958gLNY/=f'hlaG+3(E&S4dV=!g8"JO)\K'T9b(*a.TfHo--l/pa4X\TLfe(`HRWgg"`(ia&B/i]"<11rh<9CbYZ7_GH1\;]FJY$3,>c]fG1";-A$Fjo2*f4.F/E-N`$7_lS)4eM1T4%&gru?NKcja>;Ei,Vtd9njNdVLabHSZ^J?5%qT*UZWtd+/GKr6/hp_nFNJ/%aNZVOZrJJ^s@>\%Z[aWf:!?5ZY5070\J.^"o-lU1M1R;#*DJ!F<WTcXah0d.'@G!R`qp!+rO4>EN_8b-P[]bBLK,1#Xjg,7T\+kP)N:WiNc]!l):Z.==HQRH1[+.r`42;qnX)>Kli"=n\8^,q?s<h1u)XNp#W=CZIe6.9)*T%n-&0n:h?g@gL9LRW@jthR1jsl,R<+_^)OaSrO+qAtMKQ?juP@UFMU`8qlm^_RsIl_bY(Lo.ijK/nK&NiqkXOg,g$A9kjh9Ji)=rV=,*jqG`#rGshC\I2#cJAoAoj]+UN6aFlhC=B1s.#6A!6pRc>_WD4OS.Zr-5fk`FWi4jB#lUNWST,$%6m8ILY89L3A;^<4V"J]?.(Q+]N`'ohsUV1alOqk'%C7Q-2@oett]I:Bcj354]h&n]m@,qY//P:bD.HC;7bKQsBQqUP:\Qi)X:Pr(e&4ZP6b:+tVJqa';+U\<1c]5l.Km_dp(?#Y-d'`#sbe;8dH9-b/g>Wq%*!*jJ%lE'b?+qj#]q,+Jh4_Z,g=\+[kXLl;RVs+=3l)Y`Xlo]$"(EYd[E)$4,d^&:TSb%&;6^aJg:c5Bh,Fq*,6i+<=p&]].9Cjb$nCOm8Ao6PAm+:H2YBSb1rk3A.Kgfd!\u&."K;1FW51+DX`)[_;MedrieZ)aM9Sb<@/a)$UOW]/j5e.Y-.oE$s/AJ5cNl=,/&mceT[".+9[t/)^-l-QbelRrqMIjhBTpV(.O5YZ(3C%t8PRR.kf4+\*).6>,</&Y>Rs<*ij-_g.H!8SLuJ,MgBWGF?qIl/"K1_/f@MD"JV!4VC5/?W#Pq<)lPC)XYr-uGn<t_?06l?qY!iQoL[k@T::K[Qk;:j7.^BOYIfj1$jXoL8Zcu\)QPMHjlpRIQj^KMrIYnN?=eODpF]@"q6q>3Ypf(F(G"M-"7OO@;d'Qu74&O(b.m*C8"R2e+L\02?H:gZuI1NmO(nPEbHTqMnE7ZBW46%8[?IX%X%b71n=a,.^D2U>=%Ifac`=c9X:<%NtX=<KYoSPN?E06J(QJE^-^j-qMAPkC&$&Z^@_DK(/XQ7scFKgU^X-NsMR;f`'0mDDfT?p$%^&^tL\lMu,KG3Q>R89/)9m8)cY4Ak2l"g6.AAa?UVX`_VGV_cu=uKCF.2MM!X8`VA5Rk!MM7ilqN.rDZQa?4;)nN["dU7/Y)deTj4""\L2[Y!X+*bJ47sQcH^TXOiI6N,ga85`!\M6bOlfh#sR^qSn%l"5^J@G$q2sikh/7KAQ\\[tZk4RCPHH.M]iJC)ja:SC5m-e+iGg/2,[">@MZss,3=k,lq<l^qX;Rj7c%8R]2i25;]rP7s4p9T`lCjUqZfI]q<TB;&<kTA(Crs'K!I?6so-aZ=4Fb^=#qFWF[XUR2(''3^g?+uS^\j[S%1mJIES,qF!!'[Q?^C5lLr!.4*OEmhfJ;/p==L=,FVXM*$f[FI?Rju6++"PKjU8I#9'N32QCD>BB5nfhOiSEBUN]O8%G7)JYDqfCSJ*mQR6MMiNrmQYWpGD`mA99mSh$d&GV0XQ/h4GPGDElj7W=P$JTa1?)5F]b0/0aWo9lce(-E#4G]&?.GJU[uN!DUr3e&V2'qBS$Of32b+,Q(i4D<EFJC8Z)X?[YCJqBS)\o$uo)Xj<QiP+&geV))-:r34,hH!W)t.pC[%?C7P=NZpOo(\#].m0B)Xnqef(]gPaaHVi>_HhHQIY"LrpU1?3c9(SE#f6Wm$3!!%D^urj?=pR0oaE.GGd"Yr5Uq*GPB"Y_3!EPG2D$jY!;l#lbOg4u)R)>;ZN6JfXkb:\LVoG_b.X=XCio8^t54=7U*k%<sFUED%n;/^,h9D`U)OFQeq<"WX5K"jPf>1,KWcZjpm`:oF@qO4^c9GO<3Ob2]#&mnFF-SY)oE=ub)&mYOdD;r=a:r-F=5\Mh%8\!YMRmqG]!t-CCJi)E[RVk^F:cD7SNe`P%!;doA?ks@=D*OE4!MN8\)RuTLuFs82Q'ZomHp)493C2e_?"1Z-4^*S9/ChO)Z`dNlWUL++*X(%U1X'C[Q$djbd7c5mMeFrbZndl=3nLd&+E-(+Q19WTc`0.HZ<TBm4],6/2p+lR@,F7$'1#0c4EufYta@3ZGD_6a!#)iKGVX$Zl(CqdA],/:31hFYe1e>G-4`&Y'!p*q&GLPBIffcFY?N;36n6-]:#iS_HRNUC.R<O)'m#l>6K,anC6Ae1tQ^<Ab2B)M0_2qGNZhfX3;V!%(/,O*2U"A!M,qIDZ~>endstream
 endobj
 xref
-0 9
+0 17
 0000000000 65535 f 
-0000000011 00000 n 
-0000000052 00000 n 
-0000000149 00000 n 
-0000000251 00000 n 
-0000007046 00000 n 
-0000007169 00000 n 
-0000007226 00000 n 
-0000007275 00000 n 
+0000000061 00000 n 
+0000000102 00000 n 
+0000000209 00000 n 
+0000000321 00000 n 
+0000000500 00000 n 
+0000000690 00000 n 
+0000000869 00000 n 
+0000001067 00000 n 
+0000001248 00000 n 
+0000001448 00000 n 
+0000001625 00000 n 
+0000001819 00000 n 
+0000002087 00000 n 
+0000002157 00000 n 
+0000002524 00000 n 
+0000002585 00000 n 
 trailer
-<< /Size 9 /Root 7 0 R /Info 8 0 R >>
+<<
+/ID 
+[<7832708e5ae723cce0c6c16d4b2cccb0><7832708e5ae723cce0c6c16d4b2cccb0>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 14 0 R
+/Root 13 0 R
+/Size 17
+>>
 startxref
-7357
+6181
 %%EOF

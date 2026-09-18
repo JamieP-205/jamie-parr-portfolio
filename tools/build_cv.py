@@ -171,11 +171,11 @@ def build() -> Path:
     story += section("PROFILE", heading_style)
     story.append(
         Paragraph(
-            "Computing Technologies student at Ulster University, entering Year 2 in September 2026 and seeking a "
-            "2027/28 industrial placement in software engineering, web development or technical support. Built and "
-            "deployed tested web systems for a live stakeholder using TypeScript/JavaScript, serverless functions and "
-            "CI/CD. Brings nearly five years of continuous part-time work, hands-on machinery troubleshooting, customer "
-            "service, accuracy and dependable teamwork.",
+            "Second-year Computing Technologies student at Ulster University seeking a 2027/28 industrial placement "
+            "in software, web development or practical IT. Built and maintain a live stakeholder website using "
+            "JavaScript, serverless functions and CI/CD, alongside personal web projects and university work. Brings "
+            "nearly five years of part-time work, hands-on machinery troubleshooting, customer service, accuracy and "
+            "dependable teamwork.",
             body_style,
         )
     )
@@ -190,30 +190,11 @@ def build() -> Path:
                     project_style,
                 ),
                 bullet(
-                    "Rebuilt and now maintain a live station website, working with the owner and using operational feedback to improve the mobile listener experience and owner-managed content.",
+                    "Rebuilt and now maintain a live station website, working directly with the owner and using operational feedback to improve the mobile listener experience and owner-managed content.",
                     bullet_style,
                 ),
                 bullet(
-                    "Solved an HTTPS/HTTP browser block with Cloudflare Worker relays; added signed admin sessions, first-party analytics, automated checks and deployment safeguards.",
-                    bullet_style,
-                ),
-            ]
-        )
-    )
-    story.append(
-        KeepTogether(
-            [
-                Paragraph(
-                    f'{link("French for Life", "https://french-learning-platform-one.vercel.app/")} - Developer | '
-                    f'{link("Source", "https://github.com/JamieP-205/french-learning-platform")} | Next.js, TypeScript, Supabase | 2026',
-                    project_style,
-                ),
-                bullet(
-                    "Built an A1 learning platform with prerequisite modelling and teach-before-test rules so learners are not assessed on language the app has not taught.",
-                    bullet_style,
-                ),
-                bullet(
-                    "Implemented deterministic answer checking, mistake-driven review and release gates covering unit, curriculum and Playwright browser tests.",
+                    "Solved an HTTPS/HTTP browser constraint with Cloudflare Worker relays and added serverless admin tools, first-party analytics, automated checks and deployment safeguards.",
                     bullet_style,
                 ),
             ]
@@ -223,16 +204,16 @@ def build() -> Path:
         KeepTogether(
             [
                 Paragraph(
-                    f'{link("The World Forgot Us", "https://jamiep-205.github.io/the-world-forgot-us/")} - Developer | '
-                    f'{link("Source", "https://github.com/JamieP-205/the-world-forgot-us")} | Godot 4, GDScript | 2026',
+                    f'{link("Local Web Fix", "https://localwebfix.co.uk/")} - Portfolio Business Concept | '
+                    f'{link("Source", "https://github.com/JamieP-205/local-web-fix")} | HTML, CSS, JavaScript, Netlify | 2026',
                     project_style,
                 ),
                 bullet(
-                    "Built and published a four-area road-story game with persistent state, combat, upgrades, environmental puzzles and multiple endings.",
+                    "Designed and published a small-business service concept around clear scope, example pricing, mobile usability, accessibility and safe-access guidance without presenting it as client work.",
                     bullet_style,
                 ),
                 bullet(
-                    "Created a GitHub Actions pipeline that imports the project, runs a complete campaign smoke test, exports the Web build and deploys the playable release.",
+                    "Kept the implementation deliberately simple and added automated checks for required pages, local links and the main site structure.",
                     bullet_style,
                 ),
             ]
@@ -243,13 +224,13 @@ def build() -> Path:
     story.extend(
         [
             Paragraph(
-                "<b>Languages:</b> TypeScript, JavaScript, HTML, CSS, SQL, Python, GDScript. "
-                "<b>Frameworks/platforms:</b> React, Next.js, Node.js, Supabase, Netlify, Vercel, Cloudflare Workers, Godot 4.",
+                "<b>Languages:</b> Python, SQL, HTML, CSS, JavaScript and TypeScript. "
+                "<b>Frameworks/platforms:</b> React, Next.js, Node.js, Supabase, Netlify, Vercel and Cloudflare Workers.",
                 compact_style,
             ),
             Paragraph(
-                "<b>Engineering:</b> Git/GitHub, GitHub Actions, CI/CD, Playwright, Vitest, APIs, serverless functions, "
-                "responsive design, accessibility, debugging, troubleshooting and technical documentation.",
+                "<b>Development:</b> Git/GitHub, GitHub Actions, CI/CD, Playwright, APIs, serverless functions, responsive design, accessibility, testing, debugging and technical documentation. "
+                "<b>Systems:</b> Windows 11, Linux, PowerShell, VirtualBox and basic IP/DNS networking.",
                 compact_style,
             ),
         ]
@@ -260,7 +241,7 @@ def build() -> Path:
         [
             Paragraph(
                 "<b>BSc (Hons) Computing Technologies - Ulster University, Belfast</b> | 2025 - 2029 expected<br/>"
-                "Entering Year 2 in September 2026. Study includes programming, computing systems, databases, web technologies and technical problem-solving.",
+                "Currently in Year 2. Study includes programming, computing systems, databases, web technologies and technical problem-solving.",
                 compact_style,
             ),
             Paragraph(
@@ -276,20 +257,17 @@ def build() -> Path:
         [
             Paragraph(
                 "<b>Temporary Production Operative - Saica Pack UK, Warrenpoint</b> | Jun 2026 - 12 Sep 2026 (fixed term)<br/>"
-                "Operate and monitor large automated corrugated-packaging machinery, including DRO flexographic printing "
-                "and rotary die-cutting equipment and the C4 line. Diagnose and resolve routine mechanical faults and "
-                "production stoppages through safe, hands-on intervention, helping restore operation and escalating "
-                "maintenance-critical issues.",
+                "Operated and monitored automated corrugated-packaging machinery, including DRO flexographic printing and rotary die-cutting equipment and the C4 line. Diagnosed routine faults and production stoppages safely and escalated maintenance-critical issues.",
                 compact_style,
             ),
             Paragraph(
                 "<b>Warehouse Operative - Pet Connection, Newry</b> | Oct 2021 - Jul 2026<br/>"
-                "Prepare customer and fulfilment orders accurately, organise stock and follow safety and dispatch procedures while balancing long-term employment with study.",
+                "Prepared customer and fulfilment orders accurately, organised stock and followed safety and dispatch procedures while balancing long-term employment with study.",
                 compact_style,
             ),
             Paragraph(
                 "<b>Kitchen Porter - The Garden Room, Warrenpoint</b> | Aug 2024 - Jul 2026<br/>"
-                "Support kitchen and front-of-house teams during busy services, maintain hygiene standards and assist with stock rotation and changing priorities.",
+                "Supported kitchen and front-of-house teams during busy services, maintained hygiene standards and assisted with stock rotation and changing priorities.",
                 compact_style,
             ),
             Paragraph(
