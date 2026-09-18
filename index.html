@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="project-showcase.css">
   <link rel="stylesheet" href="project-evidence.css">
   <link rel="stylesheet" href="lava-tune.css">
+  <link rel="stylesheet" href="placement-refresh.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -41,6 +42,7 @@
 
       <nav id="site-nav" class="site-nav" aria-label="Main navigation">
         <a href="#profile">Profile</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#background">Background</a>
         <a href="#contact">Contact</a>
@@ -63,7 +65,7 @@
           <p class="hero-text">I am in second year at Ulster University and preparing for a third-year placement in 2027/28. I like practical projects, clear code and being able to explain what I built and why.</p>
           <div class="hero-actions" aria-label="Primary actions">
             <a class="button button-primary" href="#projects">View projects</a>
-            <a class="button button-secondary" href="assets/jamie_parr_public_cv.pdf" download>Download CV</a>
+            <a class="button button-secondary" href="assets/jamie_parr_public_cv.pdf?v=20260918" download>Download CV</a>
             <a class="button button-ghost" href="mailto:jamieparr205@gmail.com">Contact me</a>
           </div>
         </div>
@@ -83,12 +85,35 @@
       </div>
     </section>
 
+    <section id="skills" class="section section-pad skills-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Technical skills</p>
+          <h2>The tools and areas I can already work with.</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Programming &amp; web</h3>
+            <p>Python, SQL, HTML/CSS, JavaScript/TypeScript and Next.js.</p>
+          </div>
+          <div class="skill-group">
+            <h3>Development</h3>
+            <p>Git/GitHub, REST APIs and JSON, relational databases, authentication and validation, testing, debugging and documentation.</p>
+          </div>
+          <div class="skill-group">
+            <h3>Systems &amp; support</h3>
+            <p>Windows 11, Linux, PowerShell, VirtualBox, basic IP/DNS networking and general technical troubleshooting.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="projects" class="section section-pad">
       <div class="container">
         <div class="projects-intro">
           <p class="eyebrow">Projects</p>
           <h2>Selected public projects.</h2>
-          <p>Two projects I am comfortable talking through in detail, including the choices, limitations and work behind them.</p>
+          <p>One live client project and one published business-site concept that I can talk through in detail, including the choices, limitations and work behind them.</p>
         </div>
 
         <div class="project-workbench">
@@ -115,15 +140,15 @@
             <article id="project-local-web-fix" class="project-stage-panel" data-project-panel="local-web-fix">
               <div class="project-stage-grid">
                 <div class="project-stage-copy">
-                  <p class="eyebrow">Personal project</p>
+                  <p class="eyebrow">Portfolio business concept</p>
                   <h3>Local Web Fix</h3>
-                  <p class="project-stage-lede">A small service website for helping local businesses fix common website and online-information problems, with a focus on clear scope, mobile usability, accessibility and straightforward communication.</p>
+                  <p class="project-stage-lede">A published concept for a small local-business web service. I built it to practise turning a service idea into a clear customer journey, with scope, example pricing, mobile usability, accessibility, forms and safe-access guidance. It is not currently an active business.</p>
                   <ul class="project-proof-inline" aria-label="Local Web Fix highlights">
-                    <li><strong>Mobile first</strong><span>Simple layout, forms and clear pricing</span></li>
-                    <li><strong>Published</strong><span>Live site with its own domain and deployment setup</span></li>
+                    <li><strong>Concept</strong><span>Realistic service flow without presenting it as client work</span></li>
+                    <li><strong>Published demo</strong><span>Responsive site with its own domain and deployment setup</span></li>
                   </ul>
                   <div class="project-card-actions">
-                    <a class="button button-primary" href="https://localwebfix.co.uk" target="_blank" rel="noopener noreferrer">View live site</a>
+                    <a class="button button-primary" href="https://localwebfix.co.uk" target="_blank" rel="noopener noreferrer">View concept site</a>
                     <a class="button button-secondary" href="local-web-fix-case-study.html">Read case study</a>
                     <a class="button button-ghost" href="https://github.com/JamieP-205/local-web-fix" target="_blank" rel="noopener noreferrer">GitHub</a>
                   </div>
@@ -203,7 +228,7 @@
         <div class="contact-actions">
           <a class="button button-primary" href="mailto:jamieparr205@gmail.com">Email me</a>
           <a class="button button-secondary" href="https://www.linkedin.com/in/jamie-parr-577783292" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a class="button button-secondary" href="assets/jamie_parr_public_cv.pdf" download>Download CV</a>
+          <a class="button button-secondary" href="assets/jamie_parr_public_cv.pdf?v=20260918" download>Download CV</a>
         </div>
       </div>
     </section>
@@ -223,12 +248,13 @@
       <input id="palette-input" type="text" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-activedescendant="" placeholder="Where to? Try ‘projects’ or ‘cv’" autocomplete="off" spellcheck="false">
       <ul id="palette-list" role="listbox" aria-label="Destinations">
         <li role="option" id="pal-profile" data-keywords="profile about me" data-goto="#profile">Profile</li>
+        <li role="option" id="pal-skills" data-keywords="skills technical programming systems tools" data-goto="#skills">Technical skills</li>
         <li role="option" id="pal-projects" data-keywords="projects work portfolio" data-goto="#projects">Projects</li>
         <li role="option" id="pal-background" data-keywords="background experience education jobs" data-goto="#background">Background</li>
         <li role="option" id="pal-contact" data-keywords="contact email hire" data-goto="#contact">Contact</li>
         <li role="option" id="pal-coast" data-keywords="coast internet radio" data-href="coast-internet-radio-case-study.html">Case study: Coast Internet Radio</li>
-        <li role="option" id="pal-local" data-keywords="local web fix" data-href="local-web-fix-case-study.html">Case study: Local Web Fix</li>
-        <li role="option" id="pal-cv" data-keywords="cv resume download pdf" data-href="assets/jamie_parr_public_cv.pdf" data-download="true">Download CV</li>
+        <li role="option" id="pal-local" data-keywords="local web fix concept" data-href="local-web-fix-case-study.html">Case study: Local Web Fix</li>
+        <li role="option" id="pal-cv" data-keywords="cv resume download pdf" data-href="assets/jamie_parr_public_cv.pdf?v=20260918" data-download="true">Download CV</li>
         <li role="option" id="pal-email" data-keywords="email contact message" data-href="mailto:jamieparr205@gmail.com">Email me</li>
         <li role="option" id="pal-copy" data-keywords="copy email address clipboard" data-action="copy-email">Copy my email address</li>
         <li role="option" id="pal-github" data-keywords="github code repos source" data-href="https://github.com/JamieP-205" data-external="true">GitHub profile</li>
