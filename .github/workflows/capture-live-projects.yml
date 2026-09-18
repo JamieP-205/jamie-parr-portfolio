@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   capture:
@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.head_ref }}
       - uses: actions/setup-node@v7
         with:
           node-version: 22
@@ -20,6 +22,19 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: node tools/capture-live-projects.js
+      - name: Commit current project screenshots
+        run: |
+          mkdir -p assets/project-shots
+          cp tmp/live-project-screenshots/*.png assets/project-shots/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/project-shots
+          if git diff --cached --quiet; then
+            echo "Screenshots already current"
+          else
+            git commit -m "Refresh project screenshots"
+            git push origin HEAD:${{ github.head_ref }}
+          fi
       - uses: actions/upload-artifact@v4
         with:
           name: live-project-screenshots
