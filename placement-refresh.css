@@ -35,6 +35,59 @@
   line-height: 1.65;
 }
 
+/* Give the homepage sections a clearer rhythm without changing the layout. */
+body:not(.case-page) #skills,
+body:not(.case-page) #projects,
+body:not(.case-page) #background,
+body:not(.case-page) #contact {
+  border-top: 1px solid var(--line-strong);
+}
+
+.background-grid {
+  display: grid;
+  gap: clamp(2.4rem, 6vw, 4rem);
+}
+
+.background-column > h3 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.3rem, 2.5vw, 1.55rem);
+  line-height: 1.2;
+}
+
+.background-item {
+  padding: 1rem 0 1.15rem;
+  border-top: 1px solid var(--line);
+}
+
+.background-column > h3 + .background-item {
+  border-top-color: var(--line-strong);
+}
+
+.background-date {
+  margin: 0 0 .3rem;
+  font-family: var(--mono);
+  font-size: .9rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.background-item h4 {
+  margin: 0 0 .35rem;
+  font-size: 1.08rem;
+  line-height: 1.3;
+}
+
+.background-item > p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+@media (min-width: 820px) {
+  .background-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .case-gallery {
   margin: clamp(2.1rem, 6vw, 3.4rem) 0;
   padding: .9rem 0 .8rem;
