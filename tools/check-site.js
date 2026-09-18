@@ -63,8 +63,14 @@ const expectedPanels = ["coast-internet-radio", "local-web-fix"];
 if (!/<link\s+rel=["']stylesheet["']\s+href=["']project-evidence\.css["']\s*>/i.test(homepage)) {
   errors.push("index.html must load project-evidence.css");
 }
+if (!/<link\s+rel=["']stylesheet["']\s+href=["']placement-refresh\.css["']\s*>/i.test(homepage)) {
+  errors.push("index.html must load placement-refresh.css");
+}
 if (!/<script\s+src=["']enhancements\.js["']><\/script>/i.test(homepage)) {
   errors.push("index.html must load enhancements.js");
+}
+if (!/id=["']skills["']/i.test(homepage) || !/Technical skills/i.test(homepage)) {
+  errors.push("index.html is missing the technical-skills section");
 }
 if (projectPanels.length !== 2 || expectedPanels.some((id) => !panelIds.includes(id))) {
   errors.push("index.html must contain only Coast Internet Radio and Local Web Fix project panels");
@@ -83,6 +89,20 @@ if (/\bportrait\b/i.test(homepage)) {
 if (!/data-lava-toggle/i.test(homepage)) {
   errors.push("index.html is missing the Lava lampe easter-egg toggle");
 }
+if (!/not currently an active business/i.test(homepage)) {
+  errors.push("Local Web Fix must be described as a portfolio concept, not an active business");
+}
+
+const cvPath = path.join(root, "assets", "jamie_parr_public_cv.pdf");
+if (!fs.existsSync(cvPath)) {
+  errors.push("downloadable CV is missing");
+} else {
+  const cv = fs.readFileSync(cvPath);
+  const cvText = cv.toString("latin1");
+  if (cv.length < 6000 || !cv.subarray(0, 5).equals(Buffer.from("%PDF-")) || !cvText.includes("JAMIE PARR") || !cvText.trimEnd().endsWith("%%EOF")) {
+    errors.push("downloadable CV is not a complete readable PDF containing Jamie Parr's CV");
+  }
+}
 
 for (const caseFile of ["coast-internet-radio-case-study.html", "local-web-fix-case-study.html"]) {
   const source = fs.readFileSync(path.join(root, caseFile), "utf8");
@@ -92,8 +112,17 @@ for (const caseFile of ["coast-internet-radio-case-study.html", "local-web-fix-c
   if (!/<link\s+rel=["']stylesheet["']\s+href=["']project-showcase\.css["']\s*>/i.test(source)) {
     errors.push(`${caseFile} must load project-showcase.css`);
   }
+  if (!/<link\s+rel=["']stylesheet["']\s+href=["']placement-refresh\.css["']\s*>/i.test(source)) {
+    errors.push(`${caseFile} must load placement-refresh.css`);
+  }
   if (!/<script\s+src=["']enhancements\.js["']><\/script>/i.test(source)) {
     errors.push(`${caseFile} must load enhancements.js`);
+  }
+  if (!/<script\s+src=["']case-gallery\.js["']><\/script>/i.test(source)) {
+    errors.push(`${caseFile} must load case-gallery.js`);
+  }
+  if ((source.match(/data-case-slide/g) || []).length !== 3) {
+    errors.push(`${caseFile} must contain exactly three current project screenshots`);
   }
   if (!/data-lava-toggle/i.test(source)) {
     errors.push(`${caseFile} is missing the Lava lampe toggle`);
@@ -107,7 +136,9 @@ for (const required of [
   "sitemap.xml",
   "site.webmanifest",
   "netlify.toml",
-  "enhancements.js"
+  "enhancements.js",
+  "case-gallery.js",
+  "placement-refresh.css"
 ]) {
   const file = path.join(root, required);
   if (!fs.existsSync(file) || fs.statSync(file).size === 0) errors.push(`${required} is missing or empty`);
