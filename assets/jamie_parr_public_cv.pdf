@@ -1,293 +1,109 @@
 %PDF-1.4
-%ABCD ReportLab Generated PDF document (opensource)
+%
 1 0 obj
-<<
-/F1 2 0 R /F2 3 0 R
->>
+<< /F1 2 0 R /F2 3 0 R >>
 endobj
 2 0 obj
-<<
-/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
->>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
 endobj
 3 0 obj
-<<
-/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
->>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
 endobj
 4 0 obj
-<<
-/A <<
-/S /URI /Type /Action /URI (mailto:jamieparr205@gmail.com)
->> /Border [ 0 0 0 ] /Rect [ 237.1732 758.8898 332.9836 770.8898 ] /Subtype /Link /Type /Annot
->>
-endobj
-5 0 obj
-<<
-/A <<
-/S /URI /Type /Action /URI (https://www.linkedin.com/in/jamie-parr-tech)
->> /Border [ 0 0 0 ] /Rect [ 344.5084 758.8898 458.866 770.8898 ] /Subtype /Link /Type /Annot
->>
-endobj
-6 0 obj
-<<
-/Annots [ 4 0 R 5 0 R ] /Contents 10 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 9 0 R /Resources <<
-/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
->> /Rotate 0 
-  /Trans <<
-
->> /Type /Page
->>
-endobj
-7 0 obj
-<<
-/PageMode /UseNone /Pages 9 0 R /Type /Catalog
->>
-endobj
-8 0 obj
-<<
-/Author (Jamie Parr) /CreationDate (D:20260918111820+00'00') /Creator (anonymous) /Keywords () /ModDate (D:20260918111820+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
-  /Subject (unspecified) /Title (Jamie Parr - Placement CV 2027) /Trapped /False
->>
-endobj
-9 0 obj
-<<
-/Count 1 /Kids [ 6 0 R ] /Type /Pages
->>
-endobj
-10 0 obj
-<<
-/Length 9221
->>
+<< /Length 6744 >>
 stream
-1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
-.066667 .066667 .066667 rg
-BT /F2 22 Tf 26.4 TL ET
-BT 1 0 0 1 40 799.8898 Tm (JAMIE PARR) Tj T* ET
-.266667 .266667 .266667 rg
-BT /F2 11 Tf 13.2 TL ET
-BT 1 0 0 1 40 776.8898 Tm (Computing Technologies Student | Seeking 2027/28 Technology Placement) Tj T* ET
-.266667 .266667 .266667 rg
-BT /F1 8.4 Tf 10.08 TL ET
-BT 1 0 0 1 40 760.8898 Tm (Belfast, Northern Ireland  |  Full UK driving licence  |  jamieparr205@gmail.com  |  linkedin.com/in/jamie-parr-tech) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F2 10.7 Tf 12.84 TL ET
-BT 1 0 0 1 40 743.8898 Tm (PROFILE) Tj T* ET
-.721569 .721569 .721569 RG
-.5 w
-n 40 738.8898 m 555.2756 738.8898 l S
-.066667 .066667 .066667 rg
-BT /F1 8.65 Tf 10.38 TL ET
-BT 1 0 0 1 40 728.8898 Tm (Second-year BSc \(Hons\) Computing Technologies student at Ulster University seeking a 2027/28 industrial placement.) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.65 Tf 10.38 TL ET
-BT 1 0 0 1 40 718.6398 Tm (Practical experience across programming, databases, web development, operating systems and troubleshooting, supported by) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.65 Tf 10.38 TL ET
-BT 1 0 0 1 40 708.3898 Tm (nearly five years of continuous employment in warehouse and production environments. Comfortable learning unfamiliar) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.65 Tf 10.38 TL ET
-BT 1 0 0 1 40 698.1398 Tm (software, diagnosing routine technical issues, documenting work and contributing within fast-paced teams. Interested in) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.65 Tf 10.38 TL ET
-BT 1 0 0 1 40 687.8898 Tm (software development, IT support and infrastructure, QA/testing, cloud and technical analyst roles.) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F2 10.7 Tf 12.84 TL ET
-BT 1 0 0 1 40 675.6398 Tm (TECHNICAL SKILLS) Tj T* ET
-.721569 .721569 .721569 RG
-.5 w
-n 40 670.6398 m 555.2756 670.6398 l S
-.066667 .066667 .066667 rg
-BT /F2 8.8 Tf 10.56 TL ET
-BT 1 0 0 1 40 660.6398 Tm (Programming & web: ) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.8 Tf 10.56 TL ET
-BT 1 0 0 1 130.948 660.6398 Tm (Python, SQL, HTML/CSS, JavaScript/TypeScript, Next.js.) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F2 8.8 Tf 10.56 TL ET
-BT 1 0 0 1 40 650.1398 Tm (Development: ) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.8 Tf 10.56 TL ET
-BT 1 0 0 1 100.632 650.1398 Tm (Git/GitHub, REST APIs and JSON, relational databases, authentication/validation, testing, debugging and documentation.) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F2 8.8 Tf 10.56 TL ET
-BT 1 0 0 1 40 639.6398 Tm (Systems & support: ) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.8 Tf 10.56 TL ET
-BT 1 0 0 1 125.5712 639.6398 Tm (Windows 11, Linux, PowerShell, VirtualBox, basic IP/DNS networking and general technical troubleshooting.) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F2 10.7 Tf 12.84 TL ET
-BT 1 0 0 1 40 628.1398 Tm (ACADEMIC & TECHNICAL EXPERIENCE) Tj T* ET
-.721569 .721569 .721569 RG
-.5 w
-n 40 623.1398 m 555.2756 623.1398 l S
-.066667 .066667 .066667 rg
-BT /F2 8.2 Tf 9.84 TL ET
-BT 1 0 0 1 45 613.1398 Tm (-) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.2 Tf 9.84 TL ET
-BT 1 0 0 1 56 613.1398 Tm (Built and deployed database-backed web applications, using authentication, validation, responsive interfaces,) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.2 Tf 9.84 TL ET
-BT 1 0 0 1 56 603.4898 Tm (testing and structured debugging.) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F2 8.2 Tf 9.84 TL ET
-BT 1 0 0 1 45 593.8398 Tm (-) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.2 Tf 9.84 TL ET
-BT 1 0 0 1 56 593.8398 Tm (Applied Python, SQL and object-oriented programming to coursework involving relational data modelling, queries,) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.2 Tf 9.84 TL ET
-BT 1 0 0 1 56 584.1898 Tm (APIs/JSON and server-side concepts.) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F2 8.2 Tf 9.84 TL ET
-BT 1 0 0 1 45 574.5398 Tm (-) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.2 Tf 9.84 TL ET
-BT 1 0 0 1 56 574.5398 Tm (Used Git-based workflows, Linux virtual machines and Windows development tooling to configure environments,) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.2 Tf 9.84 TL ET
-BT 1 0 0 1 56 564.8898 Tm (troubleshoot problems and document solutions.) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F2 8.2 Tf 9.84 TL ET
-BT 1 0 0 1 45 555.2398 Tm (-) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.2 Tf 9.84 TL ET
-BT 1 0 0 1 56 555.2398 Tm (Maintained and updated a live radio website for a real stakeholder, testing changes and resolving unfamiliar) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.2 Tf 9.84 TL ET
-BT 1 0 0 1 56 545.5898 Tm (technical issues.) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F2 10.7 Tf 12.84 TL ET
-BT 1 0 0 1 40 534.9398 Tm (WORK EXPERIENCE) Tj T* ET
-.721569 .721569 .721569 RG
-.5 w
-n 40 529.9398 m 555.2756 529.9398 l S
-.066667 .066667 .066667 rg
-BT /F2 8.45 Tf 10.14 TL ET
-BT 1 0 0 1 40 519.9398 Tm (Temporary Production Operative) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.45 Tf 10.14 TL ET
-BT 1 0 0 1 171.9467 519.9398 Tm ( - Saica Pack UK, Warrenpoint | Jun 2026 - Aug 2026) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F2 7.9 Tf 9.48 TL ET
-BT 1 0 0 1 45 510.5398 Tm (-) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 7.9 Tf 9.48 TL ET
-BT 1 0 0 1 56 510.5398 Tm (Operated and monitored automated corrugated-packaging machinery, completed output quality checks and responded) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 7.9 Tf 9.48 TL ET
-BT 1 0 0 1 56 501.5398 Tm (promptly to production stoppages.) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F2 7.9 Tf 9.48 TL ET
-BT 1 0 0 1 45 492.5398 Tm (-) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 7.9 Tf 9.48 TL ET
-BT 1 0 0 1 56 492.5398 Tm (Diagnosed and safely resolved routine equipment faults, followed site quality and safety procedures and escalated) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 7.9 Tf 9.48 TL ET
-BT 1 0 0 1 56 483.5398 Tm (maintenance-critical issues.) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F2 8.45 Tf 10.14 TL ET
-BT 1 0 0 1 40 474.5398 Tm (Warehouse Operative) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.45 Tf 10.14 TL ET
-BT 1 0 0 1 126.8744 474.5398 Tm ( - Pet Connection, Newry | Oct 2021 - Jul 2026) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F2 7.9 Tf 9.48 TL ET
-BT 1 0 0 1 45 465.1398 Tm (-) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 7.9 Tf 9.48 TL ET
-BT 1 0 0 1 56 465.1398 Tm (Picked and prepared customer and fulfilment orders accurately; organised, replenished and rotated stock; supported) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 7.9 Tf 9.48 TL ET
-BT 1 0 0 1 56 456.1398 Tm (dispatch and inventory accuracy.) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F2 7.9 Tf 9.48 TL ET
-BT 1 0 0 1 45 447.1398 Tm (-) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 7.9 Tf 9.48 TL ET
-BT 1 0 0 1 56 447.1398 Tm (Maintained dependable attendance and safe working standards while balancing long-term employment with college and) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 7.9 Tf 9.48 TL ET
-BT 1 0 0 1 56 438.1398 Tm (university study.) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F2 8.45 Tf 10.14 TL ET
-BT 1 0 0 1 40 429.1398 Tm (Kitchen Porter) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.45 Tf 10.14 TL ET
-BT 1 0 0 1 98.2205 429.1398 Tm ( - The Garden Room, Warrenpoint | Aug 2024 - Jul 2026) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F2 7.9 Tf 9.48 TL ET
-BT 1 0 0 1 45 419.7398 Tm (-) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 7.9 Tf 9.48 TL ET
-BT 1 0 0 1 56 419.7398 Tm (Supported busy teams, maintained hygiene standards, assisted with stock rotation and adapted quickly to changing) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 7.9 Tf 9.48 TL ET
-BT 1 0 0 1 56 410.7398 Tm (priorities.) Tj T* ET
-.266667 .266667 .266667 rg
-BT /F2 8.2 Tf 9.84 TL ET
-BT 1 0 0 1 40 401.7398 Tm (Earlier experience:) Tj T* ET
-.266667 .266667 .266667 rg
-BT /F1 8.2 Tf 9.84 TL ET
-BT 1 0 0 1 113.3818 401.7398 Tm ( Floor Staff, No.7 Duke, Warrenpoint | Jun 2022 - Sep 2022) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F2 10.7 Tf 12.84 TL ET
-BT 1 0 0 1 40 389.7398 Tm (EDUCATION & CERTIFICATION) Tj T* ET
-.721569 .721569 .721569 RG
-.5 w
-n 40 384.7398 m 555.2756 384.7398 l S
-.066667 .066667 .066667 rg
-BT /F2 8.55 Tf 10.26 TL ET
-BT 1 0 0 1 40 374.7398 Tm (BSc \(Hons\) Computing Technologies) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.55 Tf 10.26 TL ET
-BT 1 0 0 1 191.0614 374.7398 Tm ( - Ulster University, Belfast | 2025 - 2029 expected) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.05 Tf 9.66 TL ET
-BT 1 0 0 1 40 364.7398 Tm (Year 2. Relevant study includes programming, databases, web development, object-oriented programming, networking and professional) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.05 Tf 9.66 TL ET
-BT 1 0 0 1 40 355.7398 Tm (placement preparation.) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F2 8.45 Tf 10.14 TL ET
-BT 1 0 0 1 40 345.7398 Tm (Level 3 Extended Diploma in Technology) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.45 Tf 10.14 TL ET
-BT 1 0 0 1 204.3525 345.7398 Tm ( - Southern Regional College | 2022 - 2024 | D*DD) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F2 8.45 Tf 10.14 TL ET
-BT 1 0 0 1 40 335.7398 Tm (Information Technology Specialist in HTML and CSS) Tj T* ET
-.066667 .066667 .066667 rg
-BT /F1 8.45 Tf 10.14 TL ET
-BT 1 0 0 1 250.8191 335.7398 Tm ( - Certiport / Pearson VUE | 2023) Tj T* ET
- 
+0.060 g BT /F2 22.00 Tf 1 0 0 1 40.00 800.00 Tm (JAMIE PARR) Tj ET
+0.270 g BT /F2 11.00 Tf 1 0 0 1 40.00 777.00 Tm (Computing Technologies Student | Seeking 2027/28 Technology Placement) Tj ET
+0.270 g BT /F1 8.40 Tf 1 0 0 1 40.00 760.00 Tm (Belfast, Northern Ireland | Full UK driving licence | jamieparr205@gmail.com | linkedin.com/in/jamie-parr-tech) Tj ET
+0.070 g BT /F2 10.70 Tf 1 0 0 1 40.00 744.00 Tm (PROFILE) Tj ET
+0.720 G 0.50 w 40.00 739.00 m 555.28 739.00 l S
+0.070 g BT /F1 8.65 Tf 1 0 0 1 40.00 729.00 Tm (Second-year BSc \(Hons\) Computing Technologies student at Ulster University seeking a 2027/28 industrial placement. Practical) Tj ET
+0.070 g BT /F1 8.65 Tf 1 0 0 1 40.00 718.75 Tm (experience across programming, databases, web development, operating systems and troubleshooting, supported by nearly five years) Tj ET
+0.070 g BT /F1 8.65 Tf 1 0 0 1 40.00 708.50 Tm (of continuous employment in warehouse and production environments. Comfortable learning unfamiliar software, diagnosing routine) Tj ET
+0.070 g BT /F1 8.65 Tf 1 0 0 1 40.00 698.25 Tm (technical issues, documenting work and contributing within fast-paced teams. Interested in software development, IT support and) Tj ET
+0.070 g BT /F1 8.65 Tf 1 0 0 1 40.00 688.00 Tm (infrastructure, QA/testing, cloud and technical analyst roles.) Tj ET
+0.070 g BT /F2 10.70 Tf 1 0 0 1 40.00 676.75 Tm (TECHNICAL SKILLS) Tj ET
+0.720 G 0.50 w 40.00 671.75 m 555.28 671.75 l S
+0.070 g BT /F2 8.80 Tf 1 0 0 1 40.00 661.75 Tm (Programming & web:) Tj ET
+0.070 g BT /F1 8.80 Tf 1 0 0 1 130.95 661.75 Tm (Python, SQL, HTML/CSS, JavaScript/TypeScript, Next.js.) Tj ET
+0.070 g BT /F2 8.80 Tf 1 0 0 1 40.00 650.95 Tm (Development:) Tj ET
+0.070 g BT /F1 8.80 Tf 1 0 0 1 100.63 650.95 Tm (Git/GitHub, REST APIs and JSON, relational databases, authentication/validation, testing, debugging and) Tj ET
+0.070 g BT /F1 8.80 Tf 1 0 0 1 40.00 640.45 Tm (documentation.) Tj ET
+0.070 g BT /F2 8.80 Tf 1 0 0 1 40.00 629.65 Tm (Systems & support:) Tj ET
+0.070 g BT /F1 8.80 Tf 1 0 0 1 125.57 629.65 Tm (Windows 11, Linux, PowerShell, VirtualBox, basic IP/DNS networking and general technical troubleshooting.) Tj ET
+0.070 g BT /F2 10.70 Tf 1 0 0 1 40.00 619.15 Tm (ACADEMIC & TECHNICAL EXPERIENCE) Tj ET
+0.720 G 0.50 w 40.00 614.15 m 555.28 614.15 l S
+0.070 g BT /F2 8.15 Tf 1 0 0 1 45.00 604.15 Tm (-) Tj ET
+0.070 g BT /F1 8.15 Tf 1 0 0 1 56.00 604.15 Tm (Built and deployed database-backed web applications, using authentication, validation, responsive interfaces, testing and structured) Tj ET
+0.070 g BT /F1 8.15 Tf 1 0 0 1 56.00 594.60 Tm (debugging.) Tj ET
+0.070 g BT /F2 8.15 Tf 1 0 0 1 45.00 584.95 Tm (-) Tj ET
+0.070 g BT /F1 8.15 Tf 1 0 0 1 56.00 584.95 Tm (Applied Python, SQL and object-oriented programming to coursework involving relational data modelling, queries, APIs/JSON and) Tj ET
+0.070 g BT /F1 8.15 Tf 1 0 0 1 56.00 575.40 Tm (server-side concepts.) Tj ET
+0.070 g BT /F2 8.15 Tf 1 0 0 1 45.00 565.75 Tm (-) Tj ET
+0.070 g BT /F1 8.15 Tf 1 0 0 1 56.00 565.75 Tm (Used Git-based workflows, Linux virtual machines and Windows development tooling to configure environments, troubleshoot problems) Tj ET
+0.070 g BT /F1 8.15 Tf 1 0 0 1 56.00 556.20 Tm (and document solutions.) Tj ET
+0.070 g BT /F2 8.15 Tf 1 0 0 1 45.00 546.55 Tm (-) Tj ET
+0.070 g BT /F1 8.15 Tf 1 0 0 1 56.00 546.55 Tm (Maintained and updated a live radio website for a real stakeholder, testing changes and resolving unfamiliar technical issues.) Tj ET
+0.070 g BT /F2 10.70 Tf 1 0 0 1 40.00 537.90 Tm (WORK EXPERIENCE) Tj ET
+0.720 G 0.50 w 40.00 532.90 m 555.28 532.90 l S
+0.070 g BT /F2 8.45 Tf 1 0 0 1 40.00 522.90 Tm (Temporary Production Operative) Tj ET
+0.070 g BT /F1 8.45 Tf 1 0 0 1 173.95 522.90 Tm (- Saica Pack UK, Warrenpoint | Jun 2026 - Aug 2026) Tj ET
+0.070 g BT /F2 7.90 Tf 1 0 0 1 45.00 513.40 Tm (-) Tj ET
+0.070 g BT /F1 7.90 Tf 1 0 0 1 56.00 513.40 Tm (Operated and monitored automated corrugated-packaging machinery, completed output quality checks and responded promptly to production) Tj ET
+0.070 g BT /F1 7.90 Tf 1 0 0 1 56.00 504.40 Tm (stoppages.) Tj ET
+0.070 g BT /F2 7.90 Tf 1 0 0 1 45.00 495.40 Tm (-) Tj ET
+0.070 g BT /F1 7.90 Tf 1 0 0 1 56.00 495.40 Tm (Diagnosed and safely resolved routine equipment faults, followed site quality and safety procedures and escalated maintenance-critical) Tj ET
+0.070 g BT /F1 7.90 Tf 1 0 0 1 56.00 486.40 Tm (issues.) Tj ET
+0.070 g BT /F2 8.45 Tf 1 0 0 1 40.00 476.90 Tm (Warehouse Operative) Tj ET
+0.070 g BT /F1 8.45 Tf 1 0 0 1 128.87 476.90 Tm (- Pet Connection, Newry | Oct 2021 - Jul 2026) Tj ET
+0.070 g BT /F2 7.90 Tf 1 0 0 1 45.00 467.40 Tm (-) Tj ET
+0.070 g BT /F1 7.90 Tf 1 0 0 1 56.00 467.40 Tm (Picked and prepared customer and fulfilment orders accurately; organised, replenished and rotated stock; supported dispatch and inventory) Tj ET
+0.070 g BT /F1 7.90 Tf 1 0 0 1 56.00 458.40 Tm (accuracy.) Tj ET
+0.070 g BT /F2 7.90 Tf 1 0 0 1 45.00 449.40 Tm (-) Tj ET
+0.070 g BT /F1 7.90 Tf 1 0 0 1 56.00 449.40 Tm (Maintained dependable attendance and safe working standards while balancing long-term employment with college and university study.) Tj ET
+0.070 g BT /F2 8.45 Tf 1 0 0 1 40.00 439.90 Tm (Kitchen Porter) Tj ET
+0.070 g BT /F1 8.45 Tf 1 0 0 1 100.22 439.90 Tm (- The Garden Room, Warrenpoint | Aug 2024 - Jul 2026) Tj ET
+0.070 g BT /F2 7.90 Tf 1 0 0 1 45.00 430.40 Tm (-) Tj ET
+0.070 g BT /F1 7.90 Tf 1 0 0 1 56.00 430.40 Tm (Supported busy teams, maintained hygiene standards, assisted with stock rotation and adapted quickly to changing priorities.) Tj ET
+0.270 g BT /F2 8.25 Tf 1 0 0 1 40.00 420.90 Tm (Earlier experience:) Tj ET
+0.270 g BT /F1 8.25 Tf 1 0 0 1 116.12 420.90 Tm (Floor Staff, No.7 Duke, Warrenpoint | Jun 2022 - Sep 2022) Tj ET
+0.070 g BT /F2 10.70 Tf 1 0 0 1 40.00 408.90 Tm (EDUCATION & CERTIFICATION) Tj ET
+0.720 G 0.50 w 40.00 403.90 m 555.28 403.90 l S
+0.070 g BT /F2 8.40 Tf 1 0 0 1 40.00 393.90 Tm (BSc \(Hons\) Computing Technologies) Tj ET
+0.070 g BT /F1 8.40 Tf 1 0 0 1 192.41 393.90 Tm (- Ulster University, Belfast | 2025 - 2029 expected) Tj ET
+0.070 g BT /F1 8.15 Tf 1 0 0 1 40.00 384.50 Tm (Year 2. Relevant study includes programming, databases, web development, object-oriented programming, networking and professional) Tj ET
+0.070 g BT /F1 8.15 Tf 1 0 0 1 40.00 375.30 Tm (placement preparation.) Tj ET
+0.070 g BT /F2 8.40 Tf 1 0 0 1 40.00 366.10 Tm (Level 3 Extended Diploma in Technology) Tj ET
+0.070 g BT /F1 8.40 Tf 1 0 0 1 207.38 366.10 Tm (- Southern Regional College | 2022 - 2024 | D*DD) Tj ET
+0.070 g BT /F2 8.40 Tf 1 0 0 1 40.00 356.70 Tm (Information Technology Specialist in HTML and CSS) Tj ET
+0.070 g BT /F1 8.40 Tf 1 0 0 1 253.57 356.70 Tm (- Certiport / Pearson VUE | 2023) Tj ET
 endstream
 endobj
+5 0 obj
+<< /Type /Page /Parent 6 0 R /MediaBox [0 0 595.276 841.89] /Resources << /Font 1 0 R >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+7 0 obj
+<< /Type /Catalog /Pages 6 0 R >>
+endobj
+8 0 obj
+<< /Title (Jamie Parr - Placement CV 2027) /Author (Jamie Parr) >>
+endobj
 xref
-0 11
+0 9
 0000000000 65535 f 
-0000000061 00000 n 
-0000000102 00000 n 
-0000000209 00000 n 
-0000000321 00000 n 
-0000000502 00000 n 
-0000000696 00000 n 
-0000000924 00000 n 
-0000000992 00000 n 
-0000001276 00000 n 
-0000001335 00000 n 
+0000000011 00000 n 
+0000000052 00000 n 
+0000000149 00000 n 
+0000000251 00000 n 
+0000007046 00000 n 
+0000007169 00000 n 
+0000007226 00000 n 
+0000007275 00000 n 
 trailer
-<<
-/ID 
-[<29f252b2924bfc7b1253baea6a8b2edb><29f252b2924bfc7b1253baea6a8b2edb>]
-% ReportLab generated PDF document -- digest (opensource)
-
-/Info 8 0 R
-/Root 7 0 R
-/Size 11
->>
+<< /Size 9 /Root 7 0 R /Info 8 0 R >>
 startxref
-10608
+7357
 %%EOF
