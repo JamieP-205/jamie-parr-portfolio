@@ -1,13 +1,15 @@
 /* Small adjustment to the optional Lava lampe background. */
 body::before,
 body::after {
-  filter: blur(64px);
+  filter: blur(60px);
 }
 
 html[data-lava="on"] body::before {
+  opacity: .135;
   animation-duration: 16s;
 }
 
 html[data-lava="on"] body::after {
+  opacity: .105;
   animation-duration: 19.5s;
 }
