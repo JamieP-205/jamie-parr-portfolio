@@ -14,24 +14,38 @@
       || (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   }
 
+  function updateThemeChrome() {
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (!meta) return;
+    const paper = getComputedStyle(root).getPropertyValue('--paper').trim();
+    meta.setAttribute('content', paper || (root.dataset.theme === 'dark' ? '#0b0b0f' : '#ffffff'));
+  }
+
   function updateThemeButton(button) {
     if (!button) return;
     const dark = root.dataset.theme === 'dark';
+    const target = dark ? 'light' : 'dark';
+    button.dataset.themeTarget = target;
     button.setAttribute('aria-pressed', String(dark));
-    button.textContent = dark ? 'Light' : 'Dark';
+    button.setAttribute('aria-label', `Switch to ${target} mode`);
+    button.textContent = dark ? 'Light mode' : 'Dark mode';
   }
 
   function applyTheme(next, button) {
-    root.dataset.theme = next;
-    store('portfolio-theme', next);
+    const theme = next === 'dark' ? 'dark' : 'light';
+    root.dataset.theme = theme;
+    root.style.colorScheme = theme;
+    store('portfolio-theme', theme);
     updateThemeButton(button);
+    updateThemeChrome();
   }
 
   function smoothThemeSwitch(origin) {
     const button = origin && origin.matches && origin.matches('[data-theme-toggle]')
       ? origin
       : document.querySelector('[data-theme-toggle]');
-    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    const next = button?.dataset.themeTarget
+      || (root.dataset.theme === 'dark' ? 'light' : 'dark');
 
     if (!document.startViewTransition || reducedMotion() || !button) {
       root.classList.add('theme-soft-switch');
@@ -66,6 +80,7 @@
     const cleanButton = oldThemeButton.cloneNode(true);
     oldThemeButton.replaceWith(cleanButton);
     updateThemeButton(cleanButton);
+    updateThemeChrome();
     cleanButton.addEventListener('click', () => smoothThemeSwitch(cleanButton));
   }
   window.portfolioSwitchTheme = smoothThemeSwitch;
