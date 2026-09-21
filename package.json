@@ -10,7 +10,7 @@
     "test": "npm run check:js && npm run check:site && npm run test:browser"
   },
   "devDependencies": {
-    "playwright": "^1.61.1"
+    "playwright": "^1.63.0"
   },
   "engines": {
     "node": ">=20"
